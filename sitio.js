@@ -190,12 +190,22 @@
 
   /* ---------- Recorrido horizontal ---------- */
   var rec = $('recorrido'), pista = $('pista'), prog = $('r-progreso'), volverA = 'inicio';
-  function panelImg(src, i, w, h, top, titulo, texto) {
-    var pnl = el('div', 'panel img'); pnl.style.width = 'calc(' + w + ' + 64px)';
-    var caja = el('div', 'caja'), f = foto(src, i, titulo || texto);
-    f.style.width = w; f.style.height = h; f.style.top = top; caja.appendChild(f); pnl.appendChild(caja);
+  /* prop = ancho/alto de la foto real: la caja respeta su forma sin recortarla */
+  function panelImg(src, i, w, h, top, titulo, texto, prop) {
+    var pnl = el('div', 'panel img'), caja = el('div', 'caja'), f = foto(src, i, titulo || texto);
+    if (src && prop) {
+      var frac = parseFloat(h) / 100, alto = 'calc((100vh - 190px) * ' + frac + ')';
+      w = 'min(calc((100vh - 190px) * ' + (frac * prop).toFixed(3) + '), 88vw)';
+      f.style.height = 'auto'; f.style.aspectRatio = String(prop); f.style.maxHeight = alto;
+    } else f.style.height = h;
+    pnl.style.width = 'calc(' + w + ' + 64px)';
+    f.style.width = w; f.style.top = top; caja.appendChild(f); pnl.appendChild(caja);
     pnl.appendChild(el('div', 'pie', (titulo ? '<b>' + esc(titulo) + '</b>' : '') + '<p class="g">' + esc(texto) + '</p>'));
     return pnl;
+  }
+  /* Párrafos separados por línea vacía; **texto** se muestra en negritas */
+  function parrafos(txt) {
+    return String(txt || '').split(/\n\s*\n/).map(function (p) { return '<p>' + esc(p.trim()).replace(/\*\*(.+?)\*\*/g, '<b style="font-weight:600">$1</b>') + '</p>'; }).join('');
   }
   var MEDIDAS = [['54vw', '62%', '10%'], ['38vw', '72%', '0'], ['26vw', '52%', '22%'], ['46vw', '72%', '0'], ['30vw', '76%', '0']];
   function abrirRecorrido(titulo, cerrarTxt, paneles, conIndice) {
@@ -222,8 +232,9 @@
     var fin = el('div', 'panel final'), s = el('a', 'siguiente', '<span class="g">Siguiente proyecto</span><b>' + esc(sig.nombre) + '</b><span class="g">' + esc(cat(sig)) + '</span>');
     s.href = '#/proyectos/' + sig.slug; s.style.cssText = 'color:inherit;text-decoration:none';
     var fs = foto(sig.portada, sig.i, sig.nombre); fs.style.aspectRatio = '1/1'; s.appendChild(fs); fin.appendChild(s);
-    var paneles = [portada, panelImg(p.portada, p.i, '46vw', '72%', '0', 'El concepto.', p.concepto || ''), ficha];
-    (p.fotos || []).forEach(function (f, k) { var m = MEDIDAS[k % MEDIDAS.length]; paneles.push(panelImg(f.src, p.i + k + 1, m[0], m[1], m[2], f.titulo, f.texto)); });
+    var paneles = [portada, panelImg(p.portada, p.i, '46vw', '72%', '0', 'El concepto.', p.concepto || '', p.portadaProp), ficha];
+    if (p.texto) paneles.push(el('div', 'panel lectura', '<div class="fecha">Memoria del proyecto</div><div class="cuerpo">' + parrafos(p.texto) + '</div>'));
+    (p.fotos || []).forEach(function (f, k) { var m = MEDIDAS[k % MEDIDAS.length]; paneles.push(panelImg(f.src, p.i + k + 1, m[0], m[1], m[2], f.titulo, f.texto, f.prop)); });
     paneles.push(fin);
     volverA = 'proyectos';
     abrirRecorrido(p.nombre, 'Cerrar proyecto', paneles, true);
@@ -231,7 +242,7 @@
   function abrirTexto(t) {
     var portada = el('div', 'panel portada', '<h1>' + esc(t.titulo) + '</h1><div class="g">' + esc(t.fecha) + '</div>');
     var lectura = el('div', 'panel lectura', '<div class="fecha">Circular · ' + esc(t.fecha) + '</div><div class="cuerpo">' +
-      String(t.cuerpo || '').split(/\n\s*\n/).map(function (p) { return '<p>' + esc(p.trim()) + '</p>'; }).join('') + '</div>');
+      parrafos(t.cuerpo) + '</div>');
     var paneles = [portada];
     if (t.portada) paneles.push(panelImg(t.portada, t.i, '40vw', '72%', '0', '', t.titulo));
     paneles.push(lectura);
