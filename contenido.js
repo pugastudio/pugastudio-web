@@ -81,9 +81,23 @@ window.PUGA = {
       ]
     },
     {
-      slug: 'panaderia-costra', nombre: 'Panadería Costra', disciplina: 2, tipo: 'Panadería y café',
-      anio: '', estado: '', ubicacion: '', equipo: 'Javier Puga',
-      portada: '', concepto: '', fotos: []
+      slug: 'panaderia-costra', nombre: 'Costra', disciplina: 2, tipo: 'Cafetería / Panadería',
+      anio: '2020', estado: '', ubicacion: 'Ciudad de México', equipo: 'Javier Puga',
+      portada: 'img/proyectos/panaderia-costra/01.jpg', portadaProp: 1.874,
+      concepto: 'Tierra, fuego y metal: una panadería de barrio pensada como un horno.',
+      texto: "Ubicada en la Ciudad de México, **Costra** es una panadería y cafetería concebida como una experiencia sensorial. El color, la luz, las texturas y los aromas construyen una atmósfera de cercanía, donde el pan y el café son protagonistas y, al mismo tiempo, el origen del lenguaje arquitectónico.\n\nEl proyecto encuentra su inspiración en los procesos que transforman ambos productos, desde el cultivo de sus ingredientes hasta el horneado del pan y el tostado del café. De esta lectura surgen tres elementos que orientan el diseño: tierra, fuego y metal. Su presencia se expresa en una paleta de materiales y en decisiones espaciales que vinculan el trabajo artesanal con el lugar donde se disfruta.\n\nLa iluminación cálida y los tonos terrosos evocan el interior de un horno. En los muros, un sutil degradado remite a los cambios de color del pan durante la cocción y a la costra que da nombre al proyecto. El acero introduce la precisión y el carácter industrial de los equipos de producción, en equilibrio con la calidez de las superficies y el cuidado de los detalles.\n\nLa barra remetida es uno de los gestos que definen la relación del local con su entorno. Su disposición facilita la circulación y abre un vínculo visual y físico con la calle, recuperando el espíritu de la panadería de barrio: un lugar cercano, cotidiano y acogedor. Al caer la noche, la iluminación en tonos naranjas acentúa la profundidad del espacio y lo convierte en un refugio cálido, donde el fuego se evoca como símbolo de transformación y encuentro.\n\nEn el corazón del local, un muro de exhibición presenta el pan con la atención que se dedica a una pieza de arte. Cada variedad forma parte de una composición que destaca sus formas, texturas y cualidades, y celebra el oficio detrás de su elaboración. Un área de personalización con espejos incorpora una dimensión lúdica e invita a los visitantes a capturar su **#MomentoCostra**, extendiendo la experiencia más allá del espacio físico.\n\nCostra traduce los procesos y la materia del pan y del café en una arquitectura que despierta los sentidos. Su identidad se construye desde la calidez, el detalle y la relación con la calle, para hacer de una visita cotidiana un momento de encuentro y pertenencia.",
+      fotos: [
+        { src:"img/proyectos/panaderia-costra/02.jpg", prop:0.667, titulo:"La calle.", texto:"La barra remetida abre el local a la banqueta y recupera el espíritu de la panadería de barrio." },
+        { src:"img/proyectos/panaderia-costra/03.jpg", prop:0.667, titulo:"Acceso.", texto:"Un umbral cálido que anuncia el interior desde la calle." },
+        { src:"img/proyectos/panaderia-costra/04.jpg", prop:1.5, titulo:"Interior.", texto:"Tierra, fuego y metal: tonos terrosos, luz cálida y acero." },
+        { src:"img/proyectos/panaderia-costra/05.jpg", prop:1.5, titulo:"Muro de exhibición.", texto:"El pan presentado con la atención que se dedica a una pieza de arte." },
+        { src:"img/proyectos/panaderia-costra/06.jpg", prop:1.5, titulo:"Mesas y muro de pan.", texto:"El pan como protagonista y origen del lenguaje del espacio." },
+        { src:"img/proyectos/panaderia-costra/07.jpg", prop:1.5, titulo:"Barra.", texto:"La precisión del acero junto a la calidez de las superficies." },
+        { src:"img/proyectos/panaderia-costra/08.jpg", prop:0.667, titulo:"Luz.", texto:"La iluminación cálida evoca el interior de un horno." },
+        { src:"img/proyectos/panaderia-costra/09.jpg", prop:0.667, titulo:"Rincón.", texto:"Texturas y materia que remiten a la costra del pan." },
+        { src:"img/proyectos/panaderia-costra/10.jpg", prop:0.667, titulo:"Banca.", texto:"Un degradado sutil en los muros recuerda la cocción del pan." },
+        { src:"img/proyectos/panaderia-costra/11.jpg", prop:0.667, titulo:"#MomentoCostra.", texto:"Un área de espejos que invita a capturar la visita." }
+      ]
     },
     { slug: 'hotel', nombre: 'Hotel (por cargar)', disciplina: 1, tipo: 'Hospitality', portada: '', fotos: [] },
     { slug: 'residencia', nombre: 'Residencia llave en mano (por cargar)', disciplina: 1, tipo: 'Residencial de lujo', portada: '', fotos: [] },
