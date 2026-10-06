@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Puga Studio</title>
+<meta name="description" content="Puga Studio: arquitectura, diseño de interiores, mobiliario y arte-objeto. Ciudad de México, desde 2017.">
+<meta property="og:title" content="Puga Studio">
+<meta property="og:description" content="Arquitectura, diseño de interiores, mobiliario y arte-objeto.">
+<meta property="og:image" content="img/logo-negro.png">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="img/logo-negro.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;800&display=swap">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="barra" id="barra">
+  <a class="marca-movil" href="#/" style="display:none" aria-label="Puga Studio, inicio"><img src="img/logo-negro.png" alt=""></a>
+  <nav class="menu" aria-label="Principal">
+    <button type="button" data-ir="inicio">Puga Studio</button>
+    <button type="button" data-ir="explorar">Explorar</button>
+    <button type="button" data-ir="proyectos">Proyectos</button>
+    <button type="button" data-ir="circular">Circular</button>
+    <button type="button" data-ir="origen">Origen</button>
+    <button type="button" data-ir="contacto">Contacto</button>
+  </nav>
+  <span class="reloj" id="reloj">CDMX</span>
+  <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false">Menú</button>
+</header>
+
+<main>
+<!-- INICIO -->
+<section class="vista scroll-y" id="v-inicio" aria-label="Inicio">
+  <h1 class="logo-gigante" style="margin:0"><img src="img/logo-negro.png" alt="Puga Studio"></h1>
+  <div class="inicio-grid">
+    <div class="flujo" id="flujo"></div>
+    <aside class="lateral">
+      <p class="acerca" id="acerca"></p>
+      <div class="pieza" id="retrato"></div>
+      <div class="pieza" id="foto-equipo"></div>
+      <div>
+        <h2 class="h-sec">Estudio</h2>
+        <div class="plano" id="plano">Plano del estudio</div>
+      </div>
+      <ul class="equipo" id="equipo"></ul>
+    </aside>
+  </div>
+  <div id="contacto-en-inicio"></div>
+</section>
+
+<!-- EXPLORAR -->
+<section class="vista" id="v-explorar" aria-label="Explorar" hidden>
+  <div class="explorar-fondo" id="explorar-fondo"></div>
+  <div class="explorar-centro">
+    <label for="buscar" style="position:absolute;left:-9999px">Buscar</label>
+    <input id="buscar" type="text" autocomplete="off" placeholder="Escribe un término (ej. Cerámica)">
+    <div class="sub">Explora Puga Studio</div>
+    <div class="resultados" id="resultados"></div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="vista" id="v-proyectos" aria-label="Proyectos" hidden>
+  <div class="campo" id="campo-proyectos"><div class="lienzo"></div></div>
+  <div class="indice" id="indice-proyectos" hidden>
+    <div class="nums" role="group" aria-label="Disciplinas">
+      <button type="button" class="todo" data-d="0" aria-pressed="true">Todo</button>
+      <button type="button" data-d="1" aria-pressed="false" title="Sólidos">01</button>
+      <button type="button" data-d="2" aria-pressed="false" title="Lo Interior">02</button>
+      <button type="button" data-d="3" aria-pressed="false" title="Montañismo">03</button>
+      <button type="button" data-d="4" aria-pressed="false" title="Taller de Sombras">04</button>
+    </div>
+    <ul id="lista-proyectos"></ul>
+  </div>
+  <div class="flotante izq"><button type="button" class="cuadro" data-indice="indice-proyectos" aria-label="Abrir índice">+</button><button type="button" data-indice="indice-proyectos">Índice de proyectos</button></div>
+  <div class="flotante der"><button type="button" class="cuadro" data-zoom="1" aria-label="Acercar">+</button><button type="button" class="cuadro" data-zoom="-1" aria-label="Alejar">−</button></div>
+</section>
+
+<!-- CIRCULAR -->
+<section class="vista" id="v-circular" aria-label="Circular" hidden>
+  <div class="campo" id="campo-circular"><div class="lienzo"></div></div>
+  <div class="indice" id="indice-circular" hidden><ul id="lista-circular"></ul></div>
+  <div class="flotante izq"><button type="button" class="cuadro" data-indice="indice-circular" aria-label="Abrir índice">+</button><button type="button" data-indice="indice-circular">Índice Circular</button></div>
+  <div class="flotante der"><button type="button" class="cuadro" data-zoom="1" aria-label="Acercar">+</button><button type="button" class="cuadro" data-zoom="-1" aria-label="Alejar">−</button></div>
+</section>
+
+<!-- CONTACTO -->
+<section class="vista scroll-y" id="v-contacto" aria-label="Contacto" hidden></section>
+</main>
+
+<template id="tpl-contacto">
+  <div class="contacto">
+    <div class="logo-gigante"><img src="img/logo-negro.png" alt="Puga Studio"></div>
+    <div class="contacto-cuerpo">
+      <div class="pegaso"></div>
+      <div class="datos">
+        <div class="regla datos-contacto"></div>
+        <form class="form-suscribe">
+          <label>Suscríbete para recibir noticias ocasionales:</label>
+          <div class="suscribe"><input type="email" name="correo" placeholder="Correo electrónico" aria-label="Correo electrónico" required><button type="submit">Suscribirme</button></div>
+          <p class="msg" aria-live="polite" style="margin-top:8px"></p>
+        </form>
+        <div class="regla"><p class="texto-contacto"></p></div>
+        <div class="creditos">
+          <p>Diseño: Puga Studio</p>
+          <p>Puga Studio © <span class="anio"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- RECORRIDO HORIZONTAL (proyecto, texto, origen) -->
+<div class="recorrido" id="recorrido" aria-hidden="true">
+  <div class="r-barra">
+    <div class="r-progreso" id="r-progreso"></div>
+    <button type="button" class="volver" id="r-volver">Volver al inicio</button>
+    <span class="titulo" id="r-titulo"></span>
+    <button type="button" class="cerrar" id="r-cerrar">Cerrar</button>
+  </div>
+  <div class="pista" id="pista"></div>
+  <div class="flotante izq" id="r-indice" style="bottom:16px"><button type="button" class="cuadro" aria-label="Índice de proyectos">+</button><button type="button">Índice de proyectos</button></div>
+</div>
+
+<div class="etiqueta" id="etiqueta" aria-hidden="true"><span class="ico"><s></s></span><span class="txt" id="etiqueta-txt"></span></div>
+
+<script src="contenido.js"></script>
+<script src="sitio.js"></script>
+</body>
+</html>
