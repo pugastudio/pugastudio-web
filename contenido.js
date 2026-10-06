@@ -98,12 +98,7 @@ window.PUGA = {
         { src:"img/proyectos/panaderia-costra/10.jpg", prop:0.667, titulo:"Banca.", texto:"Un degradado sutil en los muros recuerda la cocción del pan." },
         { src:"img/proyectos/panaderia-costra/11.jpg", prop:0.667, titulo:"#MomentoCostra.", texto:"Un área de espejos que invita a capturar la visita." }
       ]
-    },
-    { slug: 'hotel', nombre: 'Hotel (por cargar)', disciplina: 1, tipo: 'Hospitality', portada: '', fotos: [] },
-    { slug: 'residencia', nombre: 'Residencia llave en mano (por cargar)', disciplina: 1, tipo: 'Residencial de lujo', portada: '', fotos: [] },
-    { slug: 'centro-comercial', nombre: 'Centro comercial (por cargar)', disciplina: 1, tipo: 'Comercial', portada: '', fotos: [] },
-    { slug: 'mobiliario', nombre: 'Pieza de mobiliario (por cargar)', disciplina: 3, tipo: 'Mobiliario', portada: '', fotos: [] },
-    { slug: 'arte-objeto', nombre: 'Arte-objeto (por cargar)', disciplina: 4, tipo: 'Pieza de arte', portada: '', fotos: [] }
+    }
   ],
 
   /* Circular: textos del blog. Fecha en formato DD.MM.AA.

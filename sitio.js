@@ -53,12 +53,8 @@
 
   /* Flujo: proyectos y textos intercalados */
   var flujo = $('flujo'), formas = [['4/3', ''], ['4/5', 'w66'], ['3/2', ''], ['3/2', ''], ['4/5', 'w66'], ['4/3', 'w66']];
-  var orden = [], pi = 0, ti = 0;
-  while (pi < Math.min(PROY.length, 6) || ti < Math.min(TEXTOS.length, 2)) {
-    if (pi < Math.min(PROY.length, 6)) orden.push({ p: PROY[pi++] });
-    if (pi < Math.min(PROY.length, 6)) orden.push({ p: PROY[pi++] });
-    if (ti < Math.min(TEXTOS.length, 2)) orden.push({ t: TEXTOS[ti++] });
-  }
+  /* Por ahora el inicio muestra solo los proyectos publicados (los textos de Circular aún no existen) */
+  var orden = PROY.slice(0, 6).map(function (p) { return { p: p }; });
   orden.forEach(function (o, k) {
     var it = o.p || o.t, forma = formas[k % formas.length];
     var pz = el('a', 'pieza ' + forma[1]);
@@ -133,8 +129,14 @@
     };
     return estado;
   }
+  /* Si hay pocos proyectos se repiten para llenar el campo, sin dejar dos iguales juntos */
+  function rellenar(items) {
+    if (!items.length || items.length >= POS.length) return items;
+    var mezcla = [0, 1, 2, 1, 2, 0, 1, 0];
+    return POS.map(function (_, i) { return items[items.length <= 3 ? mezcla[i] % items.length : i % items.length]; });
+  }
   var campos = {
-    proyectos: crearCampo('campo-proyectos', PROY, function (p) { return '<b>' + esc(p.nombre) + '</b><span class="g">' + esc(cat(p)) + '</span>'; }, 'proyectos', false),
+    proyectos: crearCampo('campo-proyectos', rellenar(PROY), function (p) { return '<b>' + esc(p.nombre) + '</b><span class="g">' + esc(cat(p)) + '</span>'; }, 'proyectos', false),
     circular: crearCampo('campo-circular', TEXTOS, function (t) { return '<b>' + esc(t.titulo) + '</b><span class="g">' + esc(t.fecha) + '</span>'; }, 'circular', true)
   };
   var actual = 'inicio', ultimo = performance.now();
