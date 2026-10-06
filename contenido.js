@@ -30,14 +30,36 @@ window.PUGA = {
 
   proyectos: [
     {
-      slug: 'casa-che-che', nombre: 'Casa Che Che', disciplina: 1, tipo: 'Residencial',
-      anio: '', estado: '', ubicacion: '', equipo: 'Javier Puga',
-      portada: '',
-      concepto: 'Aquí va la idea que da origen al proyecto, en dos o tres líneas: el lugar, su historia y cómo se habita.',
+      slug: 'casa-che-che', nombre: 'Casa Ché Ché', disciplina: 1, tipo: 'Residencial',
+      anio: '2021', estado: '', ubicacion: 'Mérida', equipo: 'Javier Puga',
+      portada: 'img/proyectos/casa-che-che/01.jpg', portadaProp: 1.5,
+      concepto: 'Una casa para habitar el calor de Mérida con frescura: patios, sombra, celosía y aire en movimiento.',
+      texto: "**Casa Che'Che'** nace de una intención esencial: habitar el clima cálido de Mérida mediante espacios frescos, sombreados y abiertos a la circulación natural del aire. Su nombre, asociado en lengua maya con la frescura, expresa la búsqueda que guía el proyecto: generar confort a través de estrategias pasivas, en diálogo con los materiales y las condiciones ambientales de la región.\n\nLa casa se organiza a partir de un trazo en zigzag que permite intercalar patios y jardines entre los volúmenes construidos. Estos vacíos articulan la vida interior y exterior, introducen luz natural y favorecen la ventilación cruzada. Cada ambiente encuentra así una relación cercana con la vegetación, el aire y los cambios de luz a lo largo del día.\n\nEn la fachada principal, un muro de celosía permite el paso de los vientos dominantes del norte hacia los patios. La orientación de los espacios, las superficies sombreadas y la presencia de agua en las áreas exteriores complementan esta estrategia y contribuyen a crear una atmósfera más fresca dentro de la vivienda.\n\nLa materialidad se construye con recursos de la región, como piedra, arena y maderas duras, que aportan textura, calidez y arraigo. La modulación constructiva permite optimizar los procesos de obra y ordenar la composición arquitectónica. Sobre esta base, las sombras de la propia casa y de la vegetación dibujan una atmósfera cambiante, que da profundidad y ritmo a los espacios.\n\nEl programa se distribuye en dos niveles. La planta baja reúne los accesos peatonal y vehicular, las áreas sociales y los servicios: cocina con desayunador, comedor, sala, medio baño y área de lavado. Patios y jardines acompañan estos espacios y prolongan sus vistas hacia el exterior. Al fondo, la alberca constituye un remate visual y un punto de encuentro vinculado con la vida al aire libre.\n\nLa planta alta alberga tres recámaras de distintas configuraciones, todas con iluminación y ventilación naturales. La principal, situada al fondo de la casa, integra baño completo, clóset y un balcón orientado hacia la alberca, que extiende el espacio privado hacia el paisaje del jardín.\n\nCasa Che'Che' reúne tradición constructiva y sensibilidad climática en una arquitectura que encuentra en su entorno los recursos para generar bienestar. La frescura se convierte en el principio que enlaza la forma, la materia y la experiencia cotidiana de habitar.",
       fotos: [
-        { src: '', titulo: 'Planos. 1 de 3', texto: 'Planta arquitectónica y cortes del proyecto.' },
-        { src: '', titulo: 'Materiales.', texto: 'Texturas, acabados y oficios locales que usamos en la obra.' },
-        { src: '', titulo: 'Interiores.', texto: 'Mobiliario y piezas diseñadas por el estudio para este espacio.' }
+        { src: 'img/proyectos/casa-che-che/02.jpg', prop: 0.667, titulo: 'Fachada.', texto: 'Volúmenes de tierra entre la vegetación de Mérida.' },
+        { src: 'img/proyectos/casa-che-che/03.jpg', prop: 1.5, titulo: 'Balcón.', texto: 'La recámara principal se asoma sobre el jardín.' },
+        { src: 'img/proyectos/casa-che-che/04.jpg', prop: 1.5, titulo: 'Esquina.', texto: 'El muro de celosía deja pasar los vientos del norte.' },
+        { src: 'img/proyectos/casa-che-che/17.jpg', prop: 0.667, titulo: 'Atardecer.', texto: 'La casa toma el color del cielo.' },
+        { src: 'img/proyectos/casa-che-che/05.jpg', prop: 0.667, titulo: 'Sombra.', texto: 'Los árboles dibujan sobre los muros.' },
+        { src: 'img/proyectos/casa-che-che/06.jpg', prop: 0.667, titulo: 'Pórtico.', texto: 'El acceso enmarca un patio con árbol.' },
+        { src: 'img/proyectos/casa-che-che/07.jpg', prop: 0.667, titulo: 'Acceso.', texto: 'Volados y columnas ordenan la entrada.' },
+        { src: 'img/proyectos/casa-che-che/09.jpg', prop: 0.667, titulo: 'Pasillo lateral.', texto: 'Un jardín angosto ventila la casa.' },
+        { src: 'img/proyectos/casa-che-che/19.jpg', prop: 1.5, titulo: 'Celosía.', texto: 'Luz y aire atraviesan el muro perimetral.' },
+        { src: 'img/proyectos/casa-che-che/18.jpg', prop: 0.667, titulo: 'Patio.', texto: 'Un rincón exterior junto a las recámaras.' },
+        { src: 'img/proyectos/casa-che-che/08.jpg', prop: 0.667, titulo: 'Escalera.', texto: 'Peldaños de concreto y barandal de madera oscura.' },
+        { src: 'img/proyectos/casa-che-che/11.jpg', prop: 1.5, titulo: 'Circulación.', texto: 'Cortinas de lino filtran la luz.' },
+        { src: 'img/proyectos/casa-che-che/16.jpg', prop: 1.5, titulo: 'Sala.', texto: 'Abierta al jardín y a la alberca.' },
+        { src: 'img/proyectos/casa-che-che/12.jpg', prop: 1.5, titulo: 'Comedor.', texto: 'Mobiliario en madera oscura.' },
+        { src: 'img/proyectos/casa-che-che/13.jpg', prop: 1.5, titulo: 'Planta alta.', texto: 'Un ventanal alto ilumina el pasillo.' },
+        { src: 'img/proyectos/casa-che-che/14.jpg', prop: 1.5, titulo: 'Recámara principal.', texto: 'Con balcón hacia la alberca.' },
+        { src: 'img/proyectos/casa-che-che/15.jpg', prop: 1.5, titulo: 'Baño.', texto: 'Arena, madera y mosaico.' },
+        { src: 'img/proyectos/casa-che-che/25.jpg', prop: 0.667, titulo: 'Hamaca.', texto: 'Un patio sombreado para el descanso.' },
+        { src: 'img/proyectos/casa-che-che/10.jpg', prop: 0.667, titulo: 'Alberca.', texto: 'El remate visual al fondo de la casa.' },
+        { src: 'img/proyectos/casa-che-che/24.jpg', prop: 1.5, titulo: 'Jardín.', texto: 'Columnas, sombra y agua.' },
+        { src: 'img/proyectos/casa-che-che/20.jpg', prop: 0.667, titulo: 'Pórtico al anochecer.', texto: 'La vida al aire libre.' },
+        { src: 'img/proyectos/casa-che-che/23.jpg', prop: 1.334, titulo: 'Vista aérea.', texto: 'El volumen entre los árboles.' },
+        { src: 'img/proyectos/casa-che-che/22.jpg', prop: 1.334, titulo: 'Desde arriba.', texto: 'Alberca, jardín y celosía.' },
+        { src: 'img/proyectos/casa-che-che/21.jpg', prop: 1.334, titulo: 'Planta.', texto: 'El trazo en zigzag intercala patios y jardines.' }
       ]
     },
     {
