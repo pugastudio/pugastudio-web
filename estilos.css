@@ -74,9 +74,10 @@ p { margin: 0; }
 .etiqueta .txt { padding: 4px 7px 4px 8px; }
 
 /* Contacto (lima) */
-.contacto { background: var(--lima); min-height: 100%; padding: 22px var(--m) 24px; display: flex; flex-direction: column; }
-.contacto .logo-gigante { padding: 0; }
-.contacto-cuerpo { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 25%); gap: 24px 20px; margin-top: 18vh; }
+.contacto { background: var(--lima); min-height: calc(100vh - var(--barra)); min-height: calc(100svh - var(--barra) - env(safe-area-inset-top, 0px)); padding: 22px var(--m) 24px; display: flex; flex-direction: column; }
+.contacto .logo-gigante { padding: 0; margin-top: 14vh; }
+.contacto-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 25%); align-items: end; gap: 24px 20px; margin-top: auto; padding-top: 8vh; }
+.contacto-cuerpo .datos { grid-column: 2; }
 .pegaso { align-self: end; width: min(42vw, 520px); aspect-ratio: 1 / 1; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 16px; }
 .datos { display: flex; flex-direction: column; gap: 44px; }
 .datos .regla { border-top: 1.5px solid var(--negro); padding-top: 12px; }
@@ -173,7 +174,9 @@ p { margin: 0; }
   .inicio-grid { grid-template-columns: 1fr; gap: 64px; }
   .flujo, .lateral { grid-column: 1; }
   .pieza.w66 { width: 80%; }
-  .contacto-cuerpo { grid-template-columns: 1fr; margin-top: 8vh; }
+  .contacto-cuerpo { grid-template-columns: 1fr; }
+  .contacto-cuerpo .datos { grid-column: 1; }
+  .contacto .logo-gigante { margin-top: 6vh; }
   .pegaso { width: 70%; order: 2; }
   .panel.portada { width: 86vw; }
   .ficha { width: 88vw; padding-right: 32px; }

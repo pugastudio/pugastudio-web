@@ -86,7 +86,7 @@
     n.querySelector('.anio').textContent = new Date().getFullYear();
     var peg = n.querySelector('.pegaso');
     if (K.pegaso) { peg.style.border = '0'; var im = el('img'); im.src = K.pegaso; im.alt = 'Pegaso de Puga Studio'; im.style.cssText = 'width:100%;height:100%;object-fit:contain'; peg.appendChild(im); }
-    else peg.style.visibility = 'hidden';
+    else peg.hidden = true;
     $(id).appendChild(n);
   });
   document.querySelectorAll('.form-suscribe').forEach(function (f) {
