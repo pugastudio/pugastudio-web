@@ -230,4 +230,6 @@ p { margin: 0; }
 
 /* Circular: velo lima borroso con "Próximamente" */
 .proximamente { position: absolute; inset: 0; z-index: 9; display: flex; align-items: center; justify-content: center; background: rgba(230, 240, 37, .55); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
-.proximamente p { margin: 0; color: var(--azul); font-weight: 800; font-size: clamp(40px, 9vw, 150px); letter-spacing: -.04em; line-height: 1; text-align: center; padding: 0 var(--m); }
+.proximamente p { margin: 0; color: var(--azul); font-weight: 500; font-size: 12px; letter-spacing: .42em; text-transform: uppercase; line-height: 1; text-align: center; padding: 0 var(--m) 0 calc(var(--m) + .42em); animation: respira 4.5s ease-in-out infinite; }
+@keyframes respira { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .proximamente p { animation: none; } }
