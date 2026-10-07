@@ -15,12 +15,17 @@ window.PUGA = {
   fotoEquipo: { foto: '', pie: 'El equipo de Puga Studio en Ciudad de México.' },
   plano: '',   /* plano del estudio en lima */
 
-  /* Disciplinas del estudio: bloque lima del inicio y nombres del índice de proyectos */
+  /* Disciplinas del estudio: bloque lima del inicio y nombres del índice de proyectos.
+     palabras: términos del buscador (sin acentos) que muestran los proyectos de esa disciplina */
   disciplinas: [
-    { num: 1, nombre: 'Sólidos', area: 'Arquitectura', texto: 'Diseño arquitectónico integral, desde la primera idea hasta la obra terminada. Nuestro alcance comprende asesoría, proyecto conceptual, proyecto esquemático, desarrollo de diseño, proyecto ejecutivo, supervisión y construcción.' },
-    { num: 2, nombre: 'Lo Interior', area: 'Diseño de interiores y atmósferas', texto: 'Diseño de espacios interiores y de las atmósferas que los definen: luz, materia, color y forma de habitar. Nuestro alcance comprende asesoría, proyecto conceptual, proyecto esquemático, desarrollo de diseño, proyecto ejecutivo, supervisión y construcción.' },
-    { num: 3, nombre: 'Montañismo', area: 'Diseño de mobiliario y objetos funcionales', texto: 'Mobiliario y objetos funcionales concebidos en diálogo con el espacio que habitan. El proceso abarca proyecto conceptual, proyecto esquemático, desarrollo de diseño, ejecución y montaje.' },
-    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Piezas únicas de pintura, escultura y mobiliario funcional concebido como obra. Un espacio de exploración libre sobre la forma, la materia y la sombra.' }
+    { num: 1, nombre: 'Sólidos', area: 'Arquitectura', texto: 'Diseño arquitectónico integral, desde la primera idea hasta la obra terminada. Nuestro alcance comprende asesoría, proyecto conceptual, proyecto esquemático, desarrollo de diseño, proyecto ejecutivo, supervisión y construcción.',
+      palabras: ['arquitectura', 'arquitectonico', 'arquitectonica', 'arquitecto', 'solidos', 'solido', 'construccion', 'construir', 'obra', 'obras', 'edificio', 'edificios', 'supervision', 'diseno'] },
+    { num: 2, nombre: 'Lo Interior', area: 'Diseño de interiores y atmósferas', texto: 'Diseño de espacios interiores y de las atmósferas que los definen: luz, materia, color y forma de habitar. Nuestro alcance comprende asesoría, proyecto conceptual, proyecto esquemático, desarrollo de diseño, proyecto ejecutivo, supervisión y construcción.',
+      palabras: ['interiorismo', 'interiores', 'interior', 'interiorista', 'atmosfera', 'atmosferas', 'ambientes', 'diseno'] },
+    { num: 3, nombre: 'Montañismo', area: 'Diseño de mobiliario y objetos funcionales', texto: 'Mobiliario y objetos funcionales concebidos en diálogo con el espacio que habitan. El proceso abarca proyecto conceptual, proyecto esquemático, desarrollo de diseño, ejecución y montaje.',
+      palabras: ['mobiliario', 'mueble', 'muebles', 'montanismo', 'objeto', 'objetos', 'funcionales', 'silla', 'sillas', 'mesa', 'mesas', 'diseno'] },
+    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Piezas únicas de pintura, escultura y mobiliario funcional concebido como obra. Un espacio de exploración libre sobre la forma, la materia y la sombra.',
+      palabras: ['arte', 'artistico', 'artistica', 'pintura', 'pinturas', 'escultura', 'esculturas', 'sombras', 'taller', 'pieza', 'piezas', 'objeto', 'objetos'] }
   ],
 
   equipo: [

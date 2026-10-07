@@ -199,14 +199,55 @@
     fondo.appendChild(f);
   });
   var buscar = $('buscar'), res = $('resultados');
+  /* Buscador: si un término nombra una disciplina (arquitectura, diseño, arte…) muestra sus proyectos;
+     si no, busca palabra por palabra en nombre, tipo, ubicación y texto de cada proyecto */
+  var VACIAS = ' de la el los las lo y e en del al con para por un una o a su sus '.split(' ');
+  function palabrasDe(t) { return sinAcentos(t).split(/[^a-z0-9#]+/).filter(Boolean); }
+  function empieza(lista, t) { return lista.some(function (w) { return w === t || (t.length >= 4 && w.indexOf(t) === 0); }); }
+  function discDe(t) {
+    return (C.disciplinas || []).filter(function (d) {
+      return empieza((d.palabras || []).concat(palabrasDe(d.nombre)), t);
+    }).map(function (d) { return d.num; });
+  }
+  function puntos(terms, fuerte, debil, disc) {
+    var total = 0;
+    for (var k = 0; k < terms.length; k++) {
+      var t = terms[k], pts = 0;
+      if (t.discs.length) pts = disc && t.discs.indexOf(disc) > -1 ? 10 : 0;
+      else if (empieza(fuerte, t.t)) pts = 5;
+      else if (debil.indexOf(t.t) > -1 || (t.t.length >= 5 && empieza(debil, t.t))) pts = 1;
+      if (!pts) return 0;
+      total += pts;
+    }
+    return total;
+  }
+  function filaRes(n, s, h, alClic) {
+    var a = el('a', '', esc(n) + ' <span class="g">' + esc(s) + '</span>'); a.href = h; a.style.cssText = 'color:inherit;text-decoration:none';
+    if (alClic) a.addEventListener('click', alClic);
+    res.appendChild(a);
+  }
   buscar.addEventListener('input', function () {
-    var q = sinAcentos(buscar.value.trim()); res.innerHTML = '';
-    if (!q) return;
-    var hits = PROY.map(function (p) { return { n: p.nombre, s: cat(p), h: '#/proyectos/' + p.slug, txt: [p.nombre, cat(p), p.ubicacion, p.concepto, p.texto, area(p.disciplina)].join(' ') }; })
-      .concat(TEXTOS.map(function (t) { return { n: t.titulo, s: 'Circular, ' + t.fecha, h: '#/circular/' + t.slug, txt: t.titulo + ' ' + t.cuerpo }; }))
-      .filter(function (x) { return sinAcentos(x.txt).indexOf(q) > -1; });
-    if (!hits.length) { res.appendChild(el('p', 'g', 'Sin resultados para “' + esc(buscar.value) + '”')); return; }
-    hits.forEach(function (x) { var a = el('a', '', esc(x.n) + ' <span class="g">' + esc(x.s) + '</span>'); a.href = x.h; a.style.cssText = 'color:inherit;text-decoration:none'; res.appendChild(a); });
+    res.innerHTML = '';
+    var terms = palabrasDe(buscar.value).filter(function (w) { return VACIAS.indexOf(w) < 0; }).map(function (w) { return { t: w, discs: discDe(w) }; });
+    if (!terms.length) return;
+    var hits = PROY.map(function (p) {
+      return { n: p.nombre, s: cat(p), h: '#/proyectos/' + p.slug,
+        pts: puntos(terms, palabrasDe([p.nombre, p.tipo, p.ubicacion, /ciudad de m[eé]xico/i.test(p.ubicacion || '') ? 'cdmx' : ''].join(' ')), palabrasDe([p.concepto, p.texto].join(' ')), p.disciplina) };
+    });
+    if (terms.some(function (t) { return !t.discs.length; })) hits = hits.concat(TEXTOS.map(function (t) {
+      return { n: t.titulo, s: 'Circular, ' + t.fecha, h: '#/circular/' + t.slug, pts: puntos(terms, palabrasDe(t.titulo), palabrasDe(t.cuerpo), 0) };
+    }));
+    hits = hits.filter(function (x) { return x.pts > 0; }).sort(function (a, b) { return b.pts - a.pts; });
+    /* Disciplinas nombradas: fila que abre el índice filtrado */
+    var nombradas = [];
+    terms.forEach(function (t) { t.discs.forEach(function (d) { if (nombradas.indexOf(d) < 0) nombradas.push(d); }); });
+    nombradas.sort().forEach(function (d) {
+      var info = (C.disciplinas || []).filter(function (x) { return x.num === d; })[0];
+      var hay = PROY.filter(function (p) { return p.disciplina === d; }).length;
+      filaRes('0' + d + ' ' + DISC[d], (info ? info.area : '') + (hay ? '' : ' · próximamente'), '#/proyectos', function () { setTimeout(function () { filtrar(d); $('indice-proyectos').hidden = false; }, 0); });
+    });
+    if (!hits.length && !nombradas.length) { res.appendChild(el('p', 'g', 'Sin resultados para “' + esc(buscar.value) + '”')); return; }
+    hits.forEach(function (x) { filaRes(x.n, x.s, x.h); });
   });
 
   /* ---------- Recorrido horizontal ---------- */
