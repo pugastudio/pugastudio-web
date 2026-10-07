@@ -28,6 +28,7 @@
     <button type="button" data-ir="proyectos">Proyectos</button>
     <button type="button" data-ir="circular">Circular</button>
     <button type="button" data-ir="origen">Origen</button>
+    <button type="button" data-ir="publicaciones">Publicaciones</button>
     <button type="button" data-ir="contacto">Contacto</button>
   </nav>
   <span class="reloj" id="reloj">CDMX</span>
@@ -87,6 +88,14 @@
   <div class="campo" id="campo-circular"><div class="lienzo"></div></div>
   <div class="indice" id="indice-circular" hidden><ul id="lista-circular"></ul></div>
   <div class="flotante izq"><button type="button" class="cuadro" data-indice="indice-circular" aria-label="Abrir índice">+</button><button type="button" data-indice="indice-circular">Índice Circular</button></div>
+  <div class="flotante der"><button type="button" class="cuadro" data-zoom="1" aria-label="Acercar">+</button><button type="button" class="cuadro" data-zoom="-1" aria-label="Alejar">−</button></div>
+</section>
+
+<!-- PUBLICACIONES -->
+<section class="vista" id="v-publicaciones" aria-label="Publicaciones" hidden>
+  <div class="campo" id="campo-publicaciones"><div class="lienzo"></div></div>
+  <div class="indice" id="indice-publicaciones" hidden><ul id="lista-publicaciones"></ul></div>
+  <div class="flotante izq"><button type="button" class="cuadro" data-indice="indice-publicaciones" aria-label="Abrir índice">+</button><button type="button" data-indice="indice-publicaciones">Índice de publicaciones</button></div>
   <div class="flotante der"><button type="button" class="cuadro" data-zoom="1" aria-label="Acercar">+</button><button type="button" class="cuadro" data-zoom="-1" aria-label="Alejar">−</button></div>
 </section>
 

@@ -5,6 +5,19 @@
   var DISC = { 1: 'Sólidos', 2: 'Lo Interior', 3: 'Montañismo', 4: 'Taller de Sombras', 5: 'Circular' };
   var TONOS = ['t1', 't2', 't3', 't4', 't5', 't6'];
   var PROY = C.proyectos, TEXTOS = C.circular;
+  /* Publicaciones: toman la portada del proyecto si no traen foto propia */
+  var cuenta = {};
+  var PUBS = (C.publicaciones || []).map(function (u) {
+    var p = PROY.filter(function (x) { return x.slug === u.proyecto; })[0];
+    u.p = p; u.nombre = u.medio; u.prop = u.foto ? 0.563 : 0;
+    if (!u.foto && p) {
+      /* cada publicación del mismo proyecto usa una foto distinta del proyecto */
+      var k = cuenta[p.slug] = (cuenta[p.slug] || 0) + 1, fotos = p.fotos || [];
+      var f = k === 1 || !fotos.length ? null : fotos[((k - 2) * 3) % fotos.length];
+      u.portada = f ? f.src : p.portada; u.prop = f ? f.prop : p.portadaProp;
+    } else u.portada = u.foto || '';
+    return u;
+  });
   var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function $(id) { return document.getElementById(id); }
@@ -153,6 +166,7 @@
   }
   var campos = {
     proyectos: crearCampo('campo-proyectos', rellenar(PROY), function (p) { return '<b>' + esc(p.nombre) + '</b><span class="g">' + esc(cat(p)) + '</span>'; }, 'proyectos', false),
+    publicaciones: crearCampo('campo-publicaciones', rellenar(PUBS), function (u) { return '<b>' + esc(u.medio) + '</b><span class="t">' + esc(u.titulo) + '</span><span class="g">' + esc(u.fecha || (u.p ? u.p.nombre : '')) + '</span>'; }, 'publicaciones', false),
     circular: crearCampo('campo-circular', TEXTOS, function (t) { return '<b>' + esc(t.titulo) + '</b><span class="g">' + esc(t.fecha) + '</span>'; }, 'circular', true)
   };
   var actual = 'inicio', ultimo = performance.now();
@@ -190,6 +204,7 @@
   document.querySelectorAll('#indice-proyectos .nums button').forEach(function (b) {
     b.addEventListener('click', function () { filtrar(+b.dataset.d); });
   });
+  PUBS.forEach(function (u) { $('lista-publicaciones').appendChild(filaIndice('↗', u.medio + ' · ' + (u.p ? u.p.nombre : 'Entrevista'), u.fecha, '#/publicaciones/' + u.slug)); });
   TEXTOS.forEach(function (t, i) { $('lista-circular').appendChild(filaIndice(i + 1, t.titulo, t.fecha, '#/circular/' + t.slug)); });
 
   /* ---------- Explorar ---------- */
@@ -236,6 +251,9 @@
     });
     if (terms.some(function (t) { return !t.discs.length; })) hits = hits.concat(TEXTOS.map(function (t) {
       return { n: t.titulo, s: 'Circular, ' + t.fecha, h: '#/circular/' + t.slug, pts: puntos(terms, palabrasDe(t.titulo), palabrasDe(t.cuerpo), 0) };
+    }));
+    if (terms.some(function (t) { return !t.discs.length; })) hits = hits.concat(PUBS.map(function (u) {
+      return { n: u.medio, s: 'Publicación, ' + (u.p ? u.p.nombre : 'Entrevista'), h: '#/publicaciones/' + u.slug, pts: puntos(terms, palabrasDe(u.medio), palabrasDe([u.titulo, u.resumen].join(' ')), 0) };
     }));
     hits = hits.filter(function (x) { return x.pts > 0; }).sort(function (a, b) { return b.pts - a.pts; });
     /* Disciplinas nombradas: fila que abre el índice filtrado */
@@ -311,6 +329,16 @@
     volverA = 'circular';
     abrirRecorrido(t.titulo, 'Cerrar texto', paneles, false);
   }
+  function abrirPublicacion(u) {
+    var portada = el('div', 'panel portada', '<h1>' + esc(u.medio) + '</h1>' + (u.fecha ? '<div class="g">' + esc(u.fecha) + '</div>' : '') + '<div class="g">' + esc(u.p ? u.p.nombre : 'Entrevista') + '</div>');
+    var paneles = [portada];
+    if (u.portada) paneles.push(panelImg(u.portada, 0, '40vw', '72%', '0', u.p ? u.p.nombre : '', '', u.prop));
+    var enlaces = '<p><a href="' + esc(u.url) + '" target="_blank" rel="noopener" style="color:inherit">Leer en ' + esc(u.medio) + ' ↗</a></p>' +
+      (u.p ? '<p><a href="#/proyectos/' + esc(u.p.slug) + '" style="color:inherit">Ver el proyecto ' + esc(u.p.nombre) + '</a></p>' : '');
+    paneles.push(el('div', 'panel lectura', '<div class="fecha">Publicación · ' + esc(u.medio) + (u.fecha ? ' · ' + esc(u.fecha) : '') + '</div><div class="cuerpo"><p><b style="font-weight:600">' + esc(u.titulo) + '</b></p><p>' + esc(u.resumen) + '</p>' + enlaces + '</div>'));
+    volverA = 'publicaciones';
+    abrirRecorrido(u.medio, 'Cerrar publicación', paneles, false);
+  }
   function abrirOrigen() {
     var paneles = [el('div', 'panel portada', '<h1>Puga Studio</h1><div class="g">Origen</div><div class="g">2017 – hoy</div>')];
     /* Solo texto: un capítulo por etapa */
@@ -339,6 +367,7 @@
     if (!$('v-' + v)) v = 'inicio';
     mostrarVista(v);
     if (slug && v === 'proyectos') { var p = PROY.filter(function (x) { return x.slug === slug; })[0]; if (p) return abrirProyecto(p); }
+    if (slug && v === 'publicaciones') { var u = PUBS.filter(function (x) { return x.slug === slug; })[0]; if (u) return abrirPublicacion(u); }
     if (slug && v === 'circular') { var t = TEXTOS.filter(function (x) { return x.slug === slug; })[0]; if (t) return abrirTexto(t); }
     cerrarRecorrido();
     document.title = v === 'inicio' ? 'Puga Studio' : (v.charAt(0).toUpperCase() + v.slice(1)) + ' · Puga Studio';
