@@ -128,10 +128,10 @@ window.PUGA = {
 
   /* Origen: la historia del estudio, una foto y una frase por panel */
   origen: [
-    { foto: '', texto: 'Puga Studio nació en septiembre de 2017, con Javier Puga como fundador.' },
-    { foto: '', texto: 'Los primeros proyectos fueron casas, restaurantes y cafeterías.' },
-    { foto: '', texto: 'Después llegaron hoteles, centros comerciales y residencias de lujo, muchas entregadas llave en mano.' },
-    { foto: '', texto: 'Colaboraciones con marcas internacionales: Azulik, Kom Studio, The Body Shop y AT&T.' },
-    { foto: '', texto: 'Hoy el estudio trabaja en Ciudad de México, Puerto Escondido, Mérida, Tulum y Cabo.' }
+    { etapa: 'Inicio', texto: 'Fundado en 2017 por Javier Puga, después de su paso por distintos despachos de arquitectura, el estudio comenzó con arquitectura comercial: islas y locales de helados, tiendas de AT&T y de The Body Shop en centros comerciales. De esas primeras obras nació una práctica atenta a la identidad de cada marca, la funcionalidad del espacio y la experiencia de quien lo recorre.' },
+    { etapa: 'Vivienda', texto: 'Después, el trabajo se extendió a la transformación de casas existentes. Remodelaciones integrales replantearon sus interiores para nuevas formas de habitar e incorporaron terrazas, pérgolas y piezas de arte que dieron a cada residencia un carácter contemporáneo.' },
+    { etapa: 'Colaboraciones', texto: 'En paralelo, colaboraciones nacionales e internacionales ampliaron su experiencia residencial, comercial y hotelera: hoteles en Medio Oriente, viviendas y hoteles en Tulum y Los Cabos, centros comerciales en Tijuana y residencias en San Diego.' },
+    { etapa: 'Proyectos propios', texto: 'Con el crecimiento de su práctica llegaron los proyectos propios de vivienda, restaurantes, cafeterías y hotelería, que consolidaron una visión integral del diseño y una identidad arquitectónica distintiva.' },
+    { etapa: 'Hoy', texto: 'Nueve años después, el estudio ha crecido en escala y diversidad con un propósito constante: crear proyectos únicos, sustentados en conceptos sólidos que orienten cada decisión y den coherencia al conjunto.' }
   ]
 };

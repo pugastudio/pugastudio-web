@@ -312,8 +312,11 @@
     abrirRecorrido(t.titulo, 'Cerrar texto', paneles, false);
   }
   function abrirOrigen() {
-    var paneles = [el('div', 'panel portada', '<h1>Puga Studio</h1><div class="g">Nuestra historia</div>')];
-    C.origen.forEach(function (o, k) { var m = MEDIDAS[(k + 4) % MEDIDAS.length]; paneles.push(panelImg(o.foto, k + 3, m[0], m[1], m[2], '', o.texto)); });
+    var paneles = [el('div', 'panel portada', '<h1>Puga Studio</h1><div class="g">Origen</div><div class="g">2017 – hoy</div>')];
+    /* Solo texto: un capítulo por etapa */
+    C.origen.forEach(function (o, k) {
+      paneles.push(el('div', 'panel capitulo', '<span class="g">' + String(k + 1).padStart(2, '0') + '</span><h2>' + esc(o.etapa) + '</h2><p>' + esc(o.texto) + '</p>'));
+    });
     abrirRecorrido('Puga Studio', 'Cerrar', paneles, false);
   }
 
