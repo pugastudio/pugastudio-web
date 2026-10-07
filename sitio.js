@@ -5,6 +5,7 @@
   var DISC = { 1: 'Sólidos', 2: 'Lo Interior', 3: 'Montañismo', 4: 'Taller de Sombras', 5: 'Circular' };
   var TONOS = ['t1', 't2', 't3', 't4', 't5', 't6'];
   var PROY = C.proyectos, TEXTOS = C.circular;
+  if (!C.circularProximamente) document.querySelectorAll('.proximamente').forEach(function (x) { x.hidden = true; });
   /* Publicaciones: toman la portada del proyecto si no traen foto propia */
   var cuenta = {};
   var PUBS = (C.publicaciones || []).map(function (u) {
@@ -264,7 +265,7 @@
       return { n: p.nombre, s: cat(p), h: '#/proyectos/' + p.slug,
         pts: puntos(terms, palabrasDe([p.nombre, p.tipo, p.ubicacion, /ciudad de m[eé]xico/i.test(p.ubicacion || '') ? 'cdmx' : ''].join(' ')), palabrasDe([p.concepto, p.texto].join(' ')), p.disciplina) };
     });
-    if (terms.some(function (t) { return !t.discs.length; })) hits = hits.concat(TEXTOS.map(function (t) {
+    if (!C.circularProximamente && terms.some(function (t) { return !t.discs.length; })) hits = hits.concat(TEXTOS.map(function (t) {
       return { n: t.titulo, s: 'Circular, ' + t.fecha, h: '#/circular/' + t.slug, pts: puntos(terms, palabrasDe(t.titulo), palabrasDe(t.cuerpo), 0) };
     }));
     if (terms.some(function (t) { return !t.discs.length; })) hits = hits.concat(PUBS.map(function (u) {
@@ -383,7 +384,8 @@
     mostrarVista(v);
     if (slug && v === 'proyectos') { var p = PROY.filter(function (x) { return x.slug === slug; })[0]; if (p) return abrirProyecto(p); }
     if (slug && v === 'publicaciones') { var u = PUBS.filter(function (x) { return x.slug === slug; })[0]; if (u) return abrirPublicacion(u); }
-    if (slug && v === 'circular') { var t = TEXTOS.filter(function (x) { return x.slug === slug; })[0]; if (t) return abrirTexto(t); }
+    /* Circular aún sin textos: la vista muestra el velo "Próximamente" y no abre textos */
+    if (slug && v === 'circular' && !C.circularProximamente) { var t = TEXTOS.filter(function (x) { return x.slug === slug; })[0]; if (t) return abrirTexto(t); }
     cerrarRecorrido();
     document.title = v === 'inicio' ? 'Puga Studio' : (v.charAt(0).toUpperCase() + v.slice(1)) + ' · Puga Studio';
     if (v === 'explorar') setTimeout(function () { buscar.focus(); }, 50);

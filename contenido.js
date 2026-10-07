@@ -133,6 +133,9 @@ window.PUGA = {
     {"slug": "elarqui-casa-che-che", "medio": "El Arqui MX", "titulo": "Planos de Casa Che'Che' / Javier Puga Estudio", "fecha": "", "proyecto": "casa-che-che", "url": "https://elarquimx.com/planos-de-casa-che-che-javier-puga-estudio/", "resumen": "El Arqui MX publica los planos de la Casa Che'Che'."}
   ],
 
+  /* Mientras sea true, la pestaña Circular muestra un velo lima con "Próximamente" */
+  circularProximamente: true,
+
   /* Circular: textos del blog. Fecha en formato DD.MM.AA.
      El cuerpo se escribe en párrafos separados por una línea vacía. */
   circular: [
