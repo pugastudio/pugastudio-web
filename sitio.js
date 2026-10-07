@@ -92,9 +92,16 @@
   document.querySelectorAll('.form-suscribe').forEach(function (f) {
     f.addEventListener('submit', function (e) {
       e.preventDefault();
-      var correo = f.querySelector('input').value.trim();
-      location.href = 'mailto:' + K.correo + '?subject=' + encodeURIComponent('Suscripción a noticias de Puga Studio') + '&body=' + encodeURIComponent('Quiero recibir noticias ocasionales en: ' + correo);
-      f.querySelector('.msg').textContent = 'Gracias. Se abrirá tu correo para confirmar la suscripción.';
+      var input = f.querySelector('input'), boton = f.querySelector('button'), msg = f.querySelector('.msg');
+      var correo = input.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) { msg.textContent = 'Revisa tu correo electrónico.'; return; }
+      /* Lista "Newsletter" en Brevo (formulario "HTML simple") */
+      var datos = new URLSearchParams({ EMAIL: correo, email_address_check: '', locale: 'es', html_type: 'simple' });
+      boton.disabled = true; msg.textContent = 'Enviando…';
+      fetch(K.newsletter, { method: 'POST', mode: 'no-cors', body: datos })
+        .then(function () { input.value = ''; msg.textContent = 'Gracias, ya estás suscrito a nuestro newsletter.'; })
+        .catch(function () { msg.textContent = 'No se pudo enviar. Intenta de nuevo en un momento.'; })
+        .then(function () { boton.disabled = false; });
     });
   });
 
