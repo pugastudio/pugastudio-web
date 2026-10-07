@@ -233,3 +233,6 @@ p { margin: 0; }
 .proximamente p { margin: 0; color: var(--azul); font-weight: 500; font-size: 12px; letter-spacing: .42em; text-transform: uppercase; line-height: 1; text-align: center; padding: 0 var(--m) 0 calc(var(--m) + .42em); animation: respira 4.5s ease-in-out infinite; }
 @keyframes respira { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .proximamente p { animation: none; } }
+
+/* Contacto: invitación antes de los datos */
+.invitacion { font-weight: 600; font-size: clamp(16px, 1.4vw, 22px); line-height: 1.15; letter-spacing: -.01em; margin: 0 0 14px; max-width: 18em; }

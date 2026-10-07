@@ -109,7 +109,7 @@
   var tpl = $('tpl-contacto'), K = C.contacto;
   ['v-contacto', 'contacto-en-inicio'].forEach(function (id) {
     var n = tpl.content.cloneNode(true);
-    var lineas = '<p>Correo: <a href="mailto:' + esc(K.correo) + '" style="color:inherit">' + esc(K.correo) + '</a></p>';
+    var lineas = '<p class="invitacion">Estamos listos para trabajar contigo en tu nuevo proyecto.</p><p>Correo: <a href="mailto:' + esc(K.correo) + '" style="color:inherit">' + esc(K.correo) + '</a></p>';
     if (K.instagram) lineas += '<p>Instagram: <a href="https://instagram.com/' + esc(K.instagram) + '" target="_blank" rel="noopener" style="color:inherit">@' + esc(K.instagram) + '</a></p>';
     lineas += '<p>Teléfono: <a href="tel:' + esc(K.telefono.replace(/\s/g, '')) + '" style="color:inherit">' + esc(K.telefono) + '</a></p><p>Estudio: ' + esc(K.estudio) + '</p>';
     n.querySelector('.datos-contacto').innerHTML = lineas;
