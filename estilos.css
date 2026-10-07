@@ -223,3 +223,7 @@ p { margin: 0; }
 /* Publicaciones: medio, título y fecha en líneas separadas */
 .cap .t { display: block; max-width: 34em; }
 .cap .t + .g { display: block; }
+
+/* Etiqueta que flota sobre las imágenes del inicio */
+.etiqueta.flota { position: absolute; left: 0; top: 0; opacity: 1; transition: opacity .2s; z-index: 2; will-change: transform; }
+.pieza:hover .etiqueta.flota { opacity: 0; }

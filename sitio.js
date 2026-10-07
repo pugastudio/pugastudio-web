@@ -77,6 +77,7 @@
   var flujo = $('flujo'), formas = [['4/3', ''], ['4/5', 'w66'], ['3/2', ''], ['3/2', ''], ['4/5', 'w66'], ['4/3', 'w66']];
   /* Por ahora el inicio muestra solo los proyectos publicados (los textos de Circular aún no existen) */
   var orden = PROY.slice(0, 6).map(function (p) { return { p: p }; });
+  var flotantes = [];
   orden.forEach(function (o, k) {
     var it = o.p || o.t, forma = formas[k % formas.length];
     var pz = el('a', 'pieza ' + forma[1]);
@@ -86,8 +87,22 @@
     pz.appendChild(f);
     pz.appendChild(el('p', 'cap', '<b>' + esc(o.p ? it.nombre : it.titulo) + '</b><span class="g">' + esc(o.p ? cat(it) : it.fecha) + '</span>'));
     conEtiqueta(pz, o.p ? it.nombre : it.titulo, !o.p);
+    /* Etiqueta lima que flota sola sobre la imagen; al pasar el cursor la reemplaza la que lo sigue */
+    var fl = el('span', 'etiqueta flota' + (o.p ? '' : ' circulo'), '<span class="ico"><s></s></span><span class="txt">' + esc(o.p ? it.nombre : it.titulo) + '</span>');
+    f.appendChild(fl);
+    flotantes.push({ e: fl, caja: f, a: .00021 + k * .00004, b: .00029 + k * .00003, fa: k * 1.7, fb: k * 2.3 });
     flujo.appendChild(pz);
   });
+  function flotar(t) {
+    flotantes.forEach(function (x) {
+      var w = x.caja.clientWidth - x.e.offsetWidth - 16, h = x.caja.clientHeight - x.e.offsetHeight - 16;
+      if (w <= 0 || h <= 0) return;
+      var u = reducir ? .1 : .5 + .5 * Math.sin(t * x.a + x.fa), v = reducir ? .1 : .5 + .5 * Math.sin(t * x.b + x.fb);
+      x.e.style.transform = 'translate(' + (8 + u * w).toFixed(1) + 'px,' + (8 + v * h).toFixed(1) + 'px)';
+    });
+    if (!reducir) requestAnimationFrame(flotar);
+  }
+  requestAnimationFrame(flotar);
 
   /* ---------- Contacto (vista propia y al final del inicio) ---------- */
   var tpl = $('tpl-contacto'), K = C.contacto;
