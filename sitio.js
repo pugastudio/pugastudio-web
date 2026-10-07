@@ -44,10 +44,13 @@
   /* ---------- Inicio ---------- */
   $('acerca').textContent = C.acerca;
   [['retrato', C.retrato, 't4'], ['foto-equipo', C.fotoEquipo, 't2']].forEach(function (r) {
+    if (!r[1].foto) { $(r[0]).hidden = true; return; } /* sin foto todavía: no se muestra */
     var f = foto(r[1].foto, 3, r[1].pie); f.style.aspectRatio = '4/5';
+    var im = f.querySelector('img'); if (im) im.style.objectPosition = '50% 15%';
     $(r[0]).appendChild(f); $(r[0]).appendChild(el('p', 'cap', esc(r[1].pie)));
     $(r[0]).style.cursor = 'default';
   });
+  if (!C.plano) $('plano').hidden = true;
   if (C.plano) { $('plano').textContent = ''; $('plano').style.padding = '0'; $('plano').appendChild(foto(C.plano, 0, 'Plano del estudio')).style.height = '100%'; }
   C.equipo.forEach(function (m) { $('equipo').appendChild(el('li', '', '<span>' + esc(m.nombre) + '<br><span class="g">' + esc(m.puesto) + '</span></span>')); });
 

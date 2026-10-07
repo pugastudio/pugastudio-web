@@ -11,7 +11,7 @@ window.PUGA = {
 
   acerca: 'Puga Studio es un estudio de arquitectura, diseño de interiores, mobiliario y arte-objeto fundado en 2017 por Javier Puga. Desde entonces ha diseñado y construido casas, hoteles, centros comerciales, restaurantes, cafeterías y residencias de lujo, muchas de ellas entregadas llave en mano. Cada proyecto es único y parte de un concepto sólido: la historia del lugar, la forma de habitarlo y el oficio local definen una idea, y esa idea ordena todo lo demás. El estudio ha colaborado con marcas internacionales en proyectos de lujo para hospitality.',
 
-  retrato: { foto: '', pie: 'Javier Puga, fundador.' },
+  retrato: { foto: 'img/retrato.jpg', pie: 'Javier Puga, fundador.' },
   fotoEquipo: { foto: '', pie: 'El equipo de Puga Studio en Ciudad de México.' },
   plano: '',   /* plano del estudio en lima */
 
