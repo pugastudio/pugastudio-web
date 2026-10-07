@@ -17,10 +17,10 @@ window.PUGA = {
 
   /* Disciplinas del estudio: bloque lima del inicio y nombres del índice de proyectos */
   disciplinas: [
-    { num: 1, nombre: 'Sólidos', area: 'Arquitectura', texto: 'Casas, hoteles y espacios comerciales que nacen de un concepto. Del primer trazo a la obra terminada, con entregas llave en mano.' },
-    { num: 2, nombre: 'Lo Interior', area: 'Interiorismo', texto: 'Restaurantes, cafeterías y residencias donde la luz, la materia y la forma de habitar construyen una atmósfera propia.' },
-    { num: 3, nombre: 'Montañismo', area: 'Diseño de mobiliario', texto: 'Piezas de mobiliario pensadas para cada proyecto y hechas con el oficio local.' },
-    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Objetos y piezas de arte que exploran la forma, la materia y la sombra.' }
+    { num: 1, nombre: 'Sólidos', area: 'Arquitectura', texto: 'Diseño arquitectónico integral, desde la primera idea hasta la obra terminada. Nuestro alcance comprende asesoría, proyecto conceptual, proyecto esquemático, desarrollo de diseño, proyecto ejecutivo, supervisión y construcción.' },
+    { num: 2, nombre: 'Lo Interior', area: 'Diseño de interiores y atmósferas', texto: 'Diseño de espacios interiores y de las atmósferas que los definen: luz, materia, color y forma de habitar. Nuestro alcance comprende asesoría, proyecto conceptual, proyecto esquemático, desarrollo de diseño, proyecto ejecutivo, supervisión y construcción.' },
+    { num: 3, nombre: 'Montañismo', area: 'Diseño de mobiliario y objetos funcionales', texto: 'Mobiliario y objetos funcionales concebidos en diálogo con el espacio que habitan. El proceso abarca proyecto conceptual, proyecto esquemático, desarrollo de diseño, ejecución y montaje.' },
+    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Piezas únicas de pintura, escultura y mobiliario funcional concebido como obra. Un espacio de exploración libre sobre la forma, la materia y la sombra.' }
   ],
 
   equipo: [
