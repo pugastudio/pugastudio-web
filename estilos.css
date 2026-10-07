@@ -236,3 +236,9 @@ p { margin: 0; }
 
 /* Contacto: invitación antes de los datos */
 .invitacion { font-weight: 600; font-size: clamp(16px, 1.4vw, 22px); line-height: 1.15; letter-spacing: -.01em; margin: 0 0 14px; max-width: 18em; }
+
+/* Premios en el inicio */
+.premios ul { list-style: none; margin: 0; padding: 0; }
+.premios a { display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1.5px solid var(--negro); color: inherit; text-decoration: none; font-size: 13px; line-height: 1.17; }
+.premios b { font-weight: 600; font-size: 15px; color: var(--azul); }
+.premios a:hover b { text-decoration: underline; text-underline-offset: 3px; }

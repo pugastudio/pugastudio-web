@@ -18,6 +18,10 @@
       u.portada = f ? f.src : p.portada; u.prop = f ? f.prop : p.portadaProp;
     } else u.portada = u.foto || '';
     return u;
+  }).sort(function (a, b) {
+    /* premios primero, luego de la más reciente a la más antigua */
+    function k(u) { var f = u.fecha || '', m = f.split('.'); return (u.destacada ? '2' : u.premio ? '1' : '0') + (m.length === 3 ? '20' + m[2] + m[1] + m[0] : (f || '0000') + '0000'); }
+    return k(b) < k(a) ? -1 : k(b) > k(a) ? 1 : 0;
   });
   var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -59,6 +63,13 @@
 
   /* ---------- Inicio ---------- */
   $('acerca').innerHTML = parrafos(C.acerca);
+  /* Premios en el inicio */
+  (C.premios || []).forEach(function (r) {
+    var p = PROY.filter(function (x) { return x.slug === r.proyecto; })[0];
+    var a = el('a', '', '<b>' + esc(r.titulo) + '</b><span>' + esc(r.certamen) + ', ' + esc(r.medio) + '</span>' + (p ? '<span class="g">' + esc(p.nombre) + '</span>' : ''));
+    a.href = r.pub ? '#/publicaciones/' + r.pub : (p ? '#/proyectos/' + p.slug : '#/publicaciones');
+    var li = el('li'); li.appendChild(a); $('premios').querySelector('ul').appendChild(li); $('premios').hidden = false;
+  });
   [['retrato', C.retrato, 't4'], ['foto-equipo', C.fotoEquipo, 't2']].forEach(function (r) {
     if (!r[1].foto) { $(r[0]).hidden = true; return; } /* sin foto todavía: no se muestra */
     var f = foto(r[1].foto, 3, r[1].pie); f.style.aspectRatio = '4/5';
@@ -182,7 +193,7 @@
   }
   var campos = {
     proyectos: crearCampo('campo-proyectos', rellenar(PROY), function (p) { return '<b>' + esc(p.nombre) + '</b><span class="g">' + esc(cat(p)) + '</span>'; }, 'proyectos', false),
-    publicaciones: crearCampo('campo-publicaciones', rellenar(PUBS), function (u) { return '<b>' + esc(u.medio) + '</b><span class="t">' + esc(u.titulo) + '</span><span class="g">' + esc(u.fecha || (u.p ? u.p.nombre : '')) + '</span>'; }, 'publicaciones', false),
+    publicaciones: crearCampo('campo-publicaciones', rellenar(PUBS), function (u) { return '<b>' + esc(u.medio) + (u.premio ? ' · Premio' : '') + '</b><span class="t">' + esc(u.titulo) + '</span><span class="g">' + esc(u.fecha || (u.p ? u.p.nombre : '')) + '</span>'; }, 'publicaciones', false),
     circular: crearCampo('campo-circular', TEXTOS, function (t) { return '<b>' + esc(t.titulo) + '</b><span class="g">' + esc(t.fecha) + '</span>'; }, 'circular', true)
   };
   var actual = 'inicio', ultimo = performance.now();
@@ -321,7 +332,7 @@
 
   function abrirProyecto(p) {
     var portada = el('div', 'panel portada', '<h1>' + esc(p.nombre) + '</h1>' + (p.anio ? '<div class="g">' + esc(p.anio) + '</div>' : '') + '<div class="g">' + esc(DISC[p.disciplina]) + '</div>');
-    var filas = [['Estado', p.estado], ['Disciplina', '0' + p.disciplina + ' ' + DISC[p.disciplina]], ['Tipo', p.tipo], ['Ubicación', p.ubicacion], ['Equipo', p.equipo]]
+    var filas = [['Estado', p.estado], ['Disciplina', '0' + p.disciplina + ' ' + DISC[p.disciplina]], ['Tipo', p.tipo], ['Ubicación', p.ubicacion], ['Equipo', p.equipo], ['Premios', (C.premios || []).filter(function (r) { return r.proyecto === p.slug; }).map(function (r) { return r.titulo + ', ' + r.certamen + ' (' + r.medio + ')'; }).join('. ')]]
       .filter(function (r) { return r[1]; }).map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join('');
     var ficha = el('div', 'panel ficha', '<table><tbody>' + filas + '</tbody></table>');
     var sig = PROY[(p.i + 1) % PROY.length];

@@ -115,9 +115,18 @@ window.PUGA = {
     }
   ],
 
+  /* Premios: aparecen en el inicio y en la ficha del proyecto. pub = slug de la publicación que lo respalda */
+  premios: [
+    { titulo: 'Revelación del Año', certamen: 'Iconos del Diseño 2022', medio: 'Architectural Digest México', proyecto: 'casa-che-che', pub: 'ad-iconos-2022' }
+  ],
+
   /* Publicaciones: notas en medios sobre el estudio. foto opcional; si no, usa la portada del proyecto.
      fecha DD.MM.AA (vacía si el medio no la muestra) */
   publicaciones: [
+    {"slug": "ad-iconos-2022", "destacada": true, "medio": "AD México", "titulo": "Iconos del Diseño 2022: conoce a los ganadores", "fecha": "2022", "proyecto": "casa-che-che", "premio": true, "url": "https://www.admagazine.com/articulos/iconos-del-diseno-2022-conoce-a-los-ganadores", "resumen": "Architectural Digest México anuncia a los ganadores de Iconos del Diseño 2022. Javier Puga Estudio gana el premio Revelación del Año con la Casa Che'Che' en Mérida, Yucatán."},
+    {"slug": "coolhunter-iconos-2022", "medio": "Coolhunter MX", "titulo": "Proyectos ganadores de Iconos del Diseño 2022 Architectural Digest México", "fecha": "03.11.22", "proyecto": "casa-che-che", "premio": true, "url": "https://coolhuntermx.com/industrias-11-2022-proyectos-ganadores-de-iconos-del-diseno-2022-architectural-digest-mexico/", "resumen": "Coolhunter MX reúne a los ganadores de Iconos del Diseño 2022, entre ellos la Casa Che'Che' de Javier Puga Estudio, Revelación del Año."},
+    {"slug": "vogue-iconos-2022", "medio": "Vogue México", "titulo": "Iconos del Diseño 2022 de AD México y Latinoamérica: categorías, cuándo y dónde verlos", "fecha": "2022", "proyecto": "casa-che-che", "premio": true, "url": "https://www.vogue.mx/estilo-de-vida/articulo/iconos-del-diseno-2022-ad-mexico-y-latinoamerica-categorias-cuando-es-donde-verlos", "resumen": "Vogue México presenta la edición 2022 de Iconos del Diseño de AD México y Latinoamérica, en la que Javier Puga Estudio resultó Revelación del Año."},
+    {"slug": "gq-iconos-2023", "medio": "GQ México", "titulo": "Iconos del Diseño 2023: convocatoria, categorías y ganadores", "fecha": "2023", "proyecto": "casa-che-che", "premio": true, "url": "https://www.gq.com.mx/articulo/iconos-del-diseno-2023-convocatoria-categorias-ganadores", "resumen": "GQ México repasa los premios Iconos del Diseño de AD, donde Javier Puga Estudio fue Revelación del Año 2022."},
     {"slug": "bienal-iluminacion-costra", "medio": "Bienal Iberoamericana de Iluminación", "titulo": "Panadería Costra", "fecha": "2024", "proyecto": "panaderia-costra", "url": "https://bienal.iluminet.com/proyectos/2024/panaderia-costra/", "resumen": "Costra participa en la Bienal Iberoamericana de Iluminación 2024, en la categoría de espacios comerciales. Diseño de iluminación de Fobos Lighting Studio, con tonos cálidos inspirados en el fuego del horno."},
     {"slug": "glocal-costra", "medio": "Glocal", "titulo": "Costra | Javier Puga Estudio", "fecha": "17.01.23", "proyecto": "panaderia-costra", "url": "https://glocal.mx/costra-javier-puga-estudio/", "resumen": "Glocal describe una panadería donde el pan es protagonista, con materiales industriales y tonos tierra que evocan los procesos de producción y horneado."},
     {"slug": "the-spaces-costra", "medio": "The Spaces", "titulo": "Costra bakery riffs on the volcanic landscape surrounding Mexico City", "fecha": "18.05.22", "proyecto": "panaderia-costra", "url": "https://thespaces.com/costra-bakery-mexico-city/", "resumen": "The Spaces lee Costra en clave volcánica: acero, tonos carbón e iluminación naranja que evocan el paisaje que rodea a la Ciudad de México."},
