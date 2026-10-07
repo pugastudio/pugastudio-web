@@ -10,6 +10,8 @@
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function sinAcentos(t) { return String(t || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  function area(d) { var x = (C.disciplinas || []).filter(function (y) { return y.num === d; })[0]; return x ? x.area + ' ' + x.texto : ''; }
   function cat(p) { return DISC[p.disciplina] + ', ' + p.tipo; }
   function tono(i) { return TONOS[i % TONOS.length]; }
   /* Caja de foto: imagen real si hay ruta, si no un recuadro gris */
@@ -198,11 +200,11 @@
   });
   var buscar = $('buscar'), res = $('resultados');
   buscar.addEventListener('input', function () {
-    var q = buscar.value.trim().toLowerCase(); res.innerHTML = '';
+    var q = sinAcentos(buscar.value.trim()); res.innerHTML = '';
     if (!q) return;
-    var hits = PROY.map(function (p) { return { n: p.nombre, s: cat(p), h: '#/proyectos/' + p.slug, txt: p.nombre + ' ' + cat(p) + ' ' + (p.ubicacion || '') + ' ' + (p.concepto || '') }; })
+    var hits = PROY.map(function (p) { return { n: p.nombre, s: cat(p), h: '#/proyectos/' + p.slug, txt: [p.nombre, cat(p), p.ubicacion, p.concepto, p.texto, area(p.disciplina)].join(' ') }; })
       .concat(TEXTOS.map(function (t) { return { n: t.titulo, s: 'Circular, ' + t.fecha, h: '#/circular/' + t.slug, txt: t.titulo + ' ' + t.cuerpo }; }))
-      .filter(function (x) { return x.txt.toLowerCase().indexOf(q) > -1; });
+      .filter(function (x) { return sinAcentos(x.txt).indexOf(q) > -1; });
     if (!hits.length) { res.appendChild(el('p', 'g', 'Sin resultados para “' + esc(buscar.value) + '”')); return; }
     hits.forEach(function (x) { var a = el('a', '', esc(x.n) + ' <span class="g">' + esc(x.s) + '</span>'); a.href = x.h; a.style.cssText = 'color:inherit;text-decoration:none'; res.appendChild(a); });
   });
