@@ -113,6 +113,8 @@ p { margin: 0; }
 .nums button { font-weight: 800; font-size: 14px; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid transparent; border-radius: 50%; letter-spacing: -.03em; }
 .nums button.todo { width: auto; padding: 0 10px; border-radius: 999px; font-weight: 500; font-size: 12px; }
 .nums button[aria-pressed="true"] { border-color: var(--negro); }
+.nums-nombre { margin: -4px 0 12px; font-size: 13px; display: flex; gap: 8px; align-items: baseline; min-height: 1.2em; }
+.nums-nombre b { font-weight: 600; }
 .indice ul { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--negro); }
 .indice li button { width: 100%; display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--gris-barra); }
 .indice li button:hover { color: var(--azul); }
@@ -195,3 +197,16 @@ p { margin: 0; }
 .panel.lectura .cuerpo p + p { margin-top: 1em; }
 .panel.lectura .fecha { color: var(--gris); margin-bottom: 16px; }
 @media (max-width: 860px) { .panel.lectura { width: 88vw; padding-right: 32px; } }
+
+/* Disciplinas en el inicio: fondo lima, letras azul Puga */
+.disciplinas { background: var(--lima); color: var(--azul); padding: 16px 16px 6px; }
+.disciplinas h2 { font-weight: 600; font-size: 14px; margin: 0 0 4px; padding-bottom: 8px; border-bottom: 1.5px solid var(--azul); }
+.disciplinas ul { list-style: none; margin: 0; padding: 0; }
+.disciplinas li + li { border-top: 1px solid var(--azul); }
+.disciplinas a { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 12px 0 13px; color: inherit; text-decoration: none; }
+.disciplinas .num { font-weight: 800; font-size: 13px; letter-spacing: -.03em; width: 28px; height: 28px; border: 1.5px solid var(--azul); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+.disciplinas .cuerpo { display: flex; flex-direction: column; gap: 2px; font-size: 13px; line-height: 1.17; }
+.disciplinas b { font-weight: 600; font-size: 14px; }
+.disciplinas .area { opacity: .75; }
+.disciplinas .txt { margin-top: 4px; }
+.disciplinas a:hover b { text-decoration: underline; text-underline-offset: 3px; }

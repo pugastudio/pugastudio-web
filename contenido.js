@@ -15,6 +15,14 @@ window.PUGA = {
   fotoEquipo: { foto: '', pie: 'El equipo de Puga Studio en Ciudad de México.' },
   plano: '',   /* plano del estudio en lima */
 
+  /* Disciplinas del estudio: bloque lima del inicio y nombres del índice de proyectos */
+  disciplinas: [
+    { num: 1, nombre: 'Sólidos', area: 'Arquitectura', texto: 'Casas, hoteles y espacios comerciales que nacen de un concepto. Del primer trazo a la obra terminada, con entregas llave en mano.' },
+    { num: 2, nombre: 'Lo Interior', area: 'Interiorismo', texto: 'Restaurantes, cafeterías y residencias donde la luz, la materia y la forma de habitar construyen una atmósfera propia.' },
+    { num: 3, nombre: 'Montañismo', area: 'Diseño de mobiliario', texto: 'Piezas de mobiliario pensadas para cada proyecto y hechas con el oficio local.' },
+    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Objetos y piezas de arte que exploran la forma, la materia y la sombra.' }
+  ],
+
   equipo: [
     { nombre: 'Javier Puga', puesto: 'Fundador' }
   ],

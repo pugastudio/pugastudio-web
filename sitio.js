@@ -50,9 +50,13 @@
     $(r[0]).appendChild(f); $(r[0]).appendChild(el('p', 'cap', esc(r[1].pie)));
     $(r[0]).style.cursor = 'default';
   });
-  if (!C.plano) $('plano').hidden = true;
-  if (C.plano) { $('plano').textContent = ''; $('plano').style.padding = '0'; $('plano').appendChild(foto(C.plano, 0, 'Plano del estudio')).style.height = '100%'; }
-  C.equipo.forEach(function (m) { $('equipo').appendChild(el('li', '', '<span>' + esc(m.nombre) + '<br><span class="g">' + esc(m.puesto) + '</span></span>')); });
+  /* Disciplinas: cada una abre el índice de proyectos filtrado */
+  (C.disciplinas || []).forEach(function (d) {
+    var a = el('a', '', '<span class="num">0' + d.num + '</span><span class="cuerpo"><b>' + esc(d.nombre) + '</b><span class="area">' + esc(d.area) + '</span><span class="txt">' + esc(d.texto) + '</span></span>');
+    a.href = '#/proyectos';
+    a.addEventListener('click', function () { setTimeout(function () { filtrar(d.num); $('indice-proyectos').hidden = false; }, 0); });
+    var li = el('li'); li.appendChild(a); $('disciplinas').appendChild(li);
+  });
 
   /* Flujo: proyectos y textos intercalados */
   var flujo = $('flujo'), formas = [['4/3', ''], ['4/5', 'w66'], ['3/2', ''], ['3/2', ''], ['4/5', 'w66'], ['4/3', 'w66']];
@@ -167,12 +171,15 @@
     lista.innerHTML = '';
     PROY.filter(function (p) { return d === 0 || p.disciplina === d; }).forEach(function (p) { lista.appendChild(filaIndice('0' + p.disciplina, p.nombre, p.tipo, '#/proyectos/' + p.slug)); });
   }
+  function filtrar(d) {
+    document.querySelectorAll('#indice-proyectos .nums button').forEach(function (x) { x.setAttribute('aria-pressed', String(+x.dataset.d === d)); });
+    var info = (C.disciplinas || []).filter(function (x) { return x.num === d; })[0];
+    $('nums-nombre').innerHTML = d === 0 ? 'Todas las disciplinas' : '<b>0' + d + ' ' + esc(DISC[d]) + '</b>' + (info ? '<span class="g">' + esc(info.area) + '</span>' : '');
+    pintarLista(d);
+  }
   pintarLista(0);
   document.querySelectorAll('#indice-proyectos .nums button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      document.querySelectorAll('#indice-proyectos .nums button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-      pintarLista(+b.dataset.d);
-    });
+    b.addEventListener('click', function () { filtrar(+b.dataset.d); });
   });
   TEXTOS.forEach(function (t, i) { $('lista-circular').appendChild(filaIndice(i + 1, t.titulo, t.fecha, '#/circular/' + t.slug)); });
 
