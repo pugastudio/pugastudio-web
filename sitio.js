@@ -42,7 +42,7 @@
   }
 
   /* ---------- Inicio ---------- */
-  $('acerca').textContent = C.acerca;
+  $('acerca').innerHTML = parrafos(C.acerca);
   [['retrato', C.retrato, 't4'], ['foto-equipo', C.fotoEquipo, 't2']].forEach(function (r) {
     if (!r[1].foto) { $(r[0]).hidden = true; return; } /* sin foto todavía: no se muestra */
     var f = foto(r[1].foto, 3, r[1].pie); f.style.aspectRatio = '4/5';

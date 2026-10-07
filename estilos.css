@@ -56,6 +56,8 @@ p { margin: 0; }
 .t5 { background: linear-gradient(170deg, #E2E2DF, #C7C7C2); }
 .t6 { background: linear-gradient(160deg, #D8CFC4, #B39F8A); }
 .acerca { font-size: clamp(13px, 1vw, 16px); line-height: 1.17; letter-spacing: -.01em; }
+.acerca p { margin: 0; }
+.acerca p + p { margin-top: .9em; }
 .lateral .pieza .cap { color: var(--negro); }
 .h-sec { font-weight: 600; font-size: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--negro); margin-bottom: 14px; }
 .plano { background: var(--lima); aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; color: rgba(0,0,0,.45); font-size: 14px; text-align: center; padding: 16px; }
