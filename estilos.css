@@ -78,7 +78,7 @@ p { margin: 0; }
 .contacto .logo-gigante { padding: 0; margin-top: 14vh; }
 .contacto-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 25%); align-items: end; gap: 24px 20px; margin-top: auto; padding-top: 8vh; }
 .contacto-cuerpo .datos { grid-column: 2; }
-.pegaso { align-self: end; width: min(42vw, 520px); aspect-ratio: 1 / 1; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 16px; }
+.pegaso { align-self: end; width: min(30vw, 380px); aspect-ratio: 716 / 644; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 16px; }
 .datos { display: flex; flex-direction: column; gap: 44px; }
 .datos .regla { border-top: 1.5px solid var(--negro); padding-top: 12px; }
 .suscribe { display: flex; gap: 10px; margin-top: 10px; }

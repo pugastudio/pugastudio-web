@@ -39,7 +39,7 @@ window.PUGA = {
     telefono: '+52 55 7408 3755',
     estudio: 'Ciudad de México',
     texto: 'Puga Studio trabaja en Ciudad de México, Puerto Escondido, Mérida, Tulum y Cabo, con artesanos y talleres locales en cada proyecto, respetando la historia, el oficio y el paisaje de cada lugar.',
-    pegaso: ''                /* nuevo pegaso de cerámica, en negro */
+    pegaso: 'img/pegaso-negro.svg'  /* pegaso elegido 23.10.26, en negro */
   },
 
   proyectos: [
