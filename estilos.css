@@ -60,7 +60,7 @@ p { margin: 0; }
 .acerca p + p { margin-top: .9em; }
 .lateral .pieza .cap { color: var(--negro); }
 .h-sec { font-weight: 600; font-size: 14px; padding-bottom: 8px; border-bottom: 1.5px solid var(--negro); margin-bottom: 14px; }
-.plano { background: var(--lima); aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; color: rgba(0,0,0,.45); font-size: 14px; text-align: center; padding: 16px; }
+.plano { background: var(--lima); aspect-ratio: 3 / 4; display: flex; align-items: center; justify-content: center; color: rgba(0,0,0,.45); font-size: 14px; text-align: center; padding: 0; }
 .equipo { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--negro); }
 .equipo li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0 9px; border-bottom: 1.5px solid var(--negro); font-size: 13px; line-height: 1.12; }
 .equipo li span:last-child { flex: none; }
@@ -78,7 +78,7 @@ p { margin: 0; }
 .contacto .logo-gigante { padding: 0; margin-top: 14vh; }
 .contacto-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 25%); align-items: end; gap: 24px 20px; margin-top: auto; padding-top: 8vh; }
 .contacto-cuerpo .datos { grid-column: 2; }
-.pegaso { align-self: end; width: min(30vw, 380px); aspect-ratio: 716 / 644; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 16px; }
+.pegaso { align-self: end; height: clamp(36px, 6.6vw, 130px); width: auto; aspect-ratio: 716 / 644; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 0; }
 .datos { display: flex; flex-direction: column; gap: 44px; }
 .datos .regla { border-top: 1.5px solid var(--negro); padding-top: 12px; }
 .suscribe { display: flex; gap: 10px; margin-top: 10px; }
@@ -109,7 +109,7 @@ p { margin: 0; }
 .flotante button:disabled { color: var(--gris); cursor: default; background: var(--blanco); }
 
 /* Índice */
-.indice { position: absolute; left: var(--m); bottom: 56px; z-index: 7; width: min(560px, calc(100% - 2 * var(--m))); max-height: calc(100% - 110px); overflow: auto; background: var(--blanco); border: 1.5px solid var(--negro); padding: 16px; }
+.indice { position: absolute; left: var(--m); bottom: 56px; z-index: 7; width: min(560px, calc(100% - 2 * var(--m))); max-height: calc(100% - 110px); overflow: auto; background: var(--blanco); border: 1.5px solid var(--negro); padding: 0; }
 .nums { display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 12px; }
 .nums button { font-weight: 800; font-size: 14px; width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border: 2px solid transparent; border-radius: 50%; letter-spacing: -.03em; }
 .nums button.todo { width: auto; padding: 0 10px; border-radius: 999px; font-weight: 500; font-size: 12px; }
@@ -177,7 +177,7 @@ p { margin: 0; }
   .contacto-cuerpo { grid-template-columns: 1fr; }
   .contacto-cuerpo .datos { grid-column: 1; }
   .contacto .logo-gigante { margin-top: 6vh; }
-  .pegaso { width: 70%; order: 2; }
+  .pegaso { order: 2; }
   .panel.portada { width: 86vw; }
   .ficha { width: 88vw; padding-right: 32px; }
   .panel.img { padding-right: 32px; }
