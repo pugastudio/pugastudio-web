@@ -5,9 +5,19 @@
    Fotos: van en la carpeta img/ y se escriben con su ruta,
    por ejemplo 'img/proyectos/casa-che-che/01.jpg'.
    Si una foto está vacía ('') se muestra un recuadro gris.
-   Disciplinas: 1 Sólidos · 2 Lo Interior · 3 Montañismo · 4 Taller de Sombras
+   Disciplinas: 1 Sólidos · 2 Lo Interior · 3 Montañismo · 4 Taller de Sombras · 5 Circular
    ========================================================= */
 window.PUGA = {
+
+  /* Portada del inicio (manual de marca): frase del manifiesto y frase de firma */
+  manifiesto: 'Diseñamos espacios que cuentan una historia.',
+  frase: 'Que empiece la obra.',
+  /* Ventana de la portada: cada visita muestra uno de estos proyectos recortado en su letra del logo (p, u, g, a) */
+  ventanas: [
+    { proyecto: 'casa-che-che', letra: 'a', foto: 'img/proyectos/casa-che-che/01.jpg' },
+    { proyecto: 'panaderia-costra', letra: 'g', foto: 'img/proyectos/panaderia-costra/01.jpg' },
+    { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' }
+  ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
 
@@ -24,8 +34,10 @@ window.PUGA = {
       palabras: ['interiorismo', 'interiores', 'interior', 'interiorista', 'atmosfera', 'atmosferas', 'ambientes', 'diseno'] },
     { num: 3, nombre: 'Montañismo', area: 'Diseño de mobiliario y objetos funcionales', texto: 'Mobiliario y objetos funcionales concebidos en diálogo con el espacio que habitan. El proceso abarca proyecto conceptual, proyecto esquemático, desarrollo de diseño, ejecución y montaje.',
       palabras: ['mobiliario', 'mueble', 'muebles', 'montanismo', 'objeto', 'objetos', 'funcionales', 'silla', 'sillas', 'mesa', 'mesas', 'diseno'] },
-    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Piezas únicas de pintura, escultura y mobiliario funcional concebido como obra. Un espacio de exploración libre sobre la forma, la materia y la sombra.',
-      palabras: ['arte', 'artistico', 'artistica', 'pintura', 'pinturas', 'escultura', 'esculturas', 'sombras', 'taller', 'pieza', 'piezas', 'objeto', 'objetos'] }
+    { num: 4, nombre: 'Taller de Sombras', area: 'Arte objeto', texto: 'Piezas de autor de pintura, escultura y mobiliario funcional concebido como obra. Un espacio de exploración libre sobre la forma, la materia y la sombra.',
+      palabras: ['arte', 'artistico', 'artistica', 'pintura', 'pinturas', 'escultura', 'esculturas', 'sombras', 'taller', 'pieza', 'piezas', 'objeto', 'objetos'] },
+    { num: 5, nombre: 'Circular', area: 'Textos del estudio', texto: 'El blog del estudio: notas de obra, materiales, oficios y referencias. Lo que pensamos mientras diseñamos.',
+      palabras: ['circular', 'blog', 'texto', 'textos', 'notas', 'lecturas'] }
   ],
 
   equipo: [
@@ -81,14 +93,14 @@ window.PUGA = {
       anio: '2024', estado: '', ubicacion: 'Ciudad de México', equipo: 'Javier Puga',
       portada: 'img/proyectos/ono-poke-house/01.jpg', portadaProp: 1.778,
       concepto: 'Una pecera urbana: el local se abre a la calle con un gran ventanal y un mural que proyecta hacia la ciudad el encuentro entre Hawái y Japón.',
-      texto: 'El proyecto de interiorismo para **ONO POKE HOUSE** nace de una lectura espacial de la identidad de la marca, en la que convergen las culturas hawaiana y japonesa. Este encuentro orientó el diseño hacia una experiencia que reúne la frescura del mar con la sensibilidad estética japonesa, y convierte ambos referentes en una atmósfera propia.\n\nUn ventanal de gran formato abierto hacia la calle definió una de las principales oportunidades del proyecto: concebir el local como una **pecera urbana**, un espacio contenido y vibrante cuya vida interior se proyecta hacia la ciudad. Un mural integra gráficos y elementos icónicos de la marca para dar profundidad y carácter a esta composición. Desde el exterior, el restaurante se revela como un acuario lúdico de escala monumental, que despierta la curiosidad e invita a entrar.\n\nEl programa se organiza en dos niveles para responder con claridad a las necesidades de operación y a la experiencia del comensal. La planta baja concentra las áreas operativas, favoreciendo la eficiencia y la fluidez del trabajo en cocina. El nivel superior alberga el área de atención al cliente y los servicios sanitarios, en una atmósfera más pausada que invita a disfrutar del espacio y permanecer en él.\n\nLa intervención traduce el universo visual de ONO POKE HOUSE en una arquitectura interior con identidad, donde la expresión gráfica, la organización del programa y la relación con la calle construyen una experiencia coherente. El resultado es un entorno que equilibra carácter y funcionalidad, y propone una inmersión en el imaginario de la marca a través del espacio.',
+      texto: 'El proyecto de interiorismo para **ONO POKE HOUSE** nace de una lectura espacial de la identidad de la marca, en la que convergen las culturas hawaiana y japonesa. Este encuentro orientó el diseño hacia una experiencia que reúne la frescura del mar con la sensibilidad estética japonesa, y convierte ambos referentes en una atmósfera propia.\n\nUn ventanal de gran formato abierto hacia la calle definió una de las principales oportunidades del proyecto: concebir el local como una **pecera urbana**, un espacio contenido y vibrante cuya vida interior se proyecta hacia la ciudad. Un mural integra gráficos y elementos característicos de la marca para dar profundidad y carácter a esta composición. Desde el exterior, el restaurante se revela como un acuario lúdico de escala monumental, que despierta la curiosidad e invita a entrar.\n\nEl programa se organiza en dos niveles para responder con claridad a las necesidades de operación y a la experiencia del comensal. La planta baja concentra las áreas operativas, favoreciendo la eficiencia y la fluidez del trabajo en cocina. El nivel superior alberga el área de atención al cliente y los servicios sanitarios, en una atmósfera más pausada que invita a disfrutar del espacio y permanecer en él.\n\nLa intervención traduce el universo visual de ONO POKE HOUSE en una arquitectura interior con identidad, donde la expresión gráfica, la organización del programa y la relación con la calle construyen una experiencia coherente. El resultado es un entorno que equilibra carácter y funcionalidad, y propone una inmersión en el imaginario de la marca a través del espacio.',
       fotos: [
         { src: 'img/proyectos/ono-poke-house/02.jpg', prop: 0.667, titulo: 'Fachada.', texto: 'La pecera urbana se revela desde la calle.' },
         { src: 'img/proyectos/ono-poke-house/03.jpg', prop: 0.75, titulo: 'Exterior.', texto: 'Hojas tropicales en el anuncio y monsteras en los ventanales.' },
         { src: 'img/proyectos/ono-poke-house/04.jpg', prop: 1.499, titulo: 'Mural.', texto: 'Gráficos e íconos de la marca dan profundidad al espacio.' },
         { src: 'img/proyectos/ono-poke-house/05.jpg', prop: 1.499, titulo: 'Salón.', texto: 'La barra y el mural envuelven al comensal.' },
         { src: 'img/proyectos/ono-poke-house/06.jpg', prop: 1.499, titulo: 'Banca corrida.', texto: 'Una banca curva acompaña el recorrido del mural.' },
-        { src: 'img/proyectos/ono-poke-house/07.jpg', prop: 0.667, titulo: 'Detalle.', texto: 'El pulpo, ícono de la marca, a escala monumental.' },
+        { src: 'img/proyectos/ono-poke-house/07.jpg', prop: 0.667, titulo: 'Detalle.', texto: 'El pulpo, emblema de la marca, a escala monumental.' },
         { src: 'img/proyectos/ono-poke-house/08.jpg', prop: 1.499, titulo: 'Barra.', texto: 'Madera, aplanado y luz cálida.' },
         { src: 'img/proyectos/ono-poke-house/09.jpg', prop: 0.667, titulo: 'Sanitarios.', texto: 'Un remate en azul profundo para los servicios.' },
         { src: 'img/proyectos/ono-poke-house/10.jpg', prop: 0.667, titulo: 'Esquina.', texto: 'La fachada se integra a la vida de la calle.' }
@@ -162,6 +174,6 @@ window.PUGA = {
     { etapa: 'Vivienda', texto: 'Después, el trabajo se extendió a la transformación de casas existentes. Remodelaciones integrales replantearon sus interiores para nuevas formas de habitar e incorporaron terrazas, pérgolas y piezas de arte que dieron a cada residencia un carácter contemporáneo.' },
     { etapa: 'Colaboraciones', texto: 'En paralelo, colaboraciones nacionales e internacionales ampliaron su experiencia residencial, comercial y hotelera: hoteles en Medio Oriente, viviendas y hoteles en Tulum y Los Cabos, centros comerciales en Tijuana y residencias en San Diego.' },
     { etapa: 'Proyectos propios', texto: 'Con el crecimiento de su práctica llegaron los proyectos propios de vivienda, restaurantes, cafeterías y hotelería, que consolidaron una visión integral del diseño y una identidad arquitectónica distintiva.' },
-    { etapa: 'Hoy', texto: 'Nueve años después, el estudio ha crecido en escala y diversidad con un propósito constante: crear proyectos únicos, sustentados en conceptos sólidos que orienten cada decisión y den coherencia al conjunto.' }
+    { etapa: 'Hoy', texto: 'Nueve años después, el estudio ha crecido en escala y diversidad con un propósito constante: crear proyectos irrepetibles, sustentados en conceptos sólidos que orienten cada decisión y den coherencia al conjunto.' }
   ]
 };

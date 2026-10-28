@@ -7,6 +7,8 @@
   --azul: #002FA7;
   --lima: #E6F025;
   --font: "Inter Tight", "Neue Haas Grotesk Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: "Instrument Serif", "Times New Roman", serif;
+  --logo: clamp(36px, 6.6vw, 130px); /* altura del logo horizontal; el pegaso mide lo mismo */
   --barra: 34px;
   --m: 16px;
 }
@@ -39,8 +41,8 @@ p { margin: 0; }
 @keyframes entraAbajo { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
 
 /* Inicio */
-.logo-gigante { padding: 22px var(--m) 0; }
-.logo-gigante img { display: block; height: clamp(36px, 6.6vw, 130px); width: auto; max-width: 100%; }
+.logo-gigante { padding: var(--m) var(--m) 0; }
+.logo-gigante img { display: block; height: var(--logo); width: auto; max-width: 100%; }
 .inicio-grid { display: grid; grid-template-columns: minmax(0, 50fr) minmax(0, 25fr) minmax(0, 25fr); gap: 0 20px; padding: 48px var(--m) 120px; }
 .flujo { grid-column: 1; display: flex; flex-direction: column; gap: 72px; }
 .lateral { grid-column: 3; display: flex; flex-direction: column; gap: 56px; }
@@ -74,11 +76,12 @@ p { margin: 0; }
 .etiqueta .txt { padding: 4px 7px 4px 8px; }
 
 /* Contacto (lima) */
-.contacto { background: var(--lima); min-height: calc(100vh - var(--barra)); min-height: calc(100svh - var(--barra) - env(safe-area-inset-top, 0px)); padding: 22px var(--m) 24px; display: flex; flex-direction: column; }
-.contacto .logo-gigante { padding: 0; margin-top: 14vh; }
+.contacto { background: var(--lima); min-height: calc(100vh - var(--barra)); min-height: calc(100svh - var(--barra) - env(safe-area-inset-top, 0px)); padding: var(--m); display: flex; flex-direction: column; }
+.contacto .logo-gigante { padding: 0; }
+.contacto .firma { margin-top: 14vh; }
 .contacto-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 25%); align-items: end; gap: 24px 20px; margin-top: auto; padding-top: 8vh; }
 .contacto-cuerpo .datos { grid-column: 2; }
-.pegaso { align-self: end; height: clamp(36px, 6.6vw, 130px); width: auto; aspect-ratio: 716 / 644; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 0; }
+.pegaso { flex: none; height: var(--logo); width: auto; aspect-ratio: 716 / 644; border: 2px dashed rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(0,0,0,.55); padding: 0; }
 .datos { display: flex; flex-direction: column; gap: 44px; }
 .datos .regla { border-top: 1.5px solid var(--negro); padding-top: 12px; }
 .suscribe { display: flex; gap: 10px; margin-top: 10px; }
@@ -143,8 +146,10 @@ p { margin: 0; }
 .pista::-webkit-scrollbar { display: none; }
 .panel { flex: none; position: relative; height: 100%; padding: 16px 0 0; }
 .panel.portada { width: 50vw; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-inline: var(--m); }
-.portada h1 { font-weight: 600; font-size: clamp(22px, 2.3vw, 40px); line-height: .98; letter-spacing: -.035em; margin: 0; text-wrap: balance; }
-.portada .g { font-weight: 600; font-size: clamp(22px, 2.3vw, 40px); line-height: .98; letter-spacing: -.035em; }
+.portada h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(48px, 5.4vw, 96px); line-height: .92; letter-spacing: -.01em; margin: 0 0 .18em; text-wrap: balance; }
+.portada .sub-serif { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 2.2vw, 36px); line-height: 1.05; margin-bottom: 18px; }
+.portada .fila-num { margin-bottom: 28px; }
+.portada .g { font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
 .panel.img { display: flex; flex-direction: column; padding-right: 64px; }
 .panel.img .caja { flex: 1; position: relative; min-height: 0; }
 .panel.img .foto { position: absolute; left: 0; }
@@ -176,8 +181,7 @@ p { margin: 0; }
   .pieza.w66 { width: 80%; }
   .contacto-cuerpo { grid-template-columns: 1fr; }
   .contacto-cuerpo .datos { grid-column: 1; }
-  .contacto .logo-gigante { margin-top: 6vh; }
-  .pegaso { order: 2; }
+  .contacto .firma { margin-top: 6vh; }
   .panel.portada { width: 86vw; }
   .ficha { width: 88vw; padding-right: 32px; }
   .panel.img { padding-right: 32px; }
@@ -242,3 +246,40 @@ p { margin: 0; }
 .premios a { display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1.5px solid var(--negro); color: inherit; text-decoration: none; font-size: 13px; line-height: 1.17; }
 .premios b { font-weight: 600; font-size: 15px; color: var(--azul); }
 .premios a:hover b { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Manual de marca 2026 ---------- */
+
+/* Fila de números: 01 a 05 siempre completa; el círculo marca la disciplina */
+.fila-num { display: flex; align-items: center; gap: 2px; font-weight: 800; font-size: 13px; letter-spacing: -.03em; }
+.fila-num span { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border: 1.5px solid transparent; border-radius: 50%; }
+.fila-num span.on { border-color: currentColor; }
+.fila-num b { margin-left: 10px; font-weight: 500; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.fila-num.chica { display: inline-flex; font-size: 11px; vertical-align: middle; margin-right: 10px; color: var(--negro); }
+.fila-num.chica span { width: 22px; height: 22px; }
+
+/* Portada del inicio: manifiesto + Ventana */
+.portada-inicio { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--m) 40px; padding: 48px var(--m) 0; }
+.pi-texto { display: flex; flex-direction: column; min-height: 100%; }
+.titulo-serif { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 7vw, 132px); line-height: .9; letter-spacing: -.012em; margin: 40px 0 48px; max-width: 8.5em; text-wrap: balance; }
+.pi-pie { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-top: 1.5px solid var(--negro); padding-top: 14px; max-width: 760px; }
+.frase-serif { font-family: var(--serif); font-style: italic; font-size: clamp(24px, 2.3vw, 36px); line-height: 1.05; }
+.pi-ver { color: inherit; text-decoration: none; font-weight: 600; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.pi-ver:hover { color: var(--azul); }
+
+/* Ventana: la foto se recorta con la forma de una letra del logo */
+.ventana { position: relative; display: block; height: min(78vh, 70vw); aspect-ratio: 191.7 / 213; color: inherit; text-decoration: none; }
+.ventana img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;
+  -webkit-mask: var(--letra) center / contain no-repeat; mask: var(--letra) center / contain no-repeat; }
+.ventana-pie { position: absolute; left: 0; right: 0; top: calc(100% + 10px); display: flex; flex-direction: column; }
+.ventana-pie b { font-weight: 500; }
+.ventana:hover .ventana-pie b { color: var(--azul); }
+
+/* Firma del contacto: logo y pegaso a la misma altura, separados 4X; la frase debajo, a X */
+.firma-logo { display: flex; align-items: stretch; gap: calc(var(--logo) * 2); }
+.firma-frase { margin-top: calc(var(--logo) / 2); font-weight: 500; font-size: calc(var(--logo) / 4); min-height: 1em; line-height: 1; letter-spacing: -.01em; }
+
+@media (max-width: 860px) {
+  .portada-inicio { grid-template-columns: 1fr; padding-top: 32px; gap: 40px; }
+  .titulo-serif { font-size: clamp(48px, 13vw, 84px); margin: 28px 0 32px; }
+  .ventana { height: auto; width: 100%; margin-bottom: 40px; }
+}

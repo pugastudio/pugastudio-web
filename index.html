@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Puga Studio</title>
-<meta name="description" content="Puga Studio: arquitectura, diseño de interiores, mobiliario y arte-objeto. Ciudad de México, desde 2017.">
+<meta name="description" content="Puga Studio: arquitectura, interiorismo, mobiliario y arte. Espacios que cuentan una historia. Ciudad de México, desde 2017.">
 <meta property="og:title" content="Puga Studio">
-<meta property="og:description" content="Arquitectura, diseño de interiores, mobiliario y arte-objeto.">
+<meta property="og:description" content="Arquitectura, interiorismo, mobiliario y arte. Espacios que cuentan una historia. Que empiece la obra.">
 <meta property="og:image" content="https://www.pugastudio.com/img/logo-cuadrado.png">
 <meta property="og:url" content="https://www.pugastudio.com/">
 <meta name="theme-color" content="#FFFFFF">
@@ -15,8 +15,8 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;800&display=swap">
-<link rel="stylesheet" href="estilos.css?v=202610231522">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="estilos.css?v=202610281428">
 </head>
 <body>
 
@@ -39,6 +39,18 @@
 <!-- INICIO -->
 <section class="vista scroll-y" id="v-inicio" aria-label="Inicio">
   <h1 class="logo-gigante" style="margin:0"><img src="img/logo-negro.png" alt="Puga Studio"></h1>
+  <!-- Portada: frase del manifiesto y una foto de proyecto recortada en una letra del logo (Ventana) -->
+  <div class="portada-inicio">
+    <div class="pi-texto">
+      <div class="fila-num" id="pi-num" aria-hidden="true"></div>
+      <h2 class="titulo-serif" id="pi-titulo"></h2>
+      <div class="pi-pie">
+        <p class="frase-serif" id="pi-frase"></p>
+        <a class="pi-ver" href="#/proyectos">Ver proyectos</a>
+      </div>
+    </div>
+    <a class="ventana" id="pi-ventana" href="#/proyectos"></a>
+  </div>
   <div class="inicio-grid">
     <div class="flujo" id="flujo"></div>
     <aside class="lateral">
@@ -76,6 +88,7 @@
       <button type="button" data-d="2" aria-pressed="false" title="Lo Interior">02</button>
       <button type="button" data-d="3" aria-pressed="false" title="Montañismo">03</button>
       <button type="button" data-d="4" aria-pressed="false" title="Taller de Sombras">04</button>
+      <button type="button" data-d="5" aria-pressed="false" title="Circular">05</button>
     </div>
     <p class="nums-nombre" id="nums-nombre" aria-live="polite">Todas las disciplinas</p>
     <ul id="lista-proyectos"></ul>
@@ -107,9 +120,14 @@
 
 <template id="tpl-contacto">
   <div class="contacto">
-    <div class="logo-gigante"><img src="img/logo-negro.png" alt="Puga Studio"></div>
+    <div class="firma">
+      <div class="firma-logo">
+        <div class="logo-gigante"><img src="img/logo-negro.png" alt="Puga Studio"></div>
+        <div class="pegaso"></div>
+      </div>
+      <p class="firma-frase"></p>
+    </div>
     <div class="contacto-cuerpo">
-      <div class="pegaso"></div>
       <div class="datos">
         <div class="regla datos-contacto"></div>
         <form class="form-suscribe">
@@ -141,7 +159,7 @@
 
 <div class="etiqueta" id="etiqueta" aria-hidden="true"><span class="ico"><s></s></span><span class="txt" id="etiqueta-txt"></span></div>
 
-<script src="contenido.js?v=202610231522"></script>
-<script src="sitio.js?v=202610231522"></script>
+<script src="contenido.js?v=202610281428"></script>
+<script src="sitio.js?v=202610281428"></script>
 </body>
 </html>

@@ -32,6 +32,12 @@
   function area(d) { var x = (C.disciplinas || []).filter(function (y) { return y.num === d; })[0]; return x ? x.area + ' ' + x.texto : ''; }
   function cat(p) { return DISC[p.disciplina] + ', ' + p.tipo; }
   function tono(i) { return TONOS[i % TONOS.length]; }
+  /* Fila de números del manual: siempre completa, con círculo en la disciplina (0 = el estudio completo) */
+  function filaNum(d) { var h = ''; for (var n = 1; n <= 5; n++) h += '<span' + (n === d ? ' class="on"' : '') + '>0' + n + '</span>'; return h; }
+  function irADisciplina(d) {
+    if (d === 5) { location.hash = '#/circular'; return; }
+    setTimeout(function () { filtrar(d); $('indice-proyectos').hidden = false; }, 0);
+  }
   /* Caja de foto: imagen real si hay ruta, si no un recuadro gris */
   function foto(src, i, alt) {
     var f = el('div', 'foto ' + (src ? 'con-img' : tono(i || 0)));
@@ -62,6 +68,21 @@
   }
 
   /* ---------- Inicio ---------- */
+  /* Portada: manifiesto en Instrument Serif y Ventana (foto de proyecto recortada en una letra del logo) */
+  (function () {
+    var vs = (C.ventanas || []).filter(function (v) { return PROY.some(function (p) { return p.slug === v.proyecto; }); });
+    if (!vs.length) return;
+    var v = vs[Math.floor(Math.random() * vs.length)], p = PROY.filter(function (x) { return x.slug === v.proyecto; })[0];
+    $('pi-titulo').textContent = C.manifiesto || '';
+    $('pi-frase').textContent = C.frase || '';
+    $('pi-num').innerHTML = filaNum(p.disciplina) + '<b>' + esc(DISC[p.disciplina]) + '</b>';
+    var ven = $('pi-ventana');
+    ven.href = '#/proyectos/' + p.slug; ven.setAttribute('aria-label', p.nombre);
+    ven.style.setProperty('--letra', 'url(img/letras/' + v.letra + '.svg)');
+    var im = el('img'); im.src = v.foto || p.portada; im.alt = p.nombre; im.decoding = 'async'; im.draggable = false; ven.appendChild(im);
+    ven.appendChild(el('span', 'ventana-pie', '<b>' + esc(p.nombre) + '</b><span class="g">' + esc([p.ubicacion, p.anio].filter(Boolean).join(' · ')) + '</span>'));
+    conEtiqueta(ven, p.nombre, false);
+  })();
   $('acerca').innerHTML = parrafos(C.acerca);
   /* Premios en el inicio */
   (C.premios || []).forEach(function (r) {
@@ -80,8 +101,8 @@
   /* Disciplinas: cada una abre el índice de proyectos filtrado */
   (C.disciplinas || []).forEach(function (d) {
     var a = el('a', '', '<span class="num">0' + d.num + '</span><span class="cuerpo"><b>' + esc(d.nombre) + '</b><span class="area">' + esc(d.area) + '</span><span class="txt">' + esc(d.texto) + '</span></span>');
-    a.href = '#/proyectos';
-    a.addEventListener('click', function () { setTimeout(function () { filtrar(d.num); $('indice-proyectos').hidden = false; }, 0); });
+    a.href = d.num === 5 ? '#/circular' : '#/proyectos';
+    if (d.num !== 5) a.addEventListener('click', function () { irADisciplina(d.num); });
     var li = el('li'); li.appendChild(a); $('disciplinas').appendChild(li);
   });
 
@@ -126,6 +147,7 @@
     n.querySelector('.datos-contacto').innerHTML = lineas;
     n.querySelector('.texto-contacto').textContent = K.texto;
     n.querySelector('.anio').textContent = new Date().getFullYear();
+    n.querySelector('.firma-frase').textContent = C.frase || '';
     var peg = n.querySelector('.pegaso');
     if (K.pegaso) { peg.style.border = '0'; var im = el('img'); im.src = K.pegaso; im.alt = 'Pegaso de Puga Studio'; im.style.cssText = 'width:100%;height:100%;object-fit:contain'; peg.appendChild(im); }
     else peg.hidden = true;
@@ -229,7 +251,7 @@
   }
   pintarLista(0);
   document.querySelectorAll('#indice-proyectos .nums button').forEach(function (b) {
-    b.addEventListener('click', function () { filtrar(+b.dataset.d); });
+    b.addEventListener('click', function () { if (+b.dataset.d === 5) irADisciplina(5); else filtrar(+b.dataset.d); });
   });
   PUBS.forEach(function (u) { $('lista-publicaciones').appendChild(filaIndice('↗', u.medio + ' · ' + (u.p ? u.p.nombre : 'Entrevista'), u.fecha, '#/publicaciones/' + u.slug)); });
   TEXTOS.forEach(function (t, i) { $('lista-circular').appendChild(filaIndice(i + 1, t.titulo, t.fecha, '#/circular/' + t.slug)); });
@@ -289,7 +311,7 @@
     nombradas.sort().forEach(function (d) {
       var info = (C.disciplinas || []).filter(function (x) { return x.num === d; })[0];
       var hay = PROY.filter(function (p) { return p.disciplina === d; }).length;
-      filaRes('0' + d + ' ' + DISC[d], (info ? info.area : '') + (hay ? '' : ' · próximamente'), '#/proyectos', function () { setTimeout(function () { filtrar(d); $('indice-proyectos').hidden = false; }, 0); });
+      filaRes('0' + d + ' ' + DISC[d], (info ? info.area : '') + (hay || d === 5 ? '' : ' · próximamente'), d === 5 ? '#/circular' : '#/proyectos', function () { if (d !== 5) irADisciplina(d); });
     });
     if (!hits.length && !nombradas.length) { res.appendChild(el('p', 'g', 'Sin resultados para “' + esc(buscar.value) + '”')); return; }
     hits.forEach(function (x) { filaRes(x.n, x.s, x.h); });
@@ -331,9 +353,9 @@
   document.querySelectorAll('#r-indice button').forEach(function (b) { b.addEventListener('click', function () { location.hash = '#/proyectos'; $('indice-proyectos').hidden = false; }); });
 
   function abrirProyecto(p) {
-    var portada = el('div', 'panel portada', '<h1>' + esc(p.nombre) + '</h1>' + (p.anio ? '<div class="g">' + esc(p.anio) + '</div>' : '') + '<div class="g">' + esc(DISC[p.disciplina]) + '</div>');
+    var portada = el('div', 'panel portada', '<div class="fila-num" aria-hidden="true">' + filaNum(p.disciplina) + '</div><h1>' + esc(p.nombre) + '</h1><div class="sub-serif">' + esc([p.ubicacion, p.anio].filter(Boolean).join(', ')) + '</div><div class="g">' + esc(DISC[p.disciplina]) + '</div>');
     var filas = [['Estado', p.estado], ['Disciplina', '0' + p.disciplina + ' ' + DISC[p.disciplina]], ['Tipo', p.tipo], ['Ubicación', p.ubicacion], ['Equipo', p.equipo], ['Premios', (C.premios || []).filter(function (r) { return r.proyecto === p.slug; }).map(function (r) { return r.titulo + ', ' + r.certamen + ' (' + r.medio + ')'; }).join('. ')]]
-      .filter(function (r) { return r[1]; }).map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td></tr>'; }).join('');
+      .filter(function (r) { return r[1]; }).map(function (r) { return '<tr><th>' + esc(r[0]) + '</th><td>' + (r[0] === 'Disciplina' ? '<span class="fila-num chica">' + filaNum(p.disciplina) + '</span>' : '') + esc(r[1]) + '</td></tr>'; }).join('');
     var ficha = el('div', 'panel ficha', '<table><tbody>' + filas + '</tbody></table>');
     var sig = PROY[(p.i + 1) % PROY.length];
     var fin = el('div', 'panel final'), s = el('a', 'siguiente', '<span class="g">Siguiente proyecto</span><b>' + esc(sig.nombre) + '</b><span class="g">' + esc(cat(sig)) + '</span>');
