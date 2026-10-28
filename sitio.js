@@ -209,7 +209,9 @@
   }
   /* Si hay pocos proyectos se repiten para llenar el campo, sin dejar dos iguales juntos */
   function rellenar(items) {
-    if (!items.length || items.length >= POS.length) return items;
+    if (!items.length) return items;
+    /* Más de un campo: se completa la última fila repitiendo desde el principio, para que no quede un hueco */
+    if (items.length >= POS.length) { var n = Math.ceil(items.length / POS.length) * POS.length; return items.concat(items.slice(0, n - items.length)); }
     var mezcla = [0, 1, 2, 1, 2, 0, 1, 0];
     return POS.map(function (_, i) { return items[items.length <= 3 ? mezcla[i] % items.length : i % items.length]; });
   }
