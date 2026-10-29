@@ -19,7 +19,8 @@ window.PUGA = {
     { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' },
     { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' },
     { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' },
-    { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' }
+    { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' },
+    { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -59,6 +60,29 @@ window.PUGA = {
 
   proyectos: [
     {
+      slug: 'ritual-reflejo', nombre: 'Ritual Reflejo', disciplina: 4, tipo: 'Pieza única',
+      anio: '2026', estado: 'Exhibida en el Mes del Diseño, por invitación de Firenze', ubicacion: '', equipo: 'Javier Puga',
+      portada: 'img/proyectos/ritual-reflejo/01.jpg', portadaProp: 1.333,
+      concepto: 'Un espejo de mármol negro y porcelanato que retoma el ritual mexica del espejo de obsidiana: un objeto que no solo se contempla, devuelve la mirada.',
+      texto: "**Ritual Reflejo** es una pieza única que traduce al lenguaje del objeto contemporáneo la lógica ritual del pensamiento mesoamericano. Con materiales oscuros y técnicas actuales como el corte láser y el corte por agua, retoma una memoria material y simbólica y la vuelve presente.\n\n**El concepto.** El punto de partida es el ritual mexica del espejo de obsidiana, asociado a Tezcatlipoca, el \"espejo humeante\", deidad del inframundo y de la introspección. En esta práctica, el sacerdote o iniciado, después de consumir sustancias psicoactivas, se enfrentaba a su reflejo en la superficie pulida de la obsidiana. Era una confrontación con sus propias sombras y con aquello que debía trabajar en sí mismo: una forma ancestral de terapia ritual.\n\n**La materia.** La pieza lleva esa idea a un lenguaje oscuro y denso. Mármoles negros en distintas tonalidades se superponen en capas para crear profundidad cromática, como una superficie que invita a mirar hacia dentro. Sobre porcelanato, el corte láser o por chorro de agua talla texturas de alto relieve inspiradas en la estética maya.\n\nEl resultado es un objeto que no solo se contempla: devuelve la mirada.\n\nLa pieza nació de una invitación de Firenze, porcelanato arquitectónico, a diseñar una obra donde el porcelanato fuera protagonista. Se fabricó en taller, se montó suspendida frente a un muro y se exhibió durante las actividades del Mes del Diseño.",
+      fotos: [
+        { src: 'img/proyectos/ritual-reflejo/02.jpg', prop: 0.667, titulo: 'Devolver la mirada.', texto: 'Quien se acerca se encuentra consigo mismo.' },
+        { src: 'img/proyectos/ritual-reflejo/r6.jpg', prop: 1.339, titulo: 'Agua.', texto: 'Lo que se refleja vuelve a reflejarse.' },
+        { src: 'img/proyectos/ritual-reflejo/04.jpg', prop: 0.75, titulo: 'Frente al reflejo.', texto: 'Detenerse, mirar, quedarse.' },
+        { src: 'img/proyectos/ritual-reflejo/r7.jpg', prop: 1.339, titulo: 'Origen.', texto: 'La memoria vuelve al lugar de donde vino.' },
+        { src: 'img/proyectos/ritual-reflejo/05.jpg', prop: 1.333, titulo: 'Superficie oscura.', texto: 'El espacio aparece deformado, en penumbra.' },
+        { src: 'img/proyectos/ritual-reflejo/r1.jpg', prop: 1.339, titulo: 'Piedra.', texto: 'Del fuego nace la piedra; de la sombra, el espejo.' },
+        { src: 'img/proyectos/ritual-reflejo/06.jpg', prop: 0.75, titulo: 'El centro.', texto: 'El ojo de la obsidiana.' },
+        { src: 'img/proyectos/ritual-reflejo/r5.jpg', prop: 1.339, titulo: 'Penumbra.', texto: 'La sombra como lugar de encuentro.' },
+        { src: 'img/proyectos/ritual-reflejo/r3.jpg', prop: 1.339, titulo: 'Umbral.', texto: 'Mirarse es el primer acto del ritual.' },
+        { src: 'img/proyectos/ritual-reflejo/r4.jpg', prop: 1.339, titulo: 'Ocaso.', texto: 'La luz se retira; queda el reflejo.' },
+        { src: 'img/proyectos/ritual-reflejo/r2.jpg', prop: 1.339, titulo: 'Habitar.', texto: 'Lo cotidiano también puede ser rito.' },
+        { src: 'img/proyectos/ritual-reflejo/13.jpg', prop: 0.75, titulo: 'Vetas.', texto: 'La materia guarda su propia memoria.' },
+        { src: 'img/proyectos/ritual-reflejo/v3.mp4', prop: 1.777, titulo: 'El ojo.', texto: 'El espejo, en movimiento.' },
+        { src: 'img/proyectos/ritual-reflejo/15.jpg', prop: 0.75, titulo: 'Trazo.', texto: 'La composición nace a mano.' }
+      ]
+    },
+    {
       slug: 'fabrica-tulum', nombre: 'Fábrica Tulum', disciplina: 1, tipo: 'Conjunto habitacional',
       anio: '2023', estado: '', ubicacion: 'Tulum', equipo: 'Javier Puga',
       portada: 'img/proyectos/fabrica-tulum/01.jpg', portadaProp: 1.777,
@@ -73,27 +97,26 @@ window.PUGA = {
         { src: 'img/proyectos/fabrica-tulum/07.jpg', prop: 1.791, titulo: 'Restaurante.', texto: 'Muros de piedra abiertos a la calle y a los residentes.' },
         { src: 'img/proyectos/fabrica-tulum/08.jpg', prop: 1.777, titulo: 'Amenidades.', texto: 'Arcos que evocan ruinas mayas, con hamacas y camastros.' },
         { src: 'img/proyectos/fabrica-tulum/09.jpg', prop: 1.777, titulo: 'Entre ruinas.', texto: 'Los arcos dialogan con la vegetación y el restaurante al fondo.' },
-        { src: 'img/proyectos/fabrica-tulum/10.jpg', prop: 1.777, titulo: 'Caminos.', texto: 'Senderos orgánicos que llevan a cada departamento.' },
-        { src: 'img/proyectos/fabrica-tulum/11.jpg', prop: 1.777, titulo: 'Plaza.', texto: 'Maquinaria en desuso convertida en hito.' },
-        { src: 'img/proyectos/fabrica-tulum/12.jpg', prop: 1.777, titulo: 'Pasaje.', texto: 'Muros curvos y enredaderas a ambos lados.' },
-        { src: 'img/proyectos/fabrica-tulum/13.jpg', prop: 1.777, titulo: 'Encuentro.', texto: 'Donde los caminos se cruzan aparece una plaza.' },
-        { src: 'img/proyectos/fabrica-tulum/14.jpg', prop: 1.777, titulo: 'Memoria industrial.', texto: 'Piezas de metal recuperado entre palmas.' },
+        { src: 'img/proyectos/fabrica-tulum/10.jpg', prop: 1.777, titulo: 'Plaza.', texto: 'Maquinaria en desuso convertida en hito.' },
+        { src: 'img/proyectos/fabrica-tulum/11.jpg', prop: 1.777, titulo: 'Pasaje.', texto: 'Muros curvos y enredaderas a ambos lados.' },
+        { src: 'img/proyectos/fabrica-tulum/12.jpg', prop: 1.777, titulo: 'Caminos.', texto: 'Senderos orgánicos que llevan a cada departamento.' },
+        { src: 'img/proyectos/fabrica-tulum/13.jpg', prop: 1.777, titulo: 'Memoria industrial.', texto: 'Piezas de metal recuperado entre palmas.' },
+        { src: 'img/proyectos/fabrica-tulum/14.jpg', prop: 1.777, titulo: 'Recorrido.', texto: 'La jungla entra hasta la puerta de cada casa.' },
         { src: 'img/proyectos/fabrica-tulum/15.jpg', prop: 1.777, titulo: 'Jardín.', texto: 'Cada departamento llega por su propio acceso.' },
-        { src: 'img/proyectos/fabrica-tulum/16.jpg', prop: 1, titulo: 'Recorrido.', texto: 'La jungla entra hasta la puerta de cada casa.' },
-        { src: 'img/proyectos/fabrica-tulum/17.jpg', prop: 1, titulo: 'Recepción.', texto: 'Un arco de piedra recibe a los visitantes.' },
-        { src: 'img/proyectos/fabrica-tulum/18.jpg', prop: 1, titulo: 'Espera.', texto: 'Una banca curva bajo el arco y luz cenital.' },
-        { src: 'img/proyectos/fabrica-tulum/19.jpg', prop: 1, titulo: 'Sala.', texto: 'Un sillón continuo sigue la curva del muro.' },
-        { src: 'img/proyectos/fabrica-tulum/20.jpg', prop: 1, titulo: 'Comedor.', texto: 'Madera, fibras naturales y vanos hacia el jardín.' },
-        { src: 'img/proyectos/fabrica-tulum/21.jpg', prop: 1, titulo: 'Estancia.', texto: 'Doble altura, celosías de madera y luz filtrada.' },
-        { src: 'img/proyectos/fabrica-tulum/22.jpg', prop: 1, titulo: 'Cocina.', texto: 'Muebles de obra, madera y cobre.' },
-        { src: 'img/proyectos/fabrica-tulum/23.jpg', prop: 1, titulo: 'Barra.', texto: 'Una barra curva de obra con cubierta de cobre.' },
-        { src: 'img/proyectos/fabrica-tulum/24.jpg', prop: 1, titulo: 'Recámara.', texto: 'Muros de cal, madera y un tapete de fibra.' },
-        { src: 'img/proyectos/fabrica-tulum/25.jpg', prop: 1, titulo: 'Descanso.', texto: 'Luz baja y texturas cálidas.' },
-        { src: 'img/proyectos/fabrica-tulum/26.jpg', prop: 1, titulo: 'Recámara principal.', texto: 'Un muro de madera guarda el clóset.' },
-        { src: 'img/proyectos/fabrica-tulum/27.jpg', prop: 1, titulo: 'Atardecer.', texto: 'La luz del trópico entra por la ventana.' },
-        { src: 'img/proyectos/fabrica-tulum/28.jpg', prop: 1, titulo: 'Baño.', texto: 'Un baño de color rosa, de muros y lavabo continuos.' },
-        { src: 'img/proyectos/fabrica-tulum/29.jpg', prop: 1, titulo: 'Nicho.', texto: 'Un arco enmarca el sanitario.' },
-        { src: 'img/proyectos/fabrica-tulum/30.jpg', prop: 1, titulo: 'Regadera.', texto: 'Un cancel de vidrio estriado con marco de madera.' }
+        { src: 'img/proyectos/fabrica-tulum/16.jpg', prop: 1, titulo: 'Recepción.', texto: 'Un arco de piedra recibe a los visitantes.' },
+        { src: 'img/proyectos/fabrica-tulum/17.jpg', prop: 1, titulo: 'Espera.', texto: 'Una banca curva bajo el arco y luz cenital.' },
+        { src: 'img/proyectos/fabrica-tulum/18.jpg', prop: 1, titulo: 'Sala.', texto: 'Un sillón continuo sigue la curva del muro.' },
+        { src: 'img/proyectos/fabrica-tulum/19.jpg', prop: 1, titulo: 'Comedor.', texto: 'Madera, fibras naturales y vanos hacia el jardín.' },
+        { src: 'img/proyectos/fabrica-tulum/20.jpg', prop: 1, titulo: 'Estancia.', texto: 'Doble altura, celosías de madera y luz filtrada.' },
+        { src: 'img/proyectos/fabrica-tulum/21.jpg', prop: 1, titulo: 'Cocina.', texto: 'Muebles de obra, madera y cobre.' },
+        { src: 'img/proyectos/fabrica-tulum/22.jpg', prop: 1, titulo: 'Barra.', texto: 'Una barra curva de obra con cubierta de cobre.' },
+        { src: 'img/proyectos/fabrica-tulum/23.jpg', prop: 1, titulo: 'Recámara.', texto: 'Muros de cal, madera y un tapete de fibra.' },
+        { src: 'img/proyectos/fabrica-tulum/24.jpg', prop: 1, titulo: 'Descanso.', texto: 'Luz baja y texturas cálidas.' },
+        { src: 'img/proyectos/fabrica-tulum/25.jpg', prop: 1, titulo: 'Recámara principal.', texto: 'Un muro de madera guarda el clóset.' },
+        { src: 'img/proyectos/fabrica-tulum/26.jpg', prop: 1, titulo: 'Atardecer.', texto: 'La luz del trópico entra por la ventana.' },
+        { src: 'img/proyectos/fabrica-tulum/27.jpg', prop: 1, titulo: 'Baño.', texto: 'Un baño de color rosa, de muros y lavabo continuos.' },
+        { src: 'img/proyectos/fabrica-tulum/28.jpg', prop: 1, titulo: 'Nicho.', texto: 'Un arco enmarca el sanitario.' },
+        { src: 'img/proyectos/fabrica-tulum/29.jpg', prop: 1, titulo: 'Regadera.', texto: 'Un cancel de vidrio estriado con marco de madera.' }
       ]
     },
     {

@@ -41,7 +41,11 @@
   /* Caja de foto: imagen real si hay ruta, si no un recuadro gris */
   function foto(src, i, alt) {
     var f = el('div', 'foto ' + (src ? 'con-img' : tono(i || 0)));
-    if (src) { var im = el('img'); im.src = src; im.alt = alt || ''; im.loading = 'lazy'; im.decoding = 'async'; im.draggable = false; f.appendChild(im); }
+    if (src && /\.mp4$/i.test(src)) {
+      /* Video: corre solo, en silencio y en bucle, como una foto en movimiento */
+      var v = el('video'); v.src = src; v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.preload = 'metadata';
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('aria-label', alt || ''); v.disablePictureInPicture = true; f.appendChild(v);
+    } else if (src) { var im = el('img'); im.src = src; im.alt = alt || ''; im.loading = 'lazy'; im.decoding = 'async'; im.draggable = false; f.appendChild(im); }
     return f;
   }
   PROY.forEach(function (p, i) { p.i = i; });
@@ -432,6 +436,10 @@
   var vInicio = $('v-inicio'), cIni = $('contacto-en-inicio');
   vInicio.addEventListener('scroll', function () { if (actual === 'inicio') barra.classList.toggle('lima', cIni.getBoundingClientRect().top < 60); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rec.classList.contains('abierto')) $('r-cerrar').click(); });
+  /* Fotos de proyectos: sin clic derecho ni arrastre para guardarlas */
+  ['contextmenu', 'dragstart'].forEach(function (t) {
+    document.addEventListener(t, function (e) { if (e.target.closest && e.target.closest('.foto, .ventana, img, video')) e.preventDefault(); });
+  });
   window.addEventListener('hashchange', rutear);
   rutear();
   requestAnimationFrame(animar);
