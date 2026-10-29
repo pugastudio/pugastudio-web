@@ -16,7 +16,8 @@ window.PUGA = {
   ventanas: [
     { proyecto: 'casa-che-che', letra: 'a', foto: 'img/proyectos/casa-che-che/01.jpg' },
     { proyecto: 'panaderia-costra', letra: 'g', foto: 'img/proyectos/panaderia-costra/01.jpg' },
-    { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' }
+    { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' },
+    { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -55,6 +56,42 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'entre-santos', nombre: 'Entre Santos', disciplina: 2, tipo: 'Restaurante / Bar',
+      anio: '', estado: '', ubicacion: 'Mérida', equipo: 'Javier Puga',
+      portada: 'img/proyectos/entre-santos/01.jpg', portadaProp: 1.791,
+      concepto: 'Restaurante de día y bar de noche: arcos, cortinas y luz que traducen el nombre de la marca en una casona colonial de Mérida.',
+      texto: "**Entre Santos** es restaurante de día y bar de noche en Mérida. Su cocina une la tradición española con los sabores de Yucatán, y el espacio cuenta ese mismo encuentro entre dos herencias.\n\nEl proyecto ocupa una casona colonial de esquina, de muros altos y vanos enmarcados en cantera. El concepto parte del nombre de la marca: retomamos el lenguaje de iglesias y templos, con arcos de medio punto, nichos de azulejo verde, figuras devocionales y contrabarras de perfil barroco enmarcadas en latón, para crear una atmósfera de recogimiento que dialoga con el carácter de la ciudad. Los aplanados originales se conservan con sus capas y su desgaste, bajo techos de vigas de madera, para que el lugar se sienta como si siempre hubiera estado ahí.\n\nDentro, cortinas de lino de piso a techo forman los muros. En ellas se recortan arcos y aberturas orgánicas que enmarcan las vistas de un salón a otro, dejan pasar la luz y generan una comunicación visual constante con el exterior. Al moverse con el aire, dan al espacio un ritmo que cambia a lo largo del día.\n\nEl mobiliario completa el relato: una barra de madera tallada, lámparas de globos de cristal, faroles de papel y, en la sala de juegos, mesas hechas con antiguas puertas de madera y herrajes de hierro.\n\nAl caer la noche, el espacio se transforma. Una iluminación en tonos fríos, verdes, azules y violetas, inspirada en los colores que la cultura maya usaba en sus murales y ornamentos, tiñe cortinas y muros. Los sanitarios llevan esa idea al extremo: un cuarto de azulejo blanco bañado en luz violeta, con esculturas clásicas y esferas de espejo suspendidas.\n\nAl fondo, un patio de arcos de piedra se abre al cielo. Alrededor de una barra circular de piedra verde, la vegetación y la luz natural recuperan la vida al aire libre de la casa yucateca.\n\nEntre Santos ofrece así dos experiencias en un mismo lugar: la calma luminosa del día y una noche más íntima y envolvente.",
+      fotos: [
+        { src: 'img/proyectos/entre-santos/02.jpg', prop: 1.791, titulo: 'Fachada.', texto: 'Una casona colonial de esquina en el centro de Mérida.' },
+        { src: 'img/proyectos/entre-santos/03.jpg', prop: 1.791, titulo: 'Acceso.', texto: 'Un vano de cantera deja ver la barra desde la calle.' },
+        { src: 'img/proyectos/entre-santos/04.jpg', prop: 1.791, titulo: 'Barra.', texto: 'Madera tallada bajo una constelación de globos de cristal.' },
+        { src: 'img/proyectos/entre-santos/05.jpg', prop: 1.791, titulo: 'Salón.', texto: 'Vigas de madera, aplanados originales y cortinas de lino.' },
+        { src: 'img/proyectos/entre-santos/06.jpg', prop: 1.791, titulo: 'Contrabarra.', texto: 'Un perfil barroco enmarcado en latón, como un retablo.' },
+        { src: 'img/proyectos/entre-santos/07.jpg', prop: 1.791, titulo: 'La barra al fondo.', texto: 'La luz del patio entra por el vano abierto.' },
+        { src: 'img/proyectos/entre-santos/08.jpg', prop: 0.558, titulo: 'Umbral.', texto: 'Arcos recortados en las cortinas enlazan un salón con otro.' },
+        { src: 'img/proyectos/entre-santos/09.jpg', prop: 1.791, titulo: 'Arco.', texto: 'Un nicho de azulejo verde remata la mesa.' },
+        { src: 'img/proyectos/entre-santos/10.jpg', prop: 1.791, titulo: 'Comedor.', texto: 'Faroles de papel y un arco de medio punto al centro.' },
+        { src: 'img/proyectos/entre-santos/11.jpg', prop: 1.791, titulo: 'Jardinera.', texto: 'La vegetación acompaña la banca corrida.' },
+        { src: 'img/proyectos/entre-santos/12.jpg', prop: 1.791, titulo: 'Luz cenital.', texto: 'Las cortinas se abren en una ranura hacia el exterior.' },
+        { src: 'img/proyectos/entre-santos/13.jpg', prop: 1.791, titulo: 'Pasaje.', texto: 'Una abertura orgánica anuncia la luz violeta de la noche.' },
+        { src: 'img/proyectos/entre-santos/14.jpg', prop: 1.791, titulo: 'Cortinas.', texto: 'Muros que se abren, se cierran y dejan pasar la luz.' },
+        { src: 'img/proyectos/entre-santos/15.jpg', prop: 0.558, titulo: 'Sala de juegos.', texto: 'Vista a través de un arco recortado.' },
+        { src: 'img/proyectos/entre-santos/16.jpg', prop: 1.791, titulo: 'Mesas de juego.', texto: 'Madera, azulejo verde y una lámpara que flota.' },
+        { src: 'img/proyectos/entre-santos/17.jpg', prop: 1.791, titulo: 'Puertas.', texto: 'Antiguas puertas con herrajes de hierro convertidas en mesas.' },
+        { src: 'img/proyectos/entre-santos/18.jpg', prop: 1.791, titulo: 'Juego.', texto: 'Tableros tallados sobre piso claro.' },
+        { src: 'img/proyectos/entre-santos/19.jpg', prop: 1.791, titulo: 'Noche.', texto: 'La barra se tiñe de verde y rosa.' },
+        { src: 'img/proyectos/entre-santos/20.jpg', prop: 1.791, titulo: 'Bar.', texto: 'Las cortinas reciben los colores de los murales mayas.' },
+        { src: 'img/proyectos/entre-santos/21.jpg', prop: 1.791, titulo: 'Cena.', texto: 'Faroles cálidos contra un fondo azul.' },
+        { src: 'img/proyectos/entre-santos/22.jpg', prop: 1.791, titulo: 'Sala de juegos de noche.', texto: 'El mismo espacio, otra atmósfera.' },
+        { src: 'img/proyectos/entre-santos/23.jpg', prop: 1.791, titulo: 'Sanitarios.', texto: 'Azulejo blanco bañado en luz violeta.' },
+        { src: 'img/proyectos/entre-santos/24.jpg', prop: 1.791, titulo: 'Ángel.', texto: 'Esculturas clásicas custodian los lavabos.' },
+        { src: 'img/proyectos/entre-santos/25.jpg', prop: 1.791, titulo: 'Esferas.', texto: 'Espejos suspendidos multiplican la luz.' },
+        { src: 'img/proyectos/entre-santos/26.jpg', prop: 1.791, titulo: 'Patio.', texto: 'Arcos de piedra abiertos al cielo.' },
+        { src: 'img/proyectos/entre-santos/27.jpg', prop: 1.791, titulo: 'Barra del patio.', texto: 'Una barra circular de piedra verde entre la vegetación.' },
+        { src: 'img/proyectos/entre-santos/28.jpg', prop: 1.791, titulo: 'Sombra.', texto: 'Un rincón para el descanso bajo la arquería.' }
+      ]
+    },
     {
       slug: 'casa-che-che', nombre: 'Casa Ché Ché', disciplina: 1, tipo: 'Residencial',
       anio: '2021', estado: '', ubicacion: 'Mérida', equipo: 'Javier Puga',
