@@ -432,6 +432,10 @@
   var vInicio = $('v-inicio'), cIni = $('contacto-en-inicio');
   vInicio.addEventListener('scroll', function () { if (actual === 'inicio') barra.classList.toggle('lima', cIni.getBoundingClientRect().top < 60); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rec.classList.contains('abierto')) $('r-cerrar').click(); });
+  /* Fotos de proyectos: sin clic derecho ni arrastre para guardarlas */
+  ['contextmenu', 'dragstart'].forEach(function (t) {
+    document.addEventListener(t, function (e) { if (e.target.closest && e.target.closest('.foto, .ventana, img')) e.preventDefault(); });
+  });
   window.addEventListener('hashchange', rutear);
   rutear();
   requestAnimationFrame(animar);
