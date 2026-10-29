@@ -49,7 +49,7 @@ window.PUGA = {
   contacto: {
     newsletter: 'https://994fd96d.sibforms.com/serve/MUIFAG-PKQ437Atqu8Dr41RarnOHdhr7Ku44zUhki5FQFEiLlB0TvnDXSiGSV0JIIIhi60Bia33nexOW2jOzxshsL15SIhJbRE4cQCcfVRcWhzzuhS7Pxi5YhgxjuUTgnqEUOOsO5-mDkgIK07SqJbjgWQzZCyPQeuKm_oXbt1mHBCP9hwFvxkW1Y-aYcCy-0wd5JOiIn510XiwloQ==',
     correo: 'javier@pugastudio.com',
-    instagram: '',            /* ej. 'pugastudio' */
+    instagram: 'puga_studio',
     telefono: '+52 55 7408 3755',
     estudio: 'Ciudad de México',
     texto: 'Puga Studio trabaja en Ciudad de México, Puerto Escondido, Mérida, Tulum y Cabo, con artesanos y talleres locales en cada proyecto, respetando la historia, el oficio y el paisaje de cada lugar.',
