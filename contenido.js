@@ -70,7 +70,7 @@ window.PUGA = {
         { src: 'img/proyectos/ritual-reflejo/r6.jpg', prop: 1.339, titulo: 'Espejo de agua.', texto: 'Render. Sobre piedra negra, la pieza se duplica en el agua bajo la neblina.' },
         { src: 'img/proyectos/ritual-reflejo/03.jpg', prop: 1.333, titulo: 'La pieza.', texto: 'Placas de mármol negro y porcelanato que giran alrededor de un círculo.' },
         { src: 'img/proyectos/ritual-reflejo/04.jpg', prop: 0.75, titulo: 'Frente al reflejo.', texto: 'La escala obliga a detenerse y mirar.' },
-        { src: 'img/proyectos/ritual-reflejo/r7.jpg', prop: 1.339, titulo: 'Selva.', texto: 'Render. Suspendida entre ceibas y piedras mayas, devorada por el musgo.' },
+        { src: 'img/proyectos/ritual-reflejo/r7.jpg', prop: 1.339, titulo: 'Selva.', texto: 'Render. Suspendida entre ceibas y piedras mayas.' },
         { src: 'img/proyectos/ritual-reflejo/05.jpg', prop: 1.333, titulo: 'Superficie oscura.', texto: 'El brillo devuelve el espacio, deformado y en penumbra.' },
         { src: 'img/proyectos/ritual-reflejo/06.jpg', prop: 0.75, titulo: 'El centro.', texto: 'Un anillo de mármol enmarca el espejo, como el ojo de la obsidiana.' },
         { src: 'img/proyectos/ritual-reflejo/r1.jpg', prop: 1.339, titulo: 'Piedra volcánica.', texto: 'Render. Bajo una sola entrada de luz cenital.' },
