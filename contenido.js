@@ -61,10 +61,10 @@ window.PUGA = {
   proyectos: [
     {
       slug: 'ritual-reflejo', nombre: 'Ritual Reflejo', disciplina: 4, tipo: 'Pieza única',
-      anio: '2026', estado: '', ubicacion: '', equipo: 'Javier Puga',
+      anio: '2026', estado: 'Exhibida en el Mes del Diseño, por invitación de Firenze', ubicacion: '', equipo: 'Javier Puga',
       portada: 'img/proyectos/ritual-reflejo/01.jpg', portadaProp: 1.333,
       concepto: 'Un espejo de mármol negro y porcelanato que retoma el ritual mexica del espejo de obsidiana: un objeto que no solo se contempla, devuelve la mirada.',
-      texto: "**Ritual Reflejo** es una pieza única que traduce al lenguaje del objeto contemporáneo la lógica ritual del pensamiento mesoamericano. Con materiales oscuros y técnicas actuales como el corte láser y el corte por agua, retoma una memoria material y simbólica y la vuelve presente.\n\n**El concepto.** El punto de partida es el ritual mexica del espejo de obsidiana, asociado a Tezcatlipoca, el \"espejo humeante\", deidad del inframundo y de la introspección. En esta práctica, el sacerdote o iniciado, después de consumir sustancias psicoactivas, se enfrentaba a su reflejo en la superficie pulida de la obsidiana. Era una confrontación con sus propias sombras y con aquello que debía trabajar en sí mismo: una forma ancestral de terapia ritual.\n\n**La materia.** La pieza lleva esa idea a un lenguaje oscuro y denso. Mármoles negros en distintas tonalidades se superponen en capas para crear profundidad cromática, como una superficie que invita a mirar hacia dentro. Sobre porcelanato, el corte láser o por chorro de agua talla texturas de alto relieve inspiradas en la estética maya.\n\nEl resultado es un objeto que no solo se contempla: devuelve la mirada.",
+      texto: "**Ritual Reflejo** es una pieza única que traduce al lenguaje del objeto contemporáneo la lógica ritual del pensamiento mesoamericano. Con materiales oscuros y técnicas actuales como el corte láser y el corte por agua, retoma una memoria material y simbólica y la vuelve presente.\n\n**El concepto.** El punto de partida es el ritual mexica del espejo de obsidiana, asociado a Tezcatlipoca, el \"espejo humeante\", deidad del inframundo y de la introspección. En esta práctica, el sacerdote o iniciado, después de consumir sustancias psicoactivas, se enfrentaba a su reflejo en la superficie pulida de la obsidiana. Era una confrontación con sus propias sombras y con aquello que debía trabajar en sí mismo: una forma ancestral de terapia ritual.\n\n**La materia.** La pieza lleva esa idea a un lenguaje oscuro y denso. Mármoles negros en distintas tonalidades se superponen en capas para crear profundidad cromática, como una superficie que invita a mirar hacia dentro. Sobre porcelanato, el corte láser o por chorro de agua talla texturas de alto relieve inspiradas en la estética maya.\n\nEl resultado es un objeto que no solo se contempla: devuelve la mirada.\n\nLa pieza nació de una invitación de Firenze, porcelanato arquitectónico, a diseñar una obra donde el porcelanato fuera protagonista. Se fabricó en taller, se montó suspendida frente a un muro y se exhibió durante las actividades del Mes del Diseño.",
       fotos: [
         { src: 'img/proyectos/ritual-reflejo/02.jpg', prop: 0.667, titulo: 'Devolver la mirada.', texto: 'En el centro, un espejo: quien se acerca se encuentra consigo mismo.' },
         { src: 'img/proyectos/ritual-reflejo/03.jpg', prop: 1.333, titulo: 'La pieza.', texto: 'Placas de mármol negro y porcelanato que giran alrededor de un círculo.' },
@@ -74,6 +74,11 @@ window.PUGA = {
         { src: 'img/proyectos/ritual-reflejo/07.jpg', prop: 0.667, titulo: 'Introspección.', texto: 'El reflejo aparece entre las vetas.' },
         { src: 'img/proyectos/ritual-reflejo/08.jpg', prop: 0.75, titulo: 'Confrontación.', texto: 'Mirarse como lo hacía el iniciado frente al espejo humeante.' },
         { src: 'img/proyectos/ritual-reflejo/09.jpg', prop: 0.75, titulo: 'Suspendida.', texto: 'La pieza cuelga del techo y flota delante del muro.' },
+        { src: 'img/proyectos/ritual-reflejo/r1.jpg', prop: 1.339, titulo: 'Contexto: vestíbulo.', texto: 'Render. La pieza sobre un muro de piedra volcánica, bajo luz cenital.' },
+        { src: 'img/proyectos/ritual-reflejo/r2.jpg', prop: 1.339, titulo: 'Contexto: sala.', texto: 'Render. Sobre concreto aparente, con la luz baja de la tarde.' },
+        { src: 'img/proyectos/ritual-reflejo/r3.jpg', prop: 1.339, titulo: 'Contexto: galería.', texto: 'Render. Suspendida en una sala blanca, frente a quien se mira en ella.' },
+        { src: 'img/proyectos/ritual-reflejo/r4.jpg', prop: 1.339, titulo: 'Contexto: terraza.', texto: 'Render. Un muro de chukum en Tulum, al caer el sol.' },
+        { src: 'img/proyectos/ritual-reflejo/r5.jpg', prop: 1.339, titulo: 'Contexto: hotel.', texto: 'Render. Tras la recepción, sobre paneles de madera tallada.' },
         { src: 'img/proyectos/ritual-reflejo/10.jpg', prop: 1.333, titulo: 'Taller.', texto: 'Las placas armadas por primera vez sobre la mesa de trabajo.' },
         { src: 'img/proyectos/ritual-reflejo/11.jpg', prop: 1.333, titulo: 'Desde arriba.', texto: 'Tonalidades de negro y gris que se superponen en capas.' },
         { src: 'img/proyectos/ritual-reflejo/v1.mp4', prop: 1.777, titulo: 'Capas.', texto: 'Recorrido por las placas en el taller.' },
@@ -84,7 +89,7 @@ window.PUGA = {
         { src: 'img/proyectos/ritual-reflejo/14.jpg', prop: 1.333, titulo: 'Trazo.', texto: 'El croquis de la composición, a mano sobre papel cuadriculado.' },
         { src: 'img/proyectos/ritual-reflejo/15.jpg', prop: 0.75, titulo: 'Despiece.', texto: 'Cada placa numerada y acotada antes del corte.' },
         { src: 'img/proyectos/ritual-reflejo/16.jpg', prop: 1.333, titulo: 'Geometría.', texto: 'Los trazos guía que ordenan los rayos.' },
-        { src: 'img/proyectos/ritual-reflejo/17.jpg', prop: 0.75, titulo: 'Llegada.', texto: 'Las piezas protegidas, presentadas en el suelo antes del montaje.' },
+        { src: 'img/proyectos/ritual-reflejo/17.jpg', prop: 0.75, titulo: 'Llegada.', texto: 'Las piezas protegidas, presentadas en el suelo de la sala de exhibición.' },
         { src: 'img/proyectos/ritual-reflejo/18.jpg', prop: 0.75, titulo: 'Estructura.', texto: 'Un bastidor metálico suspendido recibe el disco central.' },
         { src: 'img/proyectos/ritual-reflejo/19.jpg', prop: 0.75, titulo: 'Montaje.', texto: 'Las placas se fijan una a una sobre la estructura.' },
         { src: 'img/proyectos/ritual-reflejo/20.jpg', prop: 0.75, titulo: 'Casi completa.', texto: 'La composición toma forma frente al muro.' }
