@@ -19,7 +19,8 @@ window.PUGA = {
     { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' },
     { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' },
     { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' },
-    { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' }
+    { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' },
+    { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -58,6 +59,37 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'ritual-reflejo', nombre: 'Ritual Reflejo', disciplina: 4, tipo: 'Pieza única',
+      anio: '2026', estado: '', ubicacion: '', equipo: 'Javier Puga',
+      portada: 'img/proyectos/ritual-reflejo/01.jpg', portadaProp: 1.333,
+      concepto: 'Un espejo de mármol negro y porcelanato que retoma el ritual mexica del espejo de obsidiana: un objeto que no solo se contempla, devuelve la mirada.',
+      texto: "**Ritual Reflejo** es una pieza única que traduce al lenguaje del objeto contemporáneo la lógica ritual del pensamiento mesoamericano. Con materiales oscuros y técnicas actuales como el corte láser y el corte por agua, retoma una memoria material y simbólica y la vuelve presente.\n\n**El concepto.** El punto de partida es el ritual mexica del espejo de obsidiana, asociado a Tezcatlipoca, el \"espejo humeante\", deidad del inframundo y de la introspección. En esta práctica, el sacerdote o iniciado, después de consumir sustancias psicoactivas, se enfrentaba a su reflejo en la superficie pulida de la obsidiana. Era una confrontación con sus propias sombras y con aquello que debía trabajar en sí mismo: una forma ancestral de terapia ritual.\n\n**La materia.** La pieza lleva esa idea a un lenguaje oscuro y denso. Mármoles negros en distintas tonalidades se superponen en capas para crear profundidad cromática, como una superficie que invita a mirar hacia dentro. Sobre porcelanato, el corte láser o por chorro de agua talla texturas de alto relieve inspiradas en la estética maya.\n\nEl resultado es un objeto que no solo se contempla: devuelve la mirada.",
+      fotos: [
+        { src: 'img/proyectos/ritual-reflejo/02.jpg', prop: 0.667, titulo: 'Devolver la mirada.', texto: 'En el centro, un espejo: quien se acerca se encuentra consigo mismo.' },
+        { src: 'img/proyectos/ritual-reflejo/03.jpg', prop: 1.333, titulo: 'La pieza.', texto: 'Placas de mármol negro y porcelanato que giran alrededor de un círculo.' },
+        { src: 'img/proyectos/ritual-reflejo/04.jpg', prop: 0.75, titulo: 'Frente al reflejo.', texto: 'La escala obliga a detenerse y mirar.' },
+        { src: 'img/proyectos/ritual-reflejo/05.jpg', prop: 1.333, titulo: 'Superficie oscura.', texto: 'El brillo del porcelanato devuelve el espacio, deformado y en penumbra.' },
+        { src: 'img/proyectos/ritual-reflejo/06.jpg', prop: 0.75, titulo: 'El centro.', texto: 'Un anillo de mármol enmarca el espejo, como el ojo de la obsidiana.' },
+        { src: 'img/proyectos/ritual-reflejo/07.jpg', prop: 0.667, titulo: 'Introspección.', texto: 'El reflejo aparece entre las vetas.' },
+        { src: 'img/proyectos/ritual-reflejo/08.jpg', prop: 0.75, titulo: 'Confrontación.', texto: 'Mirarse como lo hacía el iniciado frente al espejo humeante.' },
+        { src: 'img/proyectos/ritual-reflejo/09.jpg', prop: 0.75, titulo: 'Suspendida.', texto: 'La pieza cuelga del techo y flota delante del muro.' },
+        { src: 'img/proyectos/ritual-reflejo/10.jpg', prop: 1.333, titulo: 'Taller.', texto: 'Las placas armadas por primera vez sobre la mesa de trabajo.' },
+        { src: 'img/proyectos/ritual-reflejo/11.jpg', prop: 1.333, titulo: 'Desde arriba.', texto: 'Tonalidades de negro y gris que se superponen en capas.' },
+        { src: 'img/proyectos/ritual-reflejo/v1.mp4', prop: 1.777, titulo: 'Capas.', texto: 'Recorrido por las placas en el taller.' },
+        { src: 'img/proyectos/ritual-reflejo/12.jpg', prop: 1.333, titulo: 'El círculo.', texto: 'Mármol negro de vetas blancas alrededor del espejo.' },
+        { src: 'img/proyectos/ritual-reflejo/13.jpg', prop: 0.75, titulo: 'Detalle.', texto: 'Cortes precisos por láser y chorro de agua.' },
+        { src: 'img/proyectos/ritual-reflejo/v2.mp4', prop: 1.777, titulo: 'Materia.', texto: 'Superficies pulidas y texturas de alto relieve.' },
+        { src: 'img/proyectos/ritual-reflejo/v3.mp4', prop: 1.777, titulo: 'Reflejo.', texto: 'El espejo central devuelve el taller.' },
+        { src: 'img/proyectos/ritual-reflejo/14.jpg', prop: 1.333, titulo: 'Trazo.', texto: 'El croquis de la composición, a mano sobre papel cuadriculado.' },
+        { src: 'img/proyectos/ritual-reflejo/15.jpg', prop: 0.75, titulo: 'Despiece.', texto: 'Cada placa numerada y acotada antes del corte.' },
+        { src: 'img/proyectos/ritual-reflejo/16.jpg', prop: 1.333, titulo: 'Geometría.', texto: 'Los trazos guía que ordenan los rayos.' },
+        { src: 'img/proyectos/ritual-reflejo/17.jpg', prop: 0.75, titulo: 'Llegada.', texto: 'Las piezas protegidas, presentadas en el suelo antes del montaje.' },
+        { src: 'img/proyectos/ritual-reflejo/18.jpg', prop: 0.75, titulo: 'Estructura.', texto: 'Un bastidor metálico suspendido recibe el disco central.' },
+        { src: 'img/proyectos/ritual-reflejo/19.jpg', prop: 0.75, titulo: 'Montaje.', texto: 'Las placas se fijan una a una sobre la estructura.' },
+        { src: 'img/proyectos/ritual-reflejo/20.jpg', prop: 0.75, titulo: 'Casi completa.', texto: 'La composición toma forma frente al muro.' }
+      ]
+    },
     {
       slug: 'fabrica-tulum', nombre: 'Fábrica Tulum', disciplina: 1, tipo: 'Conjunto habitacional',
       anio: '2023', estado: '', ubicacion: 'Tulum', equipo: 'Javier Puga',

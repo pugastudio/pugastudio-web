@@ -194,11 +194,11 @@ p { margin: 0; }
 }
 
 /* Fotos reales: cubren su caja */
-.foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.foto img, .foto video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
 .foto.con-img { background: var(--gris-barra); }
 /* Fotos de proyectos: sin menú de guardar, sin arrastrar, sin "mantener presionado" en iPhone */
 .foto, .ventana { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
-.foto img, .ventana img { pointer-events: none; -webkit-user-drag: none; }
+.foto img, .foto video, .ventana img { pointer-events: none; -webkit-user-drag: none; }
 .marca-movil img { height: 14px; width: auto; display: block; }
 
 /* Texto de Circular dentro del recorrido */
