@@ -18,7 +18,8 @@ window.PUGA = {
     { proyecto: 'panaderia-costra', letra: 'g', foto: 'img/proyectos/panaderia-costra/01.jpg' },
     { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' },
     { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' },
-    { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' }
+    { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' },
+    { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -57,6 +58,44 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'fabrica-tulum', nombre: 'Fábrica Tulum', disciplina: 1, tipo: 'Conjunto habitacional',
+      anio: '2023', estado: '', ubicacion: 'Tulum', equipo: 'Javier Puga',
+      portada: 'img/proyectos/fabrica-tulum/01.jpg', portadaProp: 1.777,
+      concepto: 'Un conjunto de 81 departamentos que imagina una fábrica abandonada reclamada por la jungla, construido con materiales que vuelven a usarse.',
+      texto: "**Fábrica Tulum** es un conjunto habitacional de 81 departamentos que parte de una imagen precisa: una fábrica abandonada que la jungla ha ido reclamando. La intención es lograr una simbiosis entre lo construido y el paisaje que lo rodea, como si la arquitectura y la vegetación hubieran aprendido a convivir con el tiempo.\n\nEl concepto se sostiene en el reúso. Los elementos decorativos se construyen con piezas metálicas recuperadas, el sargazo se integra como pigmento para dar color a distintos elementos, y los plásticos encontrados en el mar se transforman en pisos resistentes al clima de Tulum. Cada material tiene una segunda vida, y el proyecto asume la sostenibilidad como parte de su identidad, no como un añadido.\n\nEl acceso principal se ubica en la esquina noroeste del terreno. Un alto volumen de concreto sostiene una estructura de madera en forma de embudo que evoca un silo industrial. Funciona como recepción y zona de espera para visitantes, y anuncia desde la llegada el carácter del conjunto. Al sur, centrado en el terreno, el acceso secundario se resuelve con una estructura de madera y una puerta con control de acceso por tarjeta.\n\nLos edificios de vivienda son de dos niveles y se componen de tres volúmenes en forma de cápsula. Su altura queda por debajo de la copa de los árboles existentes, de modo que se pierden dentro del paisaje. En planta baja hay dos departamentos, cada uno con recámara, baño completo, sala-comedor, cocina y terraza con bodega de servicio y alberca en la parte superior, con la opción de sumar una recámara adicional con baño. En el primer nivel, un tercer departamento repite el programa con una terraza de mayor tamaño.\n\nDentro, la materia es serena: muros curvos de acabado mineral, maderas en puertas, celosías y mobiliario, fibras naturales, cocinas de obra con detalles de cobre y baños de color rosa, de muros y lavabos continuos.\n\nLos edificios se emplazan de manera aleatoria. Esa libertad permite que cada departamento tenga un acceso privado y da origen a caminos de formas orgánicas que conectan todo el conjunto. Donde los caminos se encuentran aparecen pequeñas plazas, marcadas por maquinaria en desuso que se convierte en hito y memoria de la fábrica.\n\nJunto al acceso principal se ubica el edificio de amenidades. Un espacio que evoca ruinas arqueológicas, con arcos mayas, alberga camastros, hamacas y una amplia alberca al centro. A un costado, un restaurante abierto a residentes y comensales externos, con barra, área de mesas, baños, zona de preparación de alimentos y bebidas, y una terraza en el primer nivel.\n\nSiete locales comerciales, cinco grandes y dos de menor tamaño, se distribuyen en distintos puntos del conjunto. Tienen muros de piedra, louvers en la parte superior y puertas pivotantes bajo una cubierta de losacero, e incluyen barra de obra y sanitario. Están pensados para restaurantes y tiendas orgánicas. El conjunto se completa con un espacio para mascotas, bancas a lo largo de todo el proyecto, estacionamiento perimetral con un amplio cajón asignado por departamento y lugares para bicicletas.",
+      fotos: [
+        { src: 'img/proyectos/fabrica-tulum/02.jpg', prop: 1.791, titulo: 'Desde arriba.', texto: 'Cápsulas verdes, albercas y terrazas bajo la copa de los árboles.' },
+        { src: 'img/proyectos/fabrica-tulum/03.jpg', prop: 1.777, titulo: 'El conjunto.', texto: 'Los edificios se pierden dentro de la jungla.' },
+        { src: 'img/proyectos/fabrica-tulum/04.jpg', prop: 1.777, titulo: 'Acceso principal.', texto: 'Un volumen de concreto sostiene un embudo de madera, como un silo.' },
+        { src: 'img/proyectos/fabrica-tulum/05.jpg', prop: 1.777, titulo: 'Acceso secundario.', texto: 'Una estructura de madera abre el paso hacia el sur.' },
+        { src: 'img/proyectos/fabrica-tulum/06.jpg', prop: 1.777, titulo: 'Local comercial.', texto: 'Muros de piedra, puertas pivotantes y louvers bajo la cubierta.' },
+        { src: 'img/proyectos/fabrica-tulum/07.jpg', prop: 1.791, titulo: 'Restaurante.', texto: 'Muros de piedra abiertos a la calle y a los residentes.' },
+        { src: 'img/proyectos/fabrica-tulum/08.jpg', prop: 1.777, titulo: 'Amenidades.', texto: 'Arcos que evocan ruinas mayas, con hamacas y camastros.' },
+        { src: 'img/proyectos/fabrica-tulum/09.jpg', prop: 1.777, titulo: 'Entre ruinas.', texto: 'Los arcos dialogan con la vegetación y el restaurante al fondo.' },
+        { src: 'img/proyectos/fabrica-tulum/10.jpg', prop: 1.777, titulo: 'Caminos.', texto: 'Senderos orgánicos que llevan a cada departamento.' },
+        { src: 'img/proyectos/fabrica-tulum/11.jpg', prop: 1.777, titulo: 'Plaza.', texto: 'Maquinaria en desuso convertida en hito.' },
+        { src: 'img/proyectos/fabrica-tulum/12.jpg', prop: 1.777, titulo: 'Pasaje.', texto: 'Muros curvos y enredaderas a ambos lados.' },
+        { src: 'img/proyectos/fabrica-tulum/13.jpg', prop: 1.777, titulo: 'Encuentro.', texto: 'Donde los caminos se cruzan aparece una plaza.' },
+        { src: 'img/proyectos/fabrica-tulum/14.jpg', prop: 1.777, titulo: 'Memoria industrial.', texto: 'Piezas de metal recuperado entre palmas.' },
+        { src: 'img/proyectos/fabrica-tulum/15.jpg', prop: 1.777, titulo: 'Jardín.', texto: 'Cada departamento llega por su propio acceso.' },
+        { src: 'img/proyectos/fabrica-tulum/16.jpg', prop: 1, titulo: 'Recorrido.', texto: 'La jungla entra hasta la puerta de cada casa.' },
+        { src: 'img/proyectos/fabrica-tulum/17.jpg', prop: 1, titulo: 'Recepción.', texto: 'Un arco de piedra recibe a los visitantes.' },
+        { src: 'img/proyectos/fabrica-tulum/18.jpg', prop: 1, titulo: 'Espera.', texto: 'Una banca curva bajo el arco y luz cenital.' },
+        { src: 'img/proyectos/fabrica-tulum/19.jpg', prop: 1, titulo: 'Sala.', texto: 'Un sillón continuo sigue la curva del muro.' },
+        { src: 'img/proyectos/fabrica-tulum/20.jpg', prop: 1, titulo: 'Comedor.', texto: 'Madera, fibras naturales y vanos hacia el jardín.' },
+        { src: 'img/proyectos/fabrica-tulum/21.jpg', prop: 1, titulo: 'Estancia.', texto: 'Doble altura, celosías de madera y luz filtrada.' },
+        { src: 'img/proyectos/fabrica-tulum/22.jpg', prop: 1, titulo: 'Cocina.', texto: 'Muebles de obra, madera y cobre.' },
+        { src: 'img/proyectos/fabrica-tulum/23.jpg', prop: 1, titulo: 'Barra.', texto: 'Una barra curva de obra con cubierta de cobre.' },
+        { src: 'img/proyectos/fabrica-tulum/24.jpg', prop: 1, titulo: 'Recámara.', texto: 'Muros de cal, madera y un tapete de fibra.' },
+        { src: 'img/proyectos/fabrica-tulum/25.jpg', prop: 1, titulo: 'Descanso.', texto: 'Luz baja y texturas cálidas.' },
+        { src: 'img/proyectos/fabrica-tulum/26.jpg', prop: 1, titulo: 'Recámara principal.', texto: 'Un muro de madera guarda el clóset.' },
+        { src: 'img/proyectos/fabrica-tulum/27.jpg', prop: 1, titulo: 'Atardecer.', texto: 'La luz del trópico entra por la ventana.' },
+        { src: 'img/proyectos/fabrica-tulum/28.jpg', prop: 1, titulo: 'Baño.', texto: 'Un baño de color rosa, de muros y lavabo continuos.' },
+        { src: 'img/proyectos/fabrica-tulum/29.jpg', prop: 1, titulo: 'Nicho.', texto: 'Un arco enmarca el sanitario.' },
+        { src: 'img/proyectos/fabrica-tulum/30.jpg', prop: 1, titulo: 'Regadera.', texto: 'Un cancel de vidrio estriado con marco de madera.' }
+      ]
+    },
     {
       slug: 'shell-taanah', nombre: 'Shell Taanah', disciplina: 1, tipo: 'Residencial',
       anio: '2020', estado: '', ubicacion: 'Tulum', equipo: 'Javier Puga',
