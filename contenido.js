@@ -17,7 +17,8 @@ window.PUGA = {
     { proyecto: 'casa-che-che', letra: 'a', foto: 'img/proyectos/casa-che-che/01.jpg' },
     { proyecto: 'panaderia-costra', letra: 'g', foto: 'img/proyectos/panaderia-costra/01.jpg' },
     { proyecto: 'ono-poke-house', letra: 'u', foto: 'img/proyectos/ono-poke-house/01.jpg' },
-    { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' }
+    { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' },
+    { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -56,6 +57,43 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'shell-taanah', nombre: 'Shell Taanah', disciplina: 1, tipo: 'Residencial',
+      anio: '2020', estado: '', ubicacion: 'Tulum', equipo: 'Javier Puga',
+      portada: 'img/proyectos/shell-taanah/01.jpg', portadaProp: 1.777,
+      concepto: 'Una casa de espacios sinuosos y superficies blancas, como conchas en la arena, donde la flora existente forma parte del espacio.',
+      texto: "**Shell Taanah** es una casa privada de espacios sinuosos. Sus superficies blancas y curvas recuerdan a las conchas que el mar deja en la arena.\n\nEl concepto parte de una intención clara: vivir en conexión con el ecosistema. Los árboles existentes se conservan y atraviesan terrazas, puentes y la propia alberca. La flora se vuelve parte del espacio, tan presente en la casa como quienes la habitan.\n\nLa alberca organiza el programa arquitectónico. Al separar los espacios con el agua y unirlos con puentes y escaleras de peldaños de vidrio que la cruzan, la casa se percibe mucho más amplia de lo que es. Cada traslado se convierte en un recorrido, y en cada recorrido aparece la naturaleza.\n\nEn planta baja, la alberca retoma la forma y la atmósfera de un cenote: una cascada, sombra, frescura y calma. A su alrededor se abren la sala, el comedor y la cocina, con una isla curva de sodalita azul.\n\nLa materialidad es serena: muros blancos de trazo curvo, un muro de textura estriada, maderas en tono natural en puertas, barandales y mobiliario, y ratán en cocina y recámaras. Las recámaras se abren a terrazas entre las copas de los árboles.\n\nEn la azotea, bajo una pérgola de madera curva, una segunda alberca se abre al cielo para disfrutar del sol. Vista desde arriba, la cubierta completa la idea que da nombre a la casa: una concha posada entre la vegetación.",
+      fotos: [
+        { src: 'img/proyectos/shell-taanah/02.jpg', prop: 1.777, titulo: 'Calle.', texto: 'La casa entre los árboles, a nivel de banqueta.' },
+        { src: 'img/proyectos/shell-taanah/03.jpg', prop: 1.777, titulo: 'Fachada.', texto: 'Muros blancos y un muro de textura estriada hacia la calle.' },
+        { src: 'img/proyectos/shell-taanah/04.jpg', prop: 1.777, titulo: 'Patio de acceso.', texto: 'Los árboles existentes crecen junto a los muros curvos.' },
+        { src: 'img/proyectos/shell-taanah/05.jpg', prop: 1.777, titulo: 'Acceso.', texto: 'Una puerta de madera y un vano que deja ver el comedor.' },
+        { src: 'img/proyectos/shell-taanah/06.jpg', prop: 1.791, titulo: 'Cenote.', texto: 'Una cascada cae sobre la alberca de planta baja.' },
+        { src: 'img/proyectos/shell-taanah/07.jpg', prop: 1.777, titulo: 'Alberca.', texto: 'El agua separa los espacios y los árboles crecen desde la terraza.' },
+        { src: 'img/proyectos/shell-taanah/08.jpg', prop: 1.777, titulo: 'Patio central.', texto: 'La sala se abre al agua y a la vegetación.' },
+        { src: 'img/proyectos/shell-taanah/09.jpg', prop: 1.791, titulo: 'Desde el puente.', texto: 'La alberca vista desde arriba.' },
+        { src: 'img/proyectos/shell-taanah/10.jpg', prop: 1.777, titulo: 'Hacia el cielo.', texto: 'Un árbol atraviesa los puentes que unen la casa.' },
+        { src: 'img/proyectos/shell-taanah/11.jpg', prop: 1.791, titulo: 'Puente.', texto: 'Peldaños de vidrio sobre el agua.' },
+        { src: 'img/proyectos/shell-taanah/12.jpg', prop: 1.777, titulo: 'Escalera.', texto: 'Del muro curvo a la azotea, bajo la pérgola.' },
+        { src: 'img/proyectos/shell-taanah/13.jpg', prop: 1.777, titulo: 'Ascenso.', texto: 'Peldaños de vidrio y barandal de madera.' },
+        { src: 'img/proyectos/shell-taanah/14.jpg', prop: 1.791, titulo: 'Recorrido.', texto: 'Cada traslado cruza la vegetación.' },
+        { src: 'img/proyectos/shell-taanah/15.jpg', prop: 1.791, titulo: 'Sala.', texto: 'Muros curvos, madera y luz filtrada.' },
+        { src: 'img/proyectos/shell-taanah/16.jpg', prop: 1.777, titulo: 'Cocina.', texto: 'Una isla curva de sodalita azul.' },
+        { src: 'img/proyectos/shell-taanah/17.jpg', prop: 1.777, titulo: 'Comedor.', texto: 'Madera, ratán y la cocina al fondo.' },
+        { src: 'img/proyectos/shell-taanah/18.jpg', prop: 1.777, titulo: 'Comedor al patio.', texto: 'Grandes vanos abiertos a la vegetación.' },
+        { src: 'img/proyectos/shell-taanah/19.jpg', prop: 1.777, titulo: 'Recámara.', texto: 'Un tronco atraviesa el espacio.' },
+        { src: 'img/proyectos/shell-taanah/20.jpg', prop: 1.791, titulo: 'Recámara principal.', texto: 'Abierta a una terraza entre los árboles.' },
+        { src: 'img/proyectos/shell-taanah/21.jpg', prop: 1.777, titulo: 'Recámara.', texto: 'Vanos de piso a techo hacia el jardín.' },
+        { src: 'img/proyectos/shell-taanah/22.jpg', prop: 1.777, titulo: 'Baño.', texto: 'Una tina de muros curvos con ventana al jardín.' },
+        { src: 'img/proyectos/shell-taanah/23.jpg', prop: 0.747, titulo: 'Baño de visitas.', texto: 'Un tragaluz y una enredadera.' },
+        { src: 'img/proyectos/shell-taanah/24.jpg', prop: 1.791, titulo: 'Pérgola.', texto: 'Una cubierta de madera curva corona la azotea.' },
+        { src: 'img/proyectos/shell-taanah/25.jpg', prop: 1.777, titulo: 'Azotea.', texto: 'Gradas blancas hacia la segunda alberca.' },
+        { src: 'img/proyectos/shell-taanah/26.jpg', prop: 1.777, titulo: 'Sol.', texto: 'Camastros a la sombra de la pérgola.' },
+        { src: 'img/proyectos/shell-taanah/27.jpg', prop: 1.777, titulo: 'Alberca de azotea.', texto: 'Entre las copas de los árboles.' },
+        { src: 'img/proyectos/shell-taanah/28.jpg', prop: 1.777, titulo: 'Encuentro.', texto: 'Bancas curvas alrededor del agua.' },
+        { src: 'img/proyectos/shell-taanah/29.jpg', prop: 1.791, titulo: 'Desde arriba.', texto: 'La cubierta dibuja una concha entre la vegetación.' }
+      ]
+    },
     {
       slug: 'entre-santos', nombre: 'Entre Santos', disciplina: 2, tipo: 'Restaurante / Bar',
       anio: '2023', estado: '', ubicacion: 'Mérida', equipo: 'Javier Puga',
