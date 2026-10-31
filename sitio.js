@@ -222,7 +222,7 @@
   var campos = {
     proyectos: crearCampo('campo-proyectos', rellenar(PROY), function (p) { return '<b>' + esc(p.nombre) + '</b><span class="g">' + esc(cat(p)) + '</span>'; }, 'proyectos', false),
     publicaciones: crearCampo('campo-publicaciones', rellenar(PUBS), function (u) { return '<b>' + esc(u.medio) + (u.premio ? ' · Premio' : '') + '</b><span class="t">' + esc(u.titulo) + '</span><span class="g">' + esc(u.fecha || (u.p ? u.p.nombre : '')) + '</span>'; }, 'publicaciones', false),
-    circular: crearCampo('campo-circular', TEXTOS, function (t) { return '<b>' + esc(t.titulo) + '</b><span class="g">' + esc(t.fecha) + '</span>'; }, 'circular', true)
+    circular: crearCampo('campo-circular', rellenar(TEXTOS), function (t) { return '<b>' + esc(t.titulo) + '</b><span class="g">' + esc(t.fecha) + '</span>'; }, 'circular', true)
   };
   var actual = 'inicio', ultimo = performance.now();
   function animar(t) {
@@ -379,8 +379,9 @@
     var lectura = el('div', 'panel lectura', '<div class="fecha">Circular · ' + esc(t.fecha) + '</div><div class="cuerpo">' +
       parrafos(t.cuerpo) + '</div>');
     var paneles = [portada];
-    if (t.portada) paneles.push(panelImg(t.portada, t.i, '40vw', '72%', '0', '', t.titulo));
+    if (t.portada) paneles.push(panelImg(t.portada, t.i, '40vw', '72%', '0', '', t.titulo, t.portadaProp));
     paneles.push(lectura);
+    (t.fotos || []).forEach(function (f, k) { var m = MEDIDAS[k % MEDIDAS.length]; paneles.push(panelImg(f.src, (t.i || 0) + k + 1, m[0], m[1], m[2], f.titulo || '', f.texto || '', f.prop)); });
     volverA = 'circular';
     abrirRecorrido(t.titulo, 'Cerrar texto', paneles, false);
   }
