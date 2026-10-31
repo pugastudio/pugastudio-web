@@ -376,12 +376,22 @@
   }
   function abrirTexto(t) {
     var portada = el('div', 'panel portada', '<h1>' + esc(t.titulo) + '</h1><div class="g">' + esc(t.fecha) + '</div>');
-    var lectura = el('div', 'panel lectura', '<div class="fecha">Circular · ' + esc(t.fecha) + '</div><div class="cuerpo">' +
-      parrafos(t.cuerpo) + '</div>');
     var paneles = [portada];
-    if (t.portada) paneles.push(panelImg(t.portada, t.i, '40vw', '72%', '0', '', t.titulo, t.portadaProp));
-    paneles.push(lectura);
-    (t.fotos || []).forEach(function (f, k) { var m = MEDIDAS[k % MEDIDAS.length]; paneles.push(panelImg(f.src, (t.i || 0) + k + 1, m[0], m[1], m[2], f.titulo || '', f.texto || '', f.prop)); });
+    if (t.portada) paneles.push(panelImg(t.portada, t.i, '40vw', '72%', '0', '', '', t.portadaProp));
+    /* El texto se corta en tramos de lectura; cada foto entra después del párrafo «tras» (contado desde 1) */
+    var pars = String(t.cuerpo || '').split(/\n\s*\n/), fotos = (t.fotos || []).slice().sort(function (a, b) { return (a.tras || 1e9) - (b.tras || 1e9); });
+    var desde = 0, k = 0;
+    function tramo(hasta) {
+      if (hasta <= desde) return;
+      paneles.push(el('div', 'panel lectura', (desde === 0 ? '<div class="fecha">Circular · ' + esc(t.fecha) + '</div>' : '') + '<div class="cuerpo">' + parrafos(pars.slice(desde, hasta).join('\n\n')) + '</div>'));
+      desde = hasta;
+    }
+    fotos.forEach(function (f) {
+      tramo(Math.min(f.tras || pars.length, pars.length));
+      var m = MEDIDAS[k % MEDIDAS.length]; k++;
+      paneles.push(panelImg(f.src, (t.i || 0) + k, m[0], m[1], m[2], f.titulo || '', f.texto || '', f.prop));
+    });
+    tramo(pars.length);
     volverA = 'circular';
     abrirRecorrido(t.titulo, 'Cerrar texto', paneles, false);
   }
