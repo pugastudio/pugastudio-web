@@ -71,11 +71,66 @@
     node.addEventListener('mousemove', function (e) { etq.style.left = e.clientX + 'px'; etq.style.top = e.clientY + 'px'; });
   }
 
+  /* ---------- Apertura ----------
+     El pegaso se dibuja con trazo fino (como en un plano), se rellena de negro,
+     se vuelve ventana con la misma obra que muestra la portada, crece hasta llenar
+     la pantalla y la foto se disuelve en el sitio. Se ve una vez por visita. */
+  function apertura(foto) {
+    var ap = $('apertura');
+    if (!ap || document.documentElement.classList.contains('sin-apertura')) { if (ap) ap.remove(); return; }
+    try { sessionStorage.setItem('puga-apertura', '1'); } catch (e) {}
+    var dib = ap.querySelector('.ap-dib'), silu = ap.querySelector('.ap-silu'), fot = ap.querySelector('.ap-foto');
+    var AR = 644 / 716.5, listo = false, fin = false, t0 = 0, caja = null, tFoto = 0;
+    var img = new Image(); img.onload = function () { listo = true; }; img.src = foto;
+    fot.style.backgroundImage = 'url("' + foto + '")';
+    function cierra() {
+      if (fin) return; fin = true;
+      ap.classList.add('sale');
+      setTimeout(function () { ap.remove(); }, 320);
+      document.removeEventListener('keydown', cierra);
+    }
+    ap.addEventListener('click', cierra);
+    document.addEventListener('keydown', cierra);
+    function lim(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+    function eIn(x) { return x * x * x; }
+    function eIO(x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+    function mascara(w, u, v) {
+      var h = w * AR, pos = (caja.cx - u * w) + 'px ' + (caja.cy - v * h) + 'px', tam = w + 'px ' + h + 'px';
+      [silu, fot].forEach(function (c) { c.style.webkitMaskSize = c.style.maskSize = tam; c.style.webkitMaskPosition = c.style.maskPosition = pos; });
+    }
+    function cuadro(ahora) {
+      if (fin) return;
+      var t = (ahora - t0) / 1000;
+      if (t >= 2.3 && !caja) {
+        /* el dibujo ya está relleno: se cambia por la ventana exactamente en el mismo lugar */
+        var r = dib.getBoundingClientRect();
+        caja = { w: r.width, cx: r.left + r.width / 2, cy: r.top + r.height / 2 };
+        mascara(caja.w, .5, .5); silu.style.opacity = 1; dib.style.visibility = 'hidden';
+      }
+      if (caja) {
+        if (!tFoto) { if (listo && t >= 2.75) tFoto = t; else if (t > 5) { cierra(); return; } }
+        if (tFoto) {
+          var W = innerWidth, H = innerHeight;
+          var g = eIn(lim((t - tFoto - .65) / 1.2));             /* la ventana crece */
+          var wf = Math.max(3.2 * W, 8.5 * H);
+          var u = .5 + .145 * g, v = .5 + .085 * g;              /* hacia la parte maciza del cuerpo */
+          mascara(caja.w + (wf - caja.w) * g, u, v);
+          fot.style.opacity = eIO(lim((t - tFoto) / .55));       /* aparece la obra dentro del pegaso */
+          var d = lim((t - tFoto - 1.8) / .6);                   /* la foto se disuelve en el sitio */
+          if (d > 0) { ap.style.background = 'transparent'; silu.style.opacity = 0; fot.style.opacity = 1 - eIO(d); }
+          if (d >= 1) { fin = true; ap.remove(); document.removeEventListener('keydown', cierra); return; }
+        }
+      }
+      requestAnimationFrame(cuadro);
+    }
+    requestAnimationFrame(function (a) { t0 = a; ap.classList.add('corre'); requestAnimationFrame(cuadro); });
+  }
+
   /* ---------- Inicio ---------- */
   /* Portada: manifiesto en Instrument Serif y Ventana (foto de proyecto recortada en una letra del logo) */
   (function () {
     var vs = (C.ventanas || []).filter(function (v) { return PROY.some(function (p) { return p.slug === v.proyecto; }); });
-    if (!vs.length) return;
+    if (!vs.length) { if ($('apertura')) $('apertura').remove(); return; }
     var v = vs[Math.floor(Math.random() * vs.length)], p = PROY.filter(function (x) { return x.slug === v.proyecto; })[0];
     $('pi-titulo').textContent = C.manifiesto || '';
     $('pi-frase').textContent = C.frase || '';
@@ -86,6 +141,7 @@
     var im = el('img'); im.src = v.foto || p.portada; im.alt = p.nombre; im.decoding = 'async'; im.draggable = false; ven.appendChild(im);
     ven.appendChild(el('span', 'ventana-pie', '<b>' + esc(p.nombre) + '</b><span class="g">' + esc([p.ubicacion, p.anio].filter(Boolean).join(' · ')) + '</span>'));
     conEtiqueta(ven, p.nombre, false);
+    apertura(v.foto || p.portada);
   })();
   $('acerca').innerHTML = parrafos(C.acerca);
   /* Premios en el inicio */
