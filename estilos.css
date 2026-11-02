@@ -286,3 +286,24 @@ p { margin: 0; }
   .titulo-serif { font-size: clamp(34px, 9.1vw, 59px); margin: 28px 0 32px; }
   .ventana { height: auto; width: 60%; margin-bottom: 40px; }
 }
+
+/* ---------- Apertura: pegaso en trazo → relleno → ventana con una obra → se disuelve en el sitio ---------- */
+.apertura { position: fixed; inset: 0; z-index: 60; background: var(--blanco); cursor: pointer; overflow: hidden; animation: ap-seguro 0s 9s forwards; } /* seguro: nunca tapa el sitio más de 9 s */
+@keyframes ap-seguro { to { visibility: hidden; pointer-events: none; } }
+.sin-apertura .apertura { display: none; }
+.ap-dib { position: absolute; left: 50%; top: 50%; height: min(34vh, 52vw); transform: translate(-50%, -50%); }
+.ap-dib svg { height: 100%; width: auto; display: block; overflow: visible; }
+.ap-dib path { fill: transparent; stroke: var(--negro); stroke-width: 1.4; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 1; }
+.ap-suelo { position: absolute; left: 50%; bottom: 0; width: 0; height: 1px; background: var(--negro); transform: translateX(-50%); }
+.corre .ap-dib path { animation: ap-traza 1.2s cubic-bezier(.45,0,.25,1) calc(var(--d) + .3s) forwards, ap-rellena .45s ease 1.85s forwards; }
+.corre .ap-suelo { animation: ap-suelo .7s cubic-bezier(.45,0,.25,1) forwards, ap-apaga .4s 1.95s forwards; }
+@keyframes ap-traza { to { stroke-dashoffset: 0; } }
+@keyframes ap-rellena { to { fill: var(--negro); } }
+@keyframes ap-suelo { to { width: calc(100vw - 2 * var(--m)); } }
+@keyframes ap-apaga { to { opacity: 0; } }
+.ap-capa { position: absolute; inset: 0; opacity: 0; -webkit-mask: url(img/pegaso-negro.svg) no-repeat; mask: url(img/pegaso-negro.svg) no-repeat; }
+.ap-silu { background: var(--negro); }
+.ap-foto { background: center / cover no-repeat; }
+.ap-saltar { position: absolute; right: calc(var(--m) + env(safe-area-inset-right, 0px)); bottom: calc(var(--m) + env(safe-area-inset-bottom, 0px)); background: none; border: 0; padding: 6px 0; font: 500 11px/1 var(--font); letter-spacing: .14em; text-transform: uppercase; color: var(--negro); cursor: pointer; opacity: 0; transition: opacity .4s .3s; }
+.corre .ap-saltar { opacity: 1; }
+.apertura.sale { transition: opacity .3s; opacity: 0; pointer-events: none; }
