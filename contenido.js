@@ -20,7 +20,8 @@ window.PUGA = {
     { proyecto: 'entre-santos', letra: 'p', foto: 'img/proyectos/entre-santos/01.jpg' },
     { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' },
     { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' },
-    { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' }
+    { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' },
+    { proyecto: 'azure', letra: 'p', foto: 'img/proyectos/azure/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -59,6 +60,38 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'azure', nombre: 'AZURE', disciplina: 1, tipo: 'Hotel boutique',
+      anio: '2022', estado: '', ubicacion: 'Mazunte, Oaxaca', equipo: 'Javier Puga',
+      portada: 'img/proyectos/azure/01.jpg', portadaProp: 1.791,
+      concepto: 'Un hotel boutique frente a Punta Cometa cuyas torres evocan la pirámide: arquitectura hecha para mirar el cielo y el mar.',
+      texto: "**AZURE** es un hotel boutique en Mazunte, Oaxaca, concebido como una lectura contemporánea de la herencia histórica, cultural y social de la zona. Su punto de partida no es la forma, sino el lugar: lo que la tierra guarda y lo que su gente ha sabido construir sobre ella.\n\nLa cercanía a Punta Cometa le da al proyecto buena parte de su sentido. Esta península, conocida por su importancia energética, conserva el vestigio de un asentamiento que posiblemente sirvió a la exploración astronómica en la época prehispánica. AZURE honra esa memoria y la traduce en arquitectura: las torres de habitaciones evocan la pirámide, una forma hecha para mirar el cielo. Desde ellas, igual que desde cualquier terraza o punto exterior del predio, el amanecer y el atardecer sobre el mar forman parte del día.\n\nLa materia sigue la misma intención. Los muros se levantan con enhuacalado, una técnica propia de la zona que alinea los ladrillos dejando un espacio vacío entre ellos. Esa cámara de aire funciona como un excelente aislante acústico y térmico: un saber local que resuelve el clima desde el propio muro.\n\nDentro, el ladrillo continúa en los techos sobre vigas de madera. Celosías de discos de cobre filtran la luz, los pisos de azulejo cambian de tono en cada espacio y el mobiliario de madera y fibras naturales mantiene la calma de la costa.\n\nEl proyecto pisa el terreno con cuidado. El área de desplante se reduce al mínimo para no interrumpir el flujo natural del agua que baja por la pendiente, favorecer la permeabilidad del suelo y permitir que la vegetación existente siga creciendo. El hotel se acomoda al sitio, no al revés.\n\nLo delimita un muro perimetral hecho con piedras del propio sitio, apiladas sin mortero. Un límite construido con lo que el terreno ofrece, que, como todo en AZURE, busca pertenecer al lugar antes que imponerse sobre él.",
+      fotos: [
+        { src: 'img/proyectos/azure/02.jpg', prop: 1.791, titulo: 'El conjunto.', texto: 'Torres de ladrillo que se asoman entre la selva.' },
+        { src: 'img/proyectos/azure/03.jpg', prop: 1.791, titulo: 'Desde arriba.', texto: 'Cada torre guarda su terraza y su alberca.' },
+        { src: 'img/proyectos/azure/04.jpg', prop: 1.339, titulo: 'Albercas.', texto: 'El agua sobre el ladrillo, frente a la ladera.' },
+        { src: 'img/proyectos/azure/05.jpg', prop: 1.339, titulo: 'Frente al mar.', texto: 'Una terraza abierta al horizonte.' },
+        { src: 'img/proyectos/azure/06.jpg', prop: 1.339, titulo: 'Terraza.', texto: 'Sombra de lino y madera sobre el ladrillo.' },
+        { src: 'img/proyectos/azure/07.jpg', prop: 1.791, titulo: 'Mirador.', texto: 'La alberca se funde con el Pacífico.' },
+        { src: 'img/proyectos/azure/08.jpg', prop: 1.339, titulo: 'Bajo el lino.', texto: 'La luz llega filtrada.' },
+        { src: 'img/proyectos/azure/09.jpg', prop: 1.791, titulo: 'Mirar el cielo.', texto: 'Un telescopio en la terraza, como en Punta Cometa.' },
+        { src: 'img/proyectos/azure/10.jpg', prop: 1.339, titulo: 'Recorrido.', texto: 'Caminos de madera entre cactus y palmas.' },
+        { src: 'img/proyectos/azure/11.jpg', prop: 1.339, titulo: 'La torre.', texto: 'Celosías de cobre en el muro de enhuacalado.' },
+        { src: 'img/proyectos/azure/12.jpg', prop: 1.339, titulo: 'Escaleras.', texto: 'Subir para mirar el mar.' },
+        { src: 'img/proyectos/azure/13.jpg', prop: 1.791, titulo: 'Comedor.', texto: 'Una lancha de pescadores convertida en lámpara.' },
+        { src: 'img/proyectos/azure/14.jpg', prop: 1.339, titulo: 'Entre muros.', texto: 'El ladrillo enmarca el paso hacia la selva.' },
+        { src: 'img/proyectos/azure/15.jpg', prop: 1.791, titulo: 'Cocina.', texto: 'Azulejo negro y madera bajo techo de ladrillo.' },
+        { src: 'img/proyectos/azure/16.jpg', prop: 1.339, titulo: 'Estancia.', texto: 'El mar como único muro.' },
+        { src: 'img/proyectos/azure/17.jpg', prop: 1.339, titulo: 'Sala abierta.', texto: 'Concreto, madera y piedra frente a la costa.' },
+        { src: 'img/proyectos/azure/18.jpg', prop: 1.791, titulo: 'Habitación.', texto: 'La luz entra por la celosía de cobre.' },
+        { src: 'img/proyectos/azure/19.jpg', prop: 1.791, titulo: 'Descanso.', texto: 'Muros encalados y piso de azulejo azul.' },
+        { src: 'img/proyectos/azure/20.jpg', prop: 1.791, titulo: 'Habitación rosa.', texto: 'Celosías de cobre a ambos lados de la cama.' },
+        { src: 'img/proyectos/azure/21.jpg', prop: 1.791, titulo: 'Calma.', texto: 'Madera, lino y sombra.' },
+        { src: 'img/proyectos/azure/22.jpg', prop: 1.339, titulo: 'Baño.', texto: 'Un volumen continuo en tono tierra.' },
+        { src: 'img/proyectos/azure/23.jpg', prop: 1.339, titulo: 'Al anochecer.', texto: 'Las torres se encienden sobre la ladera.' },
+        { src: 'img/proyectos/azure/24.jpg', prop: 1.791, titulo: 'Noche.', texto: 'Bajo las estrellas, el hotel mira el cielo.' }
+      ]
+    },
     {
       slug: 'ritual-reflejo', nombre: 'Ritual Reflejo', disciplina: 4, tipo: 'Pieza única',
       anio: '2026', estado: 'Exhibida en el Mes del Diseño, por invitación de Firenze', ubicacion: '', equipo: 'Javier Puga',
