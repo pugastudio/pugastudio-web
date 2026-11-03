@@ -79,6 +79,13 @@
     var ap = $('apertura');
     if (!ap || document.documentElement.classList.contains('sin-apertura')) { if (ap) ap.remove(); return; }
     try { sessionStorage.setItem('puga-apertura', '1'); } catch (e) {}
+    if (window.matchMedia && matchMedia('(max-width: 700px)').matches) {
+      /* móvil: toda la animación vive en estilos.css; aquí solo se arranca y se retira */
+      ap.addEventListener('click', function () { ap.classList.add('sale'); setTimeout(function () { ap.remove(); }, 320); });
+      ap.addEventListener('animationend', function (e) { if (e.animationName === 'm-libera') ap.remove(); });
+      requestAnimationFrame(function () { ap.classList.add('corre'); });
+      return;
+    }
     var dib = ap.querySelector('.ap-dib'), silu = ap.querySelector('.ap-silu'), fot = ap.querySelector('.ap-foto');
     var AR = 644 / 716.5, listo = false, fin = false, t0 = 0, caja = null, tFoto = 0;
     var img = new Image(); img.onload = function () { listo = true; }; img.src = foto;

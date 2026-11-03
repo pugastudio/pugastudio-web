@@ -307,3 +307,26 @@ p { margin: 0; }
 .ap-saltar { position: absolute; right: calc(var(--m) + env(safe-area-inset-right, 0px)); bottom: calc(var(--m) + env(safe-area-inset-bottom, 0px)); background: none; border: 0; padding: 6px 0; font: 500 11px/1 var(--font); letter-spacing: .14em; text-transform: uppercase; color: var(--negro); cursor: pointer; opacity: 0; transition: opacity .4s .3s; }
 .corre .ap-saltar { opacity: 1; }
 .apertura.sale { transition: opacity .3s; opacity: 0; pointer-events: none; }
+
+/* Apertura en móvil: un pegaso pequeño se alza sobre las patas traseras, bate las alas y sale volando hacia arriba, llevándose la hoja blanca */
+.ap-movil { display: none; }
+@media (max-width: 700px) {
+  .ap-dib, .ap-capa { display: none; }
+  .ap-movil { display: block; position: absolute; left: 50%; top: 54%; height: 15vh; width: auto; overflow: visible; fill: var(--negro); transform: translate(-50%, -50%); opacity: 0; }
+  .ap-movil g { transform-box: view-box; }
+  .m-alza { transform-origin: 420px 948px; }
+  .m-mano { transform-origin: 885px 700px; }
+  .m-ala { transform-origin: 632px 562px; }
+  .corre .ap-movil { animation: m-aparece .45s ease forwards, m-vuela 1.05s cubic-bezier(.55,0,.75,.4) 2.05s forwards; }
+  .corre .m-alza { animation: m-alza .75s cubic-bezier(.3,1.35,.5,1) .55s forwards; }
+  .corre .m-mano { animation: m-mano 1.2s ease-in-out .6s forwards; }
+  .corre .m-ala { animation: m-bate .38s ease-in-out 1.25s 5 alternate; }
+  .corre .m-ala2 { animation-delay: 1.29s; }
+  .apertura.corre { animation: ap-seguro 0s 9s forwards, m-libera .85s cubic-bezier(.7,0,.2,1) 2.45s forwards; }
+}
+@keyframes m-aparece { to { opacity: 1; } }
+@keyframes m-alza { to { transform: rotate(-22deg); } }
+@keyframes m-mano { 0% { transform: none; } 45% { transform: rotate(-38deg); } 70% { transform: rotate(-22deg); } 100% { transform: rotate(-36deg); } }
+@keyframes m-bate { from { transform: rotate(-6deg); } to { transform: rotate(24deg); } }
+@keyframes m-vuela { from { opacity: 1; transform: translate(-50%, -50%); } to { opacity: 1; transform: translate(-50%, -50%) translate(10vw, -62vh) rotate(-10deg); } }
+@keyframes m-libera { to { transform: translateY(-100%); } }
