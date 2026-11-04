@@ -23,7 +23,7 @@ window.PUGA = {
     { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' },
     { proyecto: 'azure', letra: 'p', foto: 'img/proyectos/azure/01.jpg' },
     { proyecto: 'verde-agua-lab', letra: 'a', foto: 'img/proyectos/verde-agua-lab/01.jpg' },
-    { proyecto: 'puerto-solena', letra: 'u', foto: 'img/proyectos/puerto-solena/10.jpg' }
+    { proyecto: 'puerto-solena', letra: 'g', foto: 'img/proyectos/puerto-solena/10.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
