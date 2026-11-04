@@ -21,7 +21,8 @@ window.PUGA = {
     { proyecto: 'shell-taanah', letra: 'u', foto: 'img/proyectos/shell-taanah/01.jpg' },
     { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' },
     { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' },
-    { proyecto: 'azure', letra: 'p', foto: 'img/proyectos/azure/01.jpg' }
+    { proyecto: 'azure', letra: 'p', foto: 'img/proyectos/azure/01.jpg' },
+    { proyecto: 'verde-agua-lab', letra: 'u', foto: 'img/proyectos/verde-agua-lab/01.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -60,6 +61,28 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'verde-agua-lab', nombre: 'VERDE AGUA LAB', disciplina: 2, tipo: 'Consultorio de nutrición',
+      anio: '2025', estado: '', ubicacion: 'Condesa, Ciudad de México', equipo: 'Javier Puga',
+      portada: 'img/proyectos/verde-agua-lab/01.jpg', portadaProp: 1.339,
+      concepto: 'Un consultorio de nutrición abierto a la copa de los árboles, donde la calma, la textura y la naturaleza forman parte del cuidado.',
+      texto: "**VERDE AGUA LAB** es un consultorio de nutrición en la colonia Condesa, en la Ciudad de México. Ocupa una planta de un edificio nuevo sobre avenida Insurgentes Sur, con vista hacia la copa de los árboles, y toma su nombre de la marca a la que da casa. El encargo pedía más que un lugar para consultar: un espacio donde una comunidad pudiera reunirse, aprender y quedarse.\n\nEl concepto parte de una decisión de orden. Los espacios que necesitan privacidad, como los consultorios, la bodega, los sanitarios y el área de medición, se agrupan sobre un mismo eje sólido. Del otro lado queda libre la fachada, y con ella la vista. Desde la cocina y la sala de talleres se miran los árboles de la avenida: el exterior entra al consultorio y lo hace sentir más amplio de lo que es.\n\nLa planta se recorre a través de una secuencia de barras de bordes redondeados que reúne recepción, cafetería, tienda y cocina. Es el corazón del lugar, pensado para detenerse, conversar y también para ser grabado y compartido, porque la vida de VERDE AGUA LAB sucede tanto en el espacio como en línea.\n\nLas curvas suavizan el interior. Un acabado continuo en tono arena envuelve muros, barras y bancas, y dialoga con el piso de terrazo y la madera clara del mobiliario. La luz es parte del diseño: una línea luminosa se dibuja sobre el techo aparente y una luz cálida brota bajo bancas, barras y repisas, de modo que los volúmenes parecen flotar. El color lo ponen las plantas: el verde llega de la naturaleza, no de la pintura.\n\nLa intención final es la comunidad. Espejos de contorno orgánico invitan a la fotografía, una larga banca ondulada recibe a quien espera y la cocina abierta se convierte en aula para talleres. El mobiliario permite reacomodar los espacios para otros usos: un consultorio que crece con quienes lo habitan.",
+      fotos: [
+        { src: 'img/proyectos/verde-agua-lab/02.jpg', prop: 0.747, titulo: 'Acceso.', texto: 'Repisas curvas y plantas reciben al visitante.' },
+        { src: 'img/proyectos/verde-agua-lab/03.jpg', prop: 1.339, titulo: 'Cocina.', texto: 'Una isla de formas suaves para cocinar en comunidad.' },
+        { src: 'img/proyectos/verde-agua-lab/04.jpg', prop: 0.747, titulo: 'Sala de espera.', texto: 'Una banca que ondula junto al muro.' },
+        { src: 'img/proyectos/verde-agua-lab/05.jpg', prop: 1.339, titulo: 'Tienda.', texto: 'Al fondo, la copa de los árboles.' },
+        { src: 'img/proyectos/verde-agua-lab/06.jpg', prop: 0.747, titulo: 'Medición.', texto: 'Un muro curvo de madera envuelve el espacio.' },
+        { src: 'img/proyectos/verde-agua-lab/07.jpg', prop: 1.339, titulo: 'Reflejos.', texto: 'Espejos de contorno orgánico que invitan a la fotografía.' },
+        { src: 'img/proyectos/verde-agua-lab/08.jpg', prop: 0.747, titulo: 'La isla.', texto: 'Un lugar pensado para quedarse.' },
+        { src: 'img/proyectos/verde-agua-lab/09.jpg', prop: 1.339, titulo: 'Recorrido.', texto: 'Una línea de luz guía de la barra a los consultorios.' },
+        { src: 'img/proyectos/verde-agua-lab/10.jpg', prop: 0.747, titulo: 'Calma.', texto: 'Luz cálida bajo la banca y las repisas.' },
+        { src: 'img/proyectos/verde-agua-lab/11.jpg', prop: 1.339, titulo: 'Talleres.', texto: 'Una mesa frente al ventanal, entre los árboles.' },
+        { src: 'img/proyectos/verde-agua-lab/12.jpg', prop: 0.747, titulo: 'Consultorio.', texto: 'Madera, muros continuos y una lámpara que se dibuja en el aire.' },
+        { src: 'img/proyectos/verde-agua-lab/13.jpg', prop: 1.339, titulo: 'Cocina abierta.', texto: 'Madera clara y una isla que parece flotar.' },
+        { src: 'img/proyectos/verde-agua-lab/14.jpg', prop: 0.747, titulo: 'Sala de espera.', texto: 'Banca, barra y tienda en un mismo gesto.' }
+      ]
+    },
     {
       slug: 'azure', nombre: 'AZURE', disciplina: 1, tipo: 'Hotel boutique',
       anio: '2022', estado: '', ubicacion: 'Mazunte, Oaxaca', equipo: 'Javier Puga',
