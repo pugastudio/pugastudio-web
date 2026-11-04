@@ -22,7 +22,8 @@ window.PUGA = {
     { proyecto: 'fabrica-tulum', letra: 'g', foto: 'img/proyectos/fabrica-tulum/01.jpg' },
     { proyecto: 'ritual-reflejo', letra: 'a', foto: 'img/proyectos/ritual-reflejo/01.jpg' },
     { proyecto: 'azure', letra: 'p', foto: 'img/proyectos/azure/01.jpg' },
-    { proyecto: 'verde-agua-lab', letra: 'a', foto: 'img/proyectos/verde-agua-lab/01.jpg' }
+    { proyecto: 'verde-agua-lab', letra: 'a', foto: 'img/proyectos/verde-agua-lab/01.jpg' },
+    { proyecto: 'puerto-solena', letra: 'g', foto: 'img/proyectos/puerto-solena/10.jpg' }
   ],
 
   acerca: "**Puga Studio** es un estudio de arquitectura, interiorismo, diseño de mobiliario y arte objeto fundado en 2017 por Javier Puga. Su trayectoria abarca el diseño y la construcción de proyectos residenciales, hoteleros y comerciales, incluidos restaurantes, cafeterías y residencias privadas, con experiencia en entregas bajo la modalidad llave en mano.\n\nCada proyecto se desarrolla a partir de un concepto que integra la historia del lugar, las formas de habitar y los saberes del oficio local. Esta visión orienta las decisiones de diseño y articula una propuesta coherente, desde la concepción arquitectónica hasta el mobiliario y los detalles.\n\nEl estudio también ha colaborado con marcas internacionales de hospitalidad en el desarrollo de sus proyectos.",
@@ -61,6 +62,39 @@ window.PUGA = {
   },
 
   proyectos: [
+    {
+      slug: 'puerto-solena', nombre: 'Puerto Solena', disciplina: 1, tipo: 'Departamentos',
+      anio: '2024', estado: '', ubicacion: 'Puerto Escondido, Oaxaca', equipo: 'Javier Puga',
+      portada: 'img/proyectos/puerto-solena/01.jpg', portadaProp: 1.339,
+      concepto: 'Volúmenes de concreto que se desplazan para dejar pasar la sombra, la brisa y las palmas.',
+      texto: "Entre palmeras y arena, a unos pasos del Pacífico, **Puerto Solena** se levanta como una pieza de volúmenes apilados. Cada nivel se desplaza sobre el anterior y abre terrazas y voladizos que dan sombra, enmarcan el paisaje y dejan caer la vegetación desde las jardineras.\n\nEl concreto aparente, colado en cimbra de madera, conserva la huella de la tabla y recibe el atardecer con un tono cálido. Lo acompañan la madera, en celosías y puertas que filtran la mirada, y el acero en tono vino de escaleras y barandales. La escalera exterior es parte de la fachada: recorre el edificio al aire libre y convierte cada ascenso en un paseo entre las copas de las palmas.\n\nEn la azotea, una pérgola de madera suspendida sobre el último volumen tiende una sombra ligera sobre una alberca de azulejo verde. Es el punto más alto y el más quieto: un lugar para nadar, leer y ver caer la tarde sobre el palmar.\n\nEn planta baja, patios cerrados por muros altos y celosías guardan la intimidad de cada espacio. La arena entra al jardín, las enredaderas suben por el concreto y una pequeña alberca, del mismo verde, se ofrece como refugio frente al calor de la costa.\n\nAdentro, la materia baja la voz. Muros de acabado terso en tono arena, piso de pasta con un patrón discreto, madera en muebles, puertas y closets, y fibras naturales en tapetes y respaldos. Sobre esa calma, el color vino aparece con intención: en la cocina de azulejo y terrazo, en el sofá, en las piezas de arte. El baño, en cambio, se envuelve en un mosaico blanco nacarado que devuelve la luz del trópico.\n\nAl caer la noche, líneas de luz bajo los voladizos dibujan la silueta del edificio entre las palmas.\n\nUna arquitectura que no compite con el sitio: lo enmarca, lo protege y lo vuelve parte de la vida diaria.",
+      fotos: [
+        { src: 'img/proyectos/puerto-solena/02.jpg', prop: 1.339, titulo: 'Desde arriba.', texto: 'Volúmenes que se desplazan entre el palmar.' },
+        { src: 'img/proyectos/puerto-solena/03.jpg', prop: 1.339, titulo: 'Al atardecer.', texto: 'La escalera exterior sube entre las palmas.' },
+        { src: 'img/proyectos/puerto-solena/04.jpg', prop: 1.339, titulo: 'La escalera.', texto: 'Acero vino y concreto: el ascenso como paseo.' },
+        { src: 'img/proyectos/puerto-solena/05.jpg', prop: 1.339, titulo: 'Acceso.', texto: 'Concreto en cimbra de madera y celosía.' },
+        { src: 'img/proyectos/puerto-solena/06.jpg', prop: 1.339, titulo: 'Entre palmas.', texto: 'Terrazas que se asoman a la vegetación.' },
+        { src: 'img/proyectos/puerto-solena/07.jpg', prop: 1.339, titulo: 'Subir.', texto: 'Una escalera abierta al cielo.' },
+        { src: 'img/proyectos/puerto-solena/08.jpg', prop: 1.339, titulo: 'Azotea.', texto: 'Una pérgola de madera suspendida sobre el último volumen.' },
+        { src: 'img/proyectos/puerto-solena/09.jpg', prop: 1.339, titulo: 'Nadar.', texto: 'Una alberca de azulejo verde bajo la sombra ligera.' },
+        { src: 'img/proyectos/puerto-solena/10.jpg', prop: 1.339, titulo: 'Leer.', texto: 'El punto más alto y el más quieto.' },
+        { src: 'img/proyectos/puerto-solena/11.jpg', prop: 1.339, titulo: 'Patio.', texto: 'Muros altos y celosías guardan la intimidad.' },
+        { src: 'img/proyectos/puerto-solena/12.jpg', prop: 1.339, titulo: 'Jardín de arena.', texto: 'Enredaderas sobre el concreto y una pequeña alberca al fondo.' },
+        { src: 'img/proyectos/puerto-solena/13.jpg', prop: 1.339, titulo: 'Comedor.', texto: 'Travertino, madera y una lámpara de fibra.' },
+        { src: 'img/proyectos/puerto-solena/14.jpg', prop: 1.339, titulo: 'Estancia.', texto: 'El color vino aparece con intención.' },
+        { src: 'img/proyectos/puerto-solena/15.jpg', prop: 1.339, titulo: 'Habitación.', texto: 'Madera, lino y la luz del trópico.' },
+        { src: 'img/proyectos/puerto-solena/16.jpg', prop: 0.747, titulo: 'Baño.', texto: 'Mosaico blanco nacarado.' },
+        { src: 'img/proyectos/puerto-solena/17.jpg', prop: 1.339, titulo: 'Sala.', texto: 'Un ventanal abierto a las palmas.' },
+        { src: 'img/proyectos/puerto-solena/18.jpg', prop: 1.339, titulo: 'Descanso.', texto: 'Muros en tono arena y piso de pasta.' },
+        { src: 'img/proyectos/puerto-solena/19.jpg', prop: 1.339, titulo: 'Cocina.', texto: 'Azulejo y terrazo color vino.' },
+        { src: 'img/proyectos/puerto-solena/20.jpg', prop: 1.339, titulo: 'Hacia la duna.', texto: 'Una torre de concreto entre palmas y cactus.' },
+        { src: 'img/proyectos/puerto-solena/21.jpg', prop: 1.339, titulo: 'Esquina.', texto: 'Jardineras que dejan caer la vegetación.' },
+        { src: 'img/proyectos/puerto-solena/22.jpg', prop: 1.339, titulo: 'La calle.', texto: 'Un edificio que se acomoda entre los árboles.' },
+        { src: 'img/proyectos/puerto-solena/23.jpg', prop: 1.313, titulo: 'Noche.', texto: 'La luz dibuja la silueta del edificio.' },
+        { src: 'img/proyectos/puerto-solena/24.jpg', prop: 1.339, titulo: 'Voladizos.', texto: 'Líneas de luz bajo cada nivel.' },
+        { src: 'img/proyectos/puerto-solena/25.jpg', prop: 1.339, titulo: 'Al anochecer.', texto: 'Entre cactus y palmas, el edificio se enciende.' }
+      ]
+    },
     {
       slug: 'verde-agua-lab', nombre: 'VERDE AGUA LAB', disciplina: 2, tipo: 'Consultorio de nutrición',
       anio: '2025', estado: '', ubicacion: 'Condesa, Ciudad de México', equipo: 'Javier Puga',
